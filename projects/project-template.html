@@ -1,0 +1,539 @@
+<!-- PAGE: Project Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- REPLACE: Project Name --> | Portfolio</title>
+    <meta name="description" content="<!-- REPLACE: A concise description of the project for SEO and social sharing -->">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexporter.dev/projects/project-one.html">
+    <meta property="og:title" content="<!-- REPLACE: Project Name --> | Portfolio">
+    <meta property="og:description" content="<!-- REPLACE: A concise description of the project for SEO and social sharing -->">
+    <meta property="og:image" content="<!-- REPLACE: /assets/images/projects/project-one-og.jpg -->">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexporter.dev/projects/project-one.html">
+    <meta property="twitter:title" content="<!-- REPLACE: Project Name --> | Portfolio">
+    <meta property="twitter:description" content="<!-- REPLACE: A concise description of the project for SEO and social sharing -->">
+    <meta property="twitter:image" content="<!-- REPLACE: /assets/images/projects/project-one-og.jpg -->">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alexporter.dev/projects/project-one.html">
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="../../index.html" class="nav-logo">AP</a>
+            <ul class="nav-links" role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                    <!-- Sun/Moon SVG icons will be injected by JS -->
+                </button>
+                <a href="../../assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
+                <!-- BREADCRUMB -->
+                <nav class="breadcrumb" aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><span class="breadcrumb-current" aria-current="page"><!-- REPLACE: Project Name --></span></li>
+                    </ol>
+                </nav>
+
+                <div class="hero-content grid grid-2 items-center gap-8">
+                    <!-- TEXT CONTENT -->
+                    <div class="hero-text">
+                        <h1 class="project-title"><!-- REPLACE: Project Name --></h1>
+                        <p class="project-tagline">
+                            <!-- REPLACE: A brief tagline describing the project's purpose and value proposition -->
+                        </p>
+
+                        <!-- META BADGES -->
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge"><!-- REPLACE: Type --> (e.g., Web App, UI Design)</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline"><!-- REPLACE: Tech 1 --></span>
+                                <span class="badge badge-outline"><!-- REPLACE: Tech 2 --></span>
+                                <span class="badge badge-outline"><!-- REPLACE: Tech 3 --></span>
+                                <span class="badge badge-outline"><!-- REPLACE: Tech 4 --></span>
+                                <span class="badge badge-outline"><!-- REPLACE: Tech 5 --></span>
+                            </div>
+                            <span class="project-badge"><!-- REPLACE: Status --> (Live/In Progress/Archived)</span>
+                            <span class="project-badge"><!-- REPLACE: Year --></span>
+                            <span class="project-badge"><!-- REPLACE: Difficulty --></span>
+                        </div>
+
+                        <!-- PRIMARY CTAS -->
+                        <div class="project-ctas flex gap-3">
+                            <a href="#" class="btn btn-primary">View Live Demo ↗</a>
+                            <a href="#" class="btn btn-outline">View on GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- PLACEHOLDER IMAGE -->
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label"><!-- REPLACE: Project Screenshot --></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <!-- LEFT: PROBLEM STATEMENT -->
+                <div class="problem-statement">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>
+                        <!-- REPLACE: Describe the problem this project addresses. What pain point does it solve? Who experiences this problem and why is it significant? -->
+                    </p>
+                    <p>
+                        <!-- REPLACE: Explain the context and limitations of existing solutions. What makes this approach novel or better than alternatives? -->
+                    </p>
+                    <p>
+                        <!-- REPLACE: Optional third paragraph for additional context or user impact -->
+                    </p>
+                </div>
+
+                <!-- RIGHT: SIDEBAR METADATA -->
+                <div class="sidebar-metadata card-glass p-6">
+                    <h3 class="sidebar-title">Project Details</h3>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Role:</span>
+                        <span class="sidebar-value"><!-- REPLACE: Frontend Developer / Designer --></span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Timeline:</span>
+                        <span class="sidebar-value"><!-- REPLACE: 2 weeks / 1 month --></span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Team size:</span>
+                        <span class="sidebar-value"><!-- REPLACE: Solo / 2 people --></span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Status:</span>
+                        <span class="sidebar-value badge"><!-- REPLACE: Live / In Progress --></span>
+                    </div>
+                    <div class="sidebar-item mb-6">
+                        <span class="sidebar-label">Tech Stack:</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline"><!-- REPLACE: Tech 1 --></span>
+                            <span class="badge badge-outline"><!-- REPLACE: Tech 2 --></span>
+                            <span class="badge badge-outline"><!-- REPLACE: Tech 3 --></span>
+                            <span class="badge badge-outline"><!-- REPLACE: Tech 4 --></span>
+                        </div>
+                    </div>
+                    <div class="sidebar-links flex gap-3">
+                        <a href="#" class="sidebar-link">
+                            <!-- GitHub Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="#" class="sidebar-link">
+                            <!-- External Link Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK DEEP DIVE -->
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
+                <h2 class="section-title">Technologies Used</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Brief explanation of how these technologies work together to create a cohesive solution -->
+                </p>
+                <div class="tech-cards grid grid-3 gap-6">
+                    <!-- TECH CARD 1: HTML/CSS -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- HTML/CSS Icon Placeholder -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7s1.5 1 3 1c1.7 0 3.4-.5 4.8-1.5L16 10H4zM4 12c1.7 0 3.4.5 4.8 1.5l1.2-2.2C11.4 12 9.6 12.5 8 15l-4 1v3h6v-2z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">HTML5 & CSS3</h3>
+                            <p class="tech-description">
+                                <!-- REPLACE: Semantic markup for accessibility and SEO, modern CSS for responsive layouts and visual design -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 2: JAVASCRIPT/FRAMEWORK -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- JavaScript/Framework Icon Placeholder -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2.2L10.1 13.1l-4.3-4.3c-1.16-1.16-2.8-1.16-3.96 0l-4.2 4.2C4.6 14.6 3 16.5 3 18.5h1.6l3.89-3.89c0.59-0.59 1.38-0.77 1.83-0.46l5.58.61c1.13-0.33 2.05-0.38 2.87-0.11l1.87-4.62a3 3 0 0 0-.5-2.12z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title"><!-- REPLACE: JavaScript / React / Vue --></h3>
+                            <p class="tech-description">
+                                <!-- REPLACE: Chosen for its component-based architecture, ecosystem, and performance characteristics -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 3: API/TOOL -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- API/Tool Icon Placeholder -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title"><!-- REPLACE: API or Tool Name --></h3>
+                            <p class="tech-description">
+                                <!-- REPLACE: Selected for specific functionality it provides that's essential to the project -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREENSHOT GALLERY -->
+        <section class="screenshot-gallery section reveal-on-scroll">
+            <div class="screenshot-gallery-inner container">
+                <h2 class="section-title">Screenshots</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Brief description of what these screenshots showcase -->
+                </p>
+                <div class="screenshot-grid grid grid-3 gap-4">
+                    <!-- SCREENSHOT 1 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Screenshot 1</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 1 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 2 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Screenshot 2</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 2 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 3 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Screenshot 3</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 3 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGES & SOLUTIONS -->
+        <section class="challenges-solutions section reveal-on-scroll">
+            <div class="challenges-solutions-inner container">
+                <h2 class="section-title">Challenges Solved</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Brief introduction to the challenges faced and how they were overcome -->
+                </p>
+                <div class="challenges-grid grid grid-3 gap-6">
+                    <!-- CHALLENGE 1 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title"><!-- REPLACE: Challenge Title --></h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed description of the challenge or problem encountered -->
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed explanation of how the challenge was addressed -->
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-comment">// Example solution code</span>
+<span class="code-keyword">const</span> solution = <span class="code-string">"Implemented using modern approaches"</span>;
+<span class="code-keyword">return</span> solution;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 2 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title"><!-- REPLACE: Challenge Title --></h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed description of the challenge or problem encountered -->
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed explanation of how the challenge was addressed -->
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-comment">// Another solution approach</span>
+<span class="code-keyword">function</span> solveProblem() {
+    <span class="code-keyword">return</span> <span class="code-builtin">Math</span>.<span class="code-function">random</span>() <span class="code-operator">&gt;</span> <span class="code-number">0.5</span>;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 3 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title"><!-- REPLACE: Challenge Title --></h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed description of the challenge or problem encountered -->
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                <!-- REPLACE: Detailed explanation of how the challenge was addressed -->
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-keyword">class</span> Solution {
+    <span class="code-keyword">constructor</span>(options) {
+        <span class="code-builtin">this</span>.options = options;
+    }
+
+    <span class="code-keyword">execute</span>() {
+        <span class="code-keyword">return</span> <span class="code-builtin">Promise</span>.resolve();
+    }
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LESSONS LEARNED -->
+        <section class="lessons-learned section reveal-on-scroll">
+            <div class="lessons-learned-inner container">
+                <h2 class="section-title">What I Leared</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Brief reflection on the overall learning experience -->
+                </p>
+                <div class="lessons-grid grid grid-3 gap-6">
+                    <!-- LESSON 1 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title"><!-- REPLACE: Lesson Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed explanation of what was learned and why it matters -->
+                        </p>
+                    </div>
+
+                    <!-- LESSON 2 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title"><!-- REPLACE: Lesson Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed explanation of what was learned and why it matters -->
+                        </p>
+                    </div>
+
+                    <!-- LESSON 3 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title"><!-- REPLACE: Lesson Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed explanation of what was learned and why it matters -->
+                        </p>
+                    </div>
+                </div>
+
+                <!-- KEY TAKEAWAY -->
+                <blockquote class="key-takeaway">
+                    <p>
+                        <!-- REPLACE: The single most important insight or takeaway from this project -->
+                    </p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- NEXT STEPS / FUTURE IMPROVEMENTS -->
+        <section class="next-steps section reveal-on-scroll">
+            <div class="next-steps-inner container">
+                <h2 class="section-title">What's Next</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Brief introduction to planned improvements and future direction -->
+                </p>
+                <ul class="next-steps-list">
+                    <li>
+                        <h3 class="next-step-title"><!-- REPLACE: Improvement Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed description of the planned improvement -->
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title"><!-- REPLACE: Improvement Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed description of the planned improvement -->
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title"><!-- REPLACE: Improvement Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed description of the planned improvement -->
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title"><!-- REPLACE: Improvement Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed description of the planned improvement -->
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title"><!-- REPLACE: Improvement Title --></h3>
+                        <p>
+                            <!-- REPLACE: Detailed description of the planned improvement -->
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECT NAVIGATION -->
+        <section class="project-navigation section">
+            <div class="project-navigation-inner container flex justify-between items-center">
+                <a href="#" class="prev-project btn btn-outline">
+                    ← Previous Project
+                </a>
+                <a href="../../projects.html" class="btn btn-secondary">
+                    ↑ All Projects
+                </a>
+                <a href="#" class="next-project btn btn-outline">
+                    Next Project →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="footer-logo">AP</a>
+                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <!-- GitHub SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <!-- Twitter/X SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <!-- Dribbble SVG -->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Work</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../experience.html">Experience</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="#">Mentoring</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
+                <div class="footer-small-links">
+                    <a href="#">Sitemap</a>
+                    <a href="#">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/contact.js"></script>
+    <script src="../../js/lightbox.js"></script>
+</body>
+</html>

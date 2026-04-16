@@ -1,0 +1,167 @@
+<!-- PAGE: Contact form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" media="print" href="/css/print.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="index.html" class="nav-logo">AP</a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                    <!-- Sun/Moon SVG icons will be injected by JS -->
+                </button>
+                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- CONTACT FORM -->
+        <section class="contact-section section reveal-on-scroll" data-animate="fadeInUp">
+            <div class="contact-section-inner container">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">
+                    <!-- REPLACE: Have a project in mind? I'd love to hear about it! Reach out for collaborations, freelance work, or just to say hello. -->
+                </p>
+
+                <!-- Network Error Fallback -->
+                <div id="network-error-message" class="network-error hidden">
+                    <div class="network-error-content">
+                        <!-- WiFi Off SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.12-.45V17a2 2 0 0 1-2 2 2 2 0 0 1-2 2v2"></path>
+                        </svg>
+                        <h3>It looks like you're offline</h3>
+                        <p>You can also reach me at <!-- REPLACE: email --></p>
+                        <a href="mailto:<!-- REPLACE: email -->" class="btn btn-outline">Email Me</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" name="contact" netlify netlify-honeypot="bot-field" hidden>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea"></textarea>
+                    </div>
+                    <!-- netlify honeypot -->
+                    <p class="hidden">
+                        <label>Don’t fill this out if you're human: </label>
+                        <input name="bot-field" />
+                    </p>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">AP</a>
+                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <!-- GitHub SVG placeholder -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG placeholder -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <!-- Twitter/X SVG placeholder -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <!-- Dribbble SVG placeholder -->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Work</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="#">Mentoring</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
+                <div class="footer-small-links">
+                    <a href="#">Sitemap</a>
+                    <a href="#">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

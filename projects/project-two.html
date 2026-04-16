@@ -1,0 +1,600 @@
+<!-- PAGE: Design System -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System | Portfolio</title>
+    <meta name="description" content="A comprehensive design system built with Figma, CSS, and JavaScript featuring reusable components, design tokens, and comprehensive documentation">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexporter.dev/projects/project-two.html">
+    <meta property="og:title" content="Design System | Portfolio">
+    <meta property="og:description" content="A comprehensive design system built with Figma, CSS, and JavaScript featuring reusable components, design tokens, and comprehensive documentation">
+    <meta property="og:image" content="https://alexporter.dev/assets/images/projects/design-system-og.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexporter.dev/projects/project-two.html">
+    <meta property="twitter:title" content="Design System | Portfolio">
+    <meta property="twitter:description" content="A comprehensive design system built with Figma, CSS, and JavaScript featuring reusable components, design tokens, and comprehensive documentation">
+    <meta property="twitter:image" content="https://alexporter.dev/assets/images/projects/design-system-og.jpg">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alexporter.dev/projects/project-two.html">
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="../../index.html" class="nav-logo">AP</a>
+            <ul class="nav-links" role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                    <!-- Sun/Moon SVG icons will be injected by JS -->
+                </button>
+                <a href="../../assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
+                <!-- BREADCRUMB -->
+                <nav class="breadcrumb" aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><span class="breadcrumb-current" aria-current="page">Design System</span></li>
+                    </ol>
+                </nav>
+
+                <div class="hero-content grid grid-2 items-center gap-8">
+                    <!-- TEXT CONTENT -->
+                    <div class="hero-text">
+                        <h1 class="project-title">Design System</h1>
+                        <p class="project-tagline">
+                            A comprehensive design system that bridges design and development with reusable components, clear guidelines, and living documentation
+                        </p>
+
+                        <!-- META BADGES -->
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge">Component Lib</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline">Figma</span>
+                                <span class="badge badge-outline">CSS</span>
+                                <span class="badge badge-outline">JavaScript</span>
+                                <span class="badge badge-outline">HTML5</span>
+                                <span class="badge badge-outline">Storybook</span>
+                            </div>
+                            <span class="project-badge">Live</span>
+                            <span class="project-badge">2023</span>
+                            <span class="project-badge">Advanced</span>
+                        </div>
+
+                        <!-- PRIMARY CTAS -->
+                        <div class="project-ctas flex gap-3">
+                            <a href="https://designsystem.alexporter.dev" class="btn btn-primary">View Live Demo ↗</a>
+                            <a href="https://github.com/alexporter/design-system" class="btn btn-outline">View on GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- PLACEHOLDER IMAGE -->
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label">Design System Dashboard</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <!-- LEFT: PROBLEM STATEMENT -->
+                <div class="problem-statement">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>
+                        Design and development teams often work in silos, leading to inconsistent interfaces, duplicated effort, and slow iteration cycles. Without a shared design system, maintaining visual and functional consistency across products becomes increasingly difficult as teams and products scale.
+                    </p>
+                    <p>
+                        Teams need a single source of truth that provides both designers and developers with the same components, guidelines, and tools. This reduces cognitive overhead, ensures brand consistency, and dramatically increases development velocity.
+                    </p>
+                    <p>
+                        The lack of a unified design system was causing inconsistent user experiences, longer development times, and challenges in maintaining brand integrity across multiple products and platforms.
+                    </p>
+                </div>
+
+                <!-- RIGHT: SIDEBAR METADATA -->
+                <div class="sidebar-metadata card-glass p-6">
+                    <h3 class="sidebar-title">Project Details</h3>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Role:</span>
+                        <span class="sidebar-value">UI/UX Designer / Frontend Developer</span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Timeline:</span>
+                        <span class="sidebar-value">2 months</span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Team size:</span>
+                        <span class="sidebar-value">Solo</span>
+                    </div>
+                    <div class="sidebar-item mb-4>
+                        <span class="sidebar-label">Status:</span>
+                        <span class="sidebar-value badge">Live</span>
+                    </div>
+                    <div class="sidebar-item mb-6>
+                        <span class="sidebar-label">Tech Stack:</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline">Figma</span>
+                            <span class="badge badge-outline">CSS</span>
+                            <span class="badge badge-outline">JavaScript</span>
+                            <span class="badge badge-outline">HTML5</span>
+                            <span class="badge badge-outline">Storybook</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-links flex gap-3>
+                        <a href="https://github.com/alexporter/design-system" class="sidebar-link">
+                            <!-- GitHub Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://designsystem.alexporter.dev" class="sidebar-link">
+                            <!-- External Link Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK DEEP DIVE -->
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
+                <h2 class="section-title">Technologies Used</h2>
+                <p class="section-subtitle">
+                    Figma was used for design and component creation, CSS/JavaScript for implementation, and Storybook for documentation and testing - creating a seamless bridge between design and development.
+                </p>
+                <div class="tech-cards grid grid-3 gap-6>
+                    <!-- TECH CARD 1: FIGMA -->
+                    <div class="tech-card card-glass p-4>
+                        <div class="tech-icon">
+                            <!-- Figma Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21.5V2.5h9.5V21.5H4zM17.5 2H15V4.5h2.5V2h2V4.5h2.5V2H14V21.5h-1.5V4.5h-1V2h-1.5V4.5h-1V2H9.5V4.5h1V21.5h10V4.5h-2.5V4h-2V4.5h-2.5V4h-2V4.5H21.5z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">Figma</h3>
+                            <p class="tech-description">
+                                Chosen for its powerful collaborative design capabilities, robust component system, and excellent prototyping features. Enabled rapid iteration and clear communication between design and development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 2: CSS -->
+                    <div class="tech-card card-glass p-4>
+                        <div class="tech-icon">
+                            <!-- CSS Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7s1.5 1 3 1c1.7 0 3.4-.5 4.8-1.5L16 10H4zM4 12c1.7 0 3.4.5 4.8 1.5l1.2-2.2C11.4 12 9.6 12.5 8 15l-4 1v3h6v-2z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">CSS</h3>
+                            <p class="tech-description">
+                                Selected for its flexibility in creating reusable, themeable components. CSS custom properties enabled dynamic theming, while BEM methodology ensured scalable and maintainable stylesheets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 3: JAVASCRIPT -->
+                    <div class="tech-card card-glass p-4>
+                        <div class="tech-icon">
+                            <!-- JavaScript Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2.2L10.1 13.1l-4.3-4.3c-1.16-1.16-2.8-1.16-3.96 0l-4.2 4.2C4.6 14.6 3 16.5 3 18.5h1.6l3.89-3.89c0.59-0.59 1.38-0.77 1.83-0.46l5.58.61c1.13-0.33 2.05-0.38 2.87-0.11l1.87-4.62a3 3 0 0 0-.5-2.12z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">JavaScript</h3>
+                            <p class="tech-description">
+                                Chosen for adding interactive behavior to components and enabling dynamic features like theme switching, state management, and API integrations that enhance the user experience beyond static styling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREENSHOT GALLERY -->
+        <section class="screenshot-gallery section reveal-on-scroll">
+            <div class="screenshot-gallery-inner container">
+                <h2 class="section-title">Screenshots</h2>
+                <p class="section-subtitle">
+                    Showcasing the design system's component library, documentation site, and Figma integration.
+                </p>
+                <div class="screenshot-grid grid grid-3 gap-4>
+                    <!-- SCREENSHOT 1 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder>
+                                <div class="image-label">Component Library</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 1 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 2 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder>
+                                <div class="image-label">Documentation Site</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 2 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0 2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 3 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder>
+                                <div class="image-label">Figma Integration</div>
+                            </div
+                            <button class="screenshot-btn" aria-label="View screenshot 3 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0 2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGES & SOLUTIONS -->
+        <section class="challenges-solutions section reveal-on-scroll>
+            <div class="challenges-solutions-inner container>
+                <h2 class="section-title">Challenges Solved</h2>
+                <p class="section-subtitle">
+                    Creating a cohesive design system that serves both designers and developers required overcoming challenges in communication, tooling, and maintenance.
+                </p>
+                <div class="challenges-grid grid grid-3 gap-6>
+                    <!-- CHALLENGE 1 -->
+                    <div class="challenge-card card-glass p-4>
+                        <h3 class="challenge-title">Designer-Developer Handoff</h3>
+                        <div class="challenge-problem>
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Ensuring that designs created in Figma translate accurately to code, preventing the "design vs reality" gap that causes frustration and rework.
+                            </p>
+                        </div>
+                        <div class="challenge-solution>
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Implemented a token-based approach where design values (colors, spacing, typography) are defined in Figma and exported as CSS custom properties. Used Figma's API to sync changes and created automated tests to verify visual consistency.
+                            </p>
+                            <div class="code-block>
+                                <pre><code>
+<span class="code-comment">// Design tokens JSON structure</span>
+<span class="code-keyword">const</span> designTokens = {
+    colors: {
+        primary: <span class="code-string">"#7c3aed"</span>,
+        secondary: <span class="code-string">"#f59e0b"</span>
+    },
+    spacing: {
+        "1": <span class="code-string">"4px"</span>,
+        "2": <span class="code-string">"8px"</span>
+    },
+    fontSizes: {
+        base: <span class="code-string">"16px"</span>,
+        lg: <span class="code-string">"18px"</span>
+    }
+};
+
+<span class="code-comment">// CSS custom properties generation</span>
+<span class="code-keyword">Object</span>.keys(designTokens.colors).forEach(key => {
+    document.documentElement.style.setProperty(
+        <span class="code-string">`--color-${key}`</span>,
+        designTokens.colors[key]
+    );
+});
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 2 -->
+                    <div class="challenge-card card-glass p-4>
+                        <h3 class="challenge-title">Component Documentation & Usage</h3>
+                        <div class="challenge-problem>
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Ensuring that developers can easily find, understand, and use components correctly without constant reference to designers or lengthy documentation.
+                            </p>
+                        </div>
+                        <div class="challenge-solution>
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Used Storybook to create interactive component documentation with live editing, accessibility testing, and visual regression checks. Each component includes usage examples, prop tables, and accessibility notes.
+                            </p>
+                            <div class="code-block>
+                                <pre><code>
+<span class="code-keyword">import</span> { Meta, StoryObj } from <span class="code-string">"@storybook/react"</span>;
+<span class="code-keyword">import</span> Button from <span class="code-string">"./Button"</span>;
+
+<span class="code-keyword">export</span> <span class="code-keyword">default</span> {
+    title: <span class="code-string">"Components/Button"</span>,
+    component: Button,
+    tags: [<span class="code-string">"autodocs"</span>],
+    argTypes: {
+        variant: {
+            control: { type: <span class="code-string">"select"</span> },
+            options: [<span class="code-string">"primary"</span>, <span class="code-string">"secondary"</span>, <span class="code-string">"outline"</span>]
+        },
+        size: {
+            control: { type: <span class="code-string">"select"</span> },
+            options: [<span class="code-string">"sm"</span>, <span class="code-string">"md"</span>, <span class="code-string">"lg"</span>]
+        }
+    }
+};
+
+<span class="code-keyword">export</span> const Primary: StoryObj = {
+    args: {
+        label: <span class="code-string">"Click me"</span>,
+        variant: <spanclass name="&#34;code-string&#34;">"primary"</span>,
+        size: <span class="code-string">"md"</span>
+    }
+};
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 3 -->
+                    <div class="challenge-card card-glass p-4>
+                        <h3 class="challenge-title">Versioning & Backward Compatibility</h3>
+                        <div class="challenge-problem>
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Managing updates to the design system without breaking existing implementations or requiring costly migrations for product teams.
+                            </p>
+                        </div>
+                        <div class="challenge-solution>
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Implemented semantic versioning with clear migration guides. Used CSS namespacing and JavaScript module aliases to allow multiple versions to coexist. Created automated compatibility tests and deprecated features with clear timelines.
+                            </p>
+                            <div class="code-block>
+                                <pre><code>
+<span class="code-comment">// Versioned CSS approach</span>
+<span class="code-keyword">/* v1.0.0 */</span>
+<span class="code-keyword">:root</span> {
+    --ds-color-primary: <span class="code-string">"#7c3aed"</span>;
+    --ds-spacing-2: <span class="code-string">"8px"</span>;
+}
+
+<span class="code-keyword">/* v2.0.0 */</span>
+<span class="code-keyword">:root</span> {
+    --ds-v2-color-primary: <span class="code-string">"#8b5cf6"</span>;
+    --ds-v2-spacing-2: <span class="code-string">"10px"</span>;
+}
+
+<span class="code-keyword">/* Migration helper */</span>
+<span class="code-keyword">function</span> migrateToV2() {
+    <span class="code-keyword">//</span> Copy values from v1 to v2 namespace
+    <span class="code-keyword">document</span>.documentElement.style.setProperty(
+        <span class="code-string">"--ds-v2-color-primary"</span>,
+        <span class="code-string">"#8b5cf6"</span>
+    );
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LESSONS LEARNED -->
+        <section class="lessons-learned section reveal-on-scroll>
+            <div class="lessons-learned-inner container>
+                <h2 class="section-title">What I Learned</h2>
+                <p class="section-subtitle">
+                    Building a design system taught me that successful systems are as much about people and processes as they are about components and code.
+                </p>
+                <div class="lessons-grid grid grid-3 gap-6>
+                    <!-- LESSON 1 -->
+                    <div class="lesson-item>
+                        <h3 class="lesson-title">Systems Thinking</h3>
+                        <p>
+                            A design system is more than a collection of components - it's a living ecosystem that includes documentation, governance, contribution guidelines, and evolutionary processes that enable long-term success.
+                        </p>
+                    </div>
+
+                    <!-- LESSON 2 -->
+                    <div class="lesson-item>
+                        <h3 class="lesson-title">Documentation as UX</h3>
+                        <p>
+                            How documentation is structured and presented significantly impacts adoption. Clear examples, interactive playgrounds, and searchable references are as important as the components themselves.
+                        </p>
+                    </div>
+
+                    <!-- LESSON 3 -->
+                    <div class="lesson-item>
+                        <h3 class="lesson-title">Incremental Adoption</h3>
+                        <p>
+                            Successful design systems allow for gradual adoption. Providing clear migration paths, coexistence mechanisms, and value demonstrations helps teams transition without disruption.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- KEY TAKEAWAY -->
+                <blockquote class="key-takeaway>
+                    <p>
+                        A design system succeeds not when it's perfect, but when it enables teams to work faster and more consistently while maintaining their ability to innovate and adapt.
+                    </p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- NEXT STEPS / FUTURE IMPROVEMENTS -->
+        <section class="next-steps section reveal-on-scroll>
+            <div class="next-steps-inner container>
+                <h2 class="section-title">What's Next</h2>
+                <p class="section-subtitle">
+                    Planned enhancements to expand the design system's capabilities and improve the developer and designer experience.
+                </p>
+                <ul class="next-steps-list>
+                    <li>
+                        <h3 class="next-step-title">Dark Mode & Theming</h3>
+                        <p>
+                            Implement comprehensive dark mode support with automatic preference detection and manual override capabilities. Extend the token system to support multiple themes and theme switching.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Accessibility Foundation</h3>
+                        <p>
+                            Build WCAG 2.1 AA compliance into the foundation with accessible components, color contrast validation, and keyboard navigation patterns that work across all interaction methods.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Animation System</h3>
+                        <p>
+                            Add a cohesive motion system with defined durations, easing functions, and transition patterns that create predictable and delightful user experiences.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">React & Vue Integrations</h3>
+                        <p>
+                            Create official wrappers and hooks for popular frameworks to make adoption seamless. Include SSR compatibility and tree-shaking optimizations.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Design Tokens v2</h3>
+                        <p>
+                            Evolve the token system to support aliases, transforms, and complex values like shadows and gradients while maintaining backward compatibility.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Component Marketplace</h3>
+                        <p>
+                            Create a marketplace for community-contributed components that extend the core system while maintaining quality standards and compatibility guarantees.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECT NAVIGATION -->
+        <section class="project-navigation section>
+            <div class="project-navigation-inner container flex justify-between items-center>
+                <a href="project-one.html" class="prev-project btn btn-outline>
+                    ← Previous Project
+                </a>
+                <a href="../../projects.html" class="btn btn-secondary>
+                    ↑ All Projects
+                </a>
+                <a href="project-three.html" class="next-project btn btn-outline>
+                    Next Project →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer>
+        <div class="footer-inner container>
+            <div class="footer-brand>
+                <a href="../../index.html" class="footer-logo">AP</a>
+                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <div class="footer-social>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <!-- GitHub SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <!-- Twitter/X SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <!-- Dribbble SVG -->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links>
+                <div>
+                    <h4>Work</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../experience.html">Experience</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="#">Mentoring</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../index.html">Privacy Policy</a></li>
+                        <li><a href="../../index.html">Terms of Service</a></li>
+                        <li><a href="../../index.html">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom>
+                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
+                <div class="footer-small-links>
+                    <a href="#">Sitemap</a>
+                    <a href="#">RSS
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/contact.js"></script>
+    <script src="../../js/lightbox.js"></script>
+</body>
+</html>

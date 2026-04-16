@@ -1,0 +1,621 @@
+<!-- PAGE: Home/Hero -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer</title>
+    <meta name="description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexporter.dev/">
+    <meta property="og:title" content="<!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer">
+    <meta property="og:description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
+    <meta property="og:image" content="<!-- REPLACE: /assets/images/og/og-home.png -->">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexporter.dev/">
+    <meta property="twitter:title" content="<!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer">
+    <meta property="twitter:description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
+    <meta property="twitter:image" content="<!-- REPLACE: /assets/images/og/og-home.png -->">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alexporter.dev/">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" media="print" href="/css/print.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="index.html" class="nav-logo">AP</a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                    <!-- Sun/Moon SVG icons will be injected by JS -->
+                </button>
+                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero section reveal-on-scroll">
+            <div class="hero-inner container grid grid-2 items-center">
+                <!-- LEFT COLUMN - TEXT CONTENT -->
+                <div class="hero-text">
+                    <!-- AVAILABLE BADGE -->
+                    <div class="available-badge">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span class="badge-text">Open to Work · Remote & On-site</span>
+                    </div>
+
+                    <!-- NAME AND ROTATING SUBTITLE -->
+                    <h1 class="hero-title" data-animate="fadeInLeft">
+                        <!-- REPLACE: Alex Porter -->
+                        <br>
+                        <span class="rotating-subtitle hero-subtitle-rotating" data-animate="fadeInRight" aria-hidden="true"></span>
+                        <span class="sr-only">
+                            Frontend Developer, UI/UX Designer, React Enthusiast, Problem Solver
+                        </span>
+                    </h1>
+
+                    <!-- BIO PARAGRAPH -->
+                    <p class="hero-bio">
+                        <!-- REPLACE: I build fast, accessible web experiences and design systems that scale. Focused on the intersection of clean code and thoughtful UI. Currently seeking frontend or product design roles. -->
+                    </p>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="hero-ctas flex gap-3">
+                        <a href="projects.html" class="btn btn-primary">View My Projects →</a>
+                        <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-secondary">Download Resume ↓</a>
+                        <a href="contact.html" class="btn btn-ghost">Let's Talk</a>
+                    </div>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="hero-social flex gap-4 mt-6">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <!-- GitHub SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <!-- LinkedIn SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter/X">
+                            <!-- Twitter/X SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4.01c-1 .49-1.98 1-3 1.27-.94-.52-1.82-.98-2.46-1.78-.79 1.02-1.47 2.24-1.47 3.56v.05a1.43 1.43 0 0 0 .26.86 4.25 4.25 0 0 1-1.87 3.7v2.16c-.34.22-.76.35-1.2.38-.81.4-1.61.57-2.4.58-.95 0-1.79-.15-2.57-.43-.49-.97-.66-2.12-.36-3.23A4.42 4.42 0 0 0 4.42 2.07a4.42 4.42 0 0 0 1.56 6.06c-.64-.16-1.26-.37-1.78-.63-.14.41-.14.85-.14 1.26v.22c1.15.21 2.34.31 3.54.3.36-.4.72-.88 1.02-1.48 1.08-.95 1.87-2.26 1.87-4.02v-.07c.78-.4 1.47-.92 2.03-1.61C17.3 5.6 18.5 3.2 19.68 1.02 20.37.2 21.2.01 22 4.01z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <!-- Dribbble SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a2 2 0 0 1 2 2v1a6 6 0 0 0 0 12 2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm5 7.34a2.72 2.72 0 0 1-1.79 3.17 2.72 2.72 0 0 1-3.86 0 2.72 2.72 0 0 1-1.79-3.17a12.08 12.08 0 0 0 7.44 0zM2 12.2a2 2 0 0 1 2-2h2.58a12.08 12.08 0 0 0 5.91-1.66 2 2 0 0 1 2.16 0 2 2 0 0 1 2 2v4.75a2 2 0 0 1-2 2h-2.59a12.09 12.09 0 0 0-5.91 1.65a2 2 0 0 1-2-1.75V12.2z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN - VISUAL ELEMENT -->
+                <div class="hero-visual relative">
+                    <!-- VIOLET GLOW -->
+                    <div class="hero-glow absolute inset-0 -z-10"></div>
+
+                    <!-- CODE CARD -->
+                    <div class="card-glass hero-code-card reveal-on-scroll reveal-stagger-1 p-6">
+                        <div class="code-header flex justify-between mb-4">
+                            <span class="text-xs text-secondary">index.html</span>
+                            <div class="code-actions flex gap-2">
+                                <button class="btn-icon hover:bg-tertiary/50 rounded">
+                                    <!-- Copy icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </button>
+                                <button class="btn-icon hover:bg-tertiary/50 rounded">
+                                    <!-- Maximize icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="code-content"><span class="token">&lt;!DOCTYPE html&gt;</span>
+<span class="token">&lt;html </span><span class="token attr">lang</span><span class="token op">=</span><span class="token value">"</span><span class="token value">en</span><span class="token value">"</span><span class="token">&gt;</span>
+    <span class="token">&lt;head&gt;</span>
+        <span class="token">&lt;meta </span><span class="token attr">charset</span><span class="token op">=</span><span class="token value">"</span><span class="token value">UTF-8</span><span class="token value">"</span><span class="token">&gt;</span>
+        <span class="token">&lt;title&gt;</span><span class="token value">Portfolio</span><span class="token">&lt;/title&gt;</span>
+        <span class="token">&lt;link </span><span class="token attr">rel</span><span class="token op">=</span><span class="token value">"</span><span class="token value">stylesheet</span><span class="token value">"</span><span class="token>&gt;</span>
+    <span class="token">&lt;/head&gt;</span>
+    <span class="token">&lt;body&gt;</span>
+        <span class="token">&lt;header </span><span class="token attr">class</span><span class="token op">=</span><span class="token value">"</span><span class="token value">nav</span><span class="token value">"</span><span class="token">&gt;</span>
+            <span class="token">&lt;!-- Navigation --&gt;</span>
+        <span class="token">&lt;/header&gt;</span>
+        <span class="token">&lt;main </span><span class="token attr">class</span><span name="&#34;token op&#34;">=</span><span class="token value">"</span><span class="token value">content</span><span class="token value">"</span><span class="token">&gt;</span>
+            <span class="token">&lt;!-- Main Content --&gt;</span>
+        <span class="token">&lt;/main&gt;</span>
+        <span class="token">&lt;footer </span><span class="token attr">class</span><span class="token op">=</span><span class="token value">"</span><span class="token value">footer</span><span class="token value">"</span><span class="token">&gt;</span>
+            <span class="token">&lt;!-- Footer --&gt;</span>
+        <span class="token">&lt;/footer&gt;</span>
+        <span class="token">&lt;script </span><span class="token attr">src</span><span class="token op">=</span><span class="token value">"</span><span class="token value">main.js</span><span class="token value">"</span><span class="token">&gt;</span>
+        <span class="token">&lt;/script&gt;</span>
+    <span class="token">&lt;/body&gt;</span>
+<span class="token">&lt;/html&gt;</span></pre>
+                    </div>
+
+                    <!-- SKILL CHIPS -->
+                    <div class="hero-skill-chips absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3">
+                        <div class="skill-chip tooltip-top" data-tooltip="React">
+                            <span class="chip-inner">React</span>
+                        </div>
+                        <div class="skill-chip tooltip-top" data-tooltip="Figma">
+                            <span class="chip-inner">Figma</span>
+                        </div>
+                        <div class="skill-chip tooltip-top" data-tooltip="JavaScript">
+                            <span class="chip-inner">JS</span>
+                        </div>
+                        <div class="skill-chip tooltip-top" data-tooltip="CSS">
+                            <span class="chip-inner">CSS</span>
+                        </div>
+                        <div class="skill-chip tooltip-top" data-tooltip="Vue">
+                            <span class="chip-inner">Vue</span>
+                        </div>
+                        <div class="skill-chip tooltip-top" data-tooltip="Node">
+                            <span class="chip-inner">Node</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats section reveal-on-scroll">
+            <div class="stats-inner container grid grid-3 text-center gap-6">
+                <div class="stat-card reveal-on-scroll reveal-stagger-1" data-animate="scaleIn">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-card reveal-on-scroll reveal-stagger-2" data-animate="scaleIn">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+                <div class="stat-card reveal-on-scroll reveal-stagger-3" data-animate="scaleIn">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Design Tools</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT I DO SECTION -->
+        <section class="what-i-do section reveal-on-scroll">
+            <div class="what-i-do-inner container">
+                <h2 class="section-title text-center mb-4">What I Do</h2>
+                <p class="section-subtitle text-center mb-12">I specialize in building beautiful, functional digital experiences that bridge the gap between design and development.</p>
+                <div class="what-i-do-grid grid grid-3 gap-8">
+                    <!-- FRONTEND DEVELOPMENT -->
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
+                        <div class="icon-wrapper mb-4">
+                            <!-- Frontend Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                        <h3 class="what-i-do-title mb-3">Frontend Development</h3>
+                        <p class="what-i-do-description mb-4">
+                            I build responsive, performant web applications using modern JavaScript frameworks and semantic HTML/CSS. Focused on accessibility, SEO, and clean architecture.
+                        </p>
+                        <ul class="what-i-do-skills flex flex-wrap gap-2 justify-center">
+                            <li class="skill-tag">React</li>
+                            <li class="skill-tag">TypeScript</li>
+                            <li class="skill-tag">CSS3</li>
+                        </ul>
+                    </div>
+
+                    <!-- UI/UX DESIGN -->
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
+                        <div class="icon-wrapper mb-4">
+                            <!-- Design Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <h3 class="what-i-do-title mb-3">UI/UX Design</h3>
+                        <p class="what-i-do-description mb-4">
+                            I craft intuitive user interfaces through research, wireframing, prototyping, and user testing. Focused on creating delightful experiences that solve real problems.
+                        </p>
+                        <ul class="what-i-do-skills flex flex-wrap gap-2 justify-center">
+                            <li class="skill-tag">Figma</li>
+                            <li class="skill-tag">User Research</li>
+                            <li class="skill-tag">Interaction Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- CURRENTLY LEARNING -->
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
+                        <div class="icon-wrapper mb-4">
+                            <!-- Learning Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3 class="what-i-do-title mb-3">Currently Learning</h3>
+                        <p class="what-i-do-description mb-4">
+                            <!-- REPLACE: Exploring advanced React patterns, server components, and edge computing to build faster, more scalable applications. -->
+                        </p>
+                        <div class="learning-progress mb-4 w-full">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="70"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary">
+                                <span>React Advanced</span>
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials section reveal-on-scroll" data-animate="fadeInUp">
+            <div class="testimonials-inner container">
+                <h2 class="section-title text-center mb-4">What Others Say</h2>
+                <p class="section-subtitle text-center mb-12">Feedback from colleagues, mentors, and collaborators</p>
+                <div class="testimonials-grid grid grid-3 gap-6">
+                    <!-- TESTIMONIAL 1 -->
+                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle">AT</div>
+                        </div>
+                        <div class="testimonial-content">
+                            <h3 class="testimonial-name"><!-- REPLACE: Alex Thompson --></h3>
+                            <p class="testimonial-title"><!-- REPLACE: Senior Engineer at TechStart Inc. --></p>
+                            <p class="testimonial-relationship"><!-- REPLACE: Worked together on the task manager project --></p>
+                            <p class="testimonial-quote"><!-- REPLACE: I had the pleasure of working closely with Alex on our task management application. Their attention to detail and commitment to clean code significantly improved our development process. They consistently delivered high-quality features ahead of schedule and were instrumental in implementing the drag-and-drop functionality that became a key selling point of our product. --></p>
+                            <div class="testimonial-footer flex items-center gap-4 mt-6">
+                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
+                                <div class="testimonial-rating">
+                                    <!-- 5-star rating (pure CSS) -->
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TESTIMONIAL 2 -->
+                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle">JS</div>
+                        </div>
+                        <div class="testimonial-content">
+                            <h3 class="testimonial-name"><!-- REPLACE: Jamie Smith --></h3>
+                            <p class="testimonial-title"><!-- REPLACE: Lead Designer at DesignCo --></p>
+                            <p class="testimonial-relationship"><!-- REPLACE: Professor for UI/UX Fundamentals course --></p>
+                            <p class="testimonial-quote"><!-- REPLACE: As an educator, I'm always looking for students who go beyond the basics. Alex demonstrated exceptional design thinking throughout our course, particularly in their capstone project where they created a comprehensive design system from scratch. Their ability to bridge the gap between design and development is rare and valuable. --></p>
+                            <div class="testimonial-footer flex items-center gap-4 mt-6">
+                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
+                                <div class="testimonial-rating">
+                                    <!-- 5-star rating (pure CSS) -->
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TESTIMONIAL 3 -->
+                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle">MK</div>
+                        </div>
+                        <div class="testimonial-content">
+                            <h3 class="testimonial-name"><!-- REPLACE: Morgan Kim --></h3>
+                            <p class="testimonial-title"><!-- REPLACE: Engineering Manager at WebSolutions --></p>
+                            <p class="testimonial-relationship"><!-- REPLACE: Supervised freelance UI/UX work --></p>
+                            <p class="testimonial-quote"><!-- REPLACE: Alex brought a refreshing combination of technical skill and design sensibility to our freelance projects. They consistently delivered pixel-perfect implementations that matched our Figma designs exactly, while also suggesting improvements that enhanced the overall user experience. Their communication was clear and proactive throughout. --></p>
+                            <div class="testimonial-footer flex items-center gap-4 mt-6">
+                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
+                                <div class="testimonial-rating">
+                                    <!-- 5-star rating (pure CSS) -->
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section class="featured-projects section reveal-on-scroll">
+            <div class="featured-projects-inner container">
+                <h2 class="section-title text-center mb-4">Featured Projects</h2>
+                <p class="section-subtitle text-center mb-12">A selection of my recent work showcasing frontend development and UI/UX design capabilities.</p>
+                <div class="projects-preview grid grid-3 gap-6">
+                    <!-- PROJECT CARD 1 -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
+                        <div class="project-card-image">
+                            <div class="image-placeholder">
+                                <div class="gradient-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Dashboard Analytics Platform</h3>
+                            <p class="project-card-description">
+                                A comprehensive analytics dashboard for tracking key business metrics with real-time data visualization.
+                            </p>
+                            <div class="project-card-tags flex gap-2 flex-wrap">
+                                <span class="badge badge-outline">React</span>
+                                <span class="badge badge-outline">TypeScript</span>
+                                <span class="badge badge-outline">D3.js</span>
+                                <span class="badge badge-outline">Chart.js</span>
+                            </div>
+                            <a href="projects/project-one.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 2 -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
+                        <div class="project-card-image">
+                            <div class="image-placeholder">
+                                <div class="gradient-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">E-commerce Redesign</h3>
+                            <p class="project-card-description">
+                                Complete UI/UX redesign of an e-commerce platform focusing on conversion optimization and mobile experience.
+                            </p>
+                            <div class="project-card-tags flex gap-2 flex-wrap">
+                                <span class="badge badge-outline">Figma</span>
+                                <span class="badge badge-outline">HTML5</span>
+                                <span class="badge badge-outline">CSS3</span>
+                                <span class="badge badge-outline">JavaScript</span>
+                            </div>
+                            <a href="projects/project-two.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 3 -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
+                        <div class="project-card-image">
+                            <div class="image-placeholder">
+                                <div class="gradient-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Mobile App Companion</h3>
+                            <p class="project-card-description">
+                                Companion mobile app for a SaaS platform with offline capabilities and push notifications.
+                            </p>
+                            <div class="project-card-tags flex gap-2 flex-wrap">
+                                <span class="badge badge-outline">React Native</span>
+                                <span class="badge badge-outline">Expo</span>
+                                <span class="badge badge-outline">Redux</span>
+                                <span class="badge badge-outline">AsyncStorage</span>
+                            </div>
+                            <a href="projects/project-three.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="projects.html" class="btn btn-primary btn-lg">View All Projects →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENTLY LEARNING / WHAT I'M WORKING ON -->
+        <section class="currently-learning section reveal-on-scroll" data-animate="fadeInUp">
+            <div class="currently-learning-inner container">
+                <h2 class="section-title text-center mb-6">Currently Learning / What I'm Working On</h2>
+                <p class="section-subtitle text-center mb-10">Staying at the forefront of frontend development through continuous learning and side projects</p>
+
+                <!-- Two Column Layout -->
+                <div class="currently-learning-grid grid grid-2 gap-8">
+                    <!-- NOW LEARNING COLUMN -->
+                    <div class="currently-learning-column">
+                        <h3 class="column-title mb-4">Now Learning</h3>
+
+                        <!-- Learning Card 1 -->
+                        <div class="learning-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="70"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>Advanced React Patterns</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                Exploring compound components, render props, and custom hooks for reusable component patterns
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 4 weeks</span>
+                            </div>
+                        </div>
+
+                        <!-- Learning Card 2 -->
+                        <div class="learning-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="40"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>WebAssembly Basics</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                Learning how to bring near-native performance to web applications for compute-intensive tasks
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 8 weeks</span>
+                            </div>
+                        </div>
+
+                        <!-- Learning Card 3 -->
+                        <div class="learning-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="60"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>Server Components</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                Investigating React Server Components for improved performance and data fetching
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 6 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NOW BUILDING COLUMN -->
+                    <div class="currently-learning-column">
+                        <h3 class="column-title mb-4">Now Building</h3>
+
+                        <!-- Building Card 1 -->
+                        <div class="building-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="30"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>Personal Finance App</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                A comprehensive expense tracker with budgeting, investment tracking, and financial reporting
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 10 weeks</span>
+                            </div>
+                        </div>
+
+                        <!-- Building Card 2 -->
+                        <div class="building-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="20"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>Design System Library</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                Creating a reusable component library with documentation, testing, and theming capabilities
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 12 weeks</span>
+                            </div>
+                        </div>
+
+                        <!-- Building Card 3 -->
+                        <div class="building-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
+                            <div class="skill-bar h-2">
+                                <div class="skill-bar-fill" data-level="50"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-secondary mb-2">
+                                <span>Open Source Contributions Tool</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="skill-progress-text text-sm">
+                                Building a CLI tool to help developers find and contribute to beginner-friendly open source projects
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-outline">Est. completion: 8 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Ticker (kept for continuity) -->
+                <div class="ticker section mt-10">
+                    <div class="ticker-inner container">
+                        <div class="ticker-track animate-ticker">
+                            <div class="ticker-items">
+                                <div class="ticker-item">📚 Learning: <!-- REPLACE: Advanced React Patterns --></div>
+                                <div class="ticker-item">🔨 Building: <!-- REPLACE: Personal Finance App --></div>
+                                <div class="ticker-item">📖 Reading: <!-- REPLACE: Designing Interface Animations --></div>
+                                <div class="ticker-item">🎯 Goal: <!-- REPLACE: Senior Frontend Engineer at Product-Focused Company --></div>
+                                <div class="ticker-item">📚 Learning: <!-- REPLACE: WebAssembly Basics --></div>
+                                <div class="ticker-item">🔨 Building: <!-- REPLACE: Design System Library --></div>
+                                <div class="ticker-item">📖 Reading: <!-- REPLACE: Atomic Design Methodology --></div>
+                                <div class="ticker-item">🎯 Goal: <!-- REPLACE: Lead UI/UX Designer on Enterprise Project --></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">AP</a>
+                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <!-- GitHub SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <!-- Twitter/X SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <!-- Dribbble SVG -->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Work</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="#">Mentoring</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

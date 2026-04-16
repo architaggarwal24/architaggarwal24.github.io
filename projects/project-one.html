@@ -1,0 +1,583 @@
+<!-- PAGE: Task Manager App -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App | Portfolio</title>
+    <meta name="description" content="A feature-rich task management application built with React featuring drag-and-drop functionality, task categorization, and local persistence">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexporter.dev/projects/project-one.html">
+    <meta property="og:title" content="Task Manager App | Portfolio">
+    <meta property="og:description" content="A feature-rich task management application built with React featuring drag-and-drop functionality, task categorization, and local persistence">
+    <meta property="og:image" content="https://alexporter.dev/assets/images/projects/task-manager-og.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexporter.dev/projects/project-one.html">
+    <meta property="twitter:title" content="Task Manager App | Portfolio">
+    <meta property="twitter:description" content="A feature-rich task management application built with React featuring drag-and-drop functionality, task categorization, and local persistence">
+    <meta property="twitter:image" content="https://alexporter.dev/assets/images/projects/task-manager-og.jpg">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alexporter.dev/projects/project-one.html">
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="../../index.html" class="nav-logo">AP</a>
+            <ul class="nav-links" role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+                    <!-- Sun/Moon SVG icons will be injected by JS -->
+                </button>
+                <a href="../../assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
+                <!-- BREADCRUMB -->
+                <nav class="breadcrumb" aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><span class="breadcrumb-current" aria-current="page">Task Manager App</span></li>
+                    </ol>
+                </nav>
+
+                <div class="hero-content grid grid-2 items-center gap-8">
+                    <!-- TEXT CONTENT -->
+                    <div class="hero-text">
+                        <h1 class="project-title">Task Manager App</h1>
+                        <p class="project-tagline">
+                            A powerful task management application built with React featuring intuitive drag-and-drop interface and smart organization
+                        </p>
+
+                        <!-- META BADGES -->
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge">Web App</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline">React</span>
+                                <span class="badge badge-outline">JavaScript</span>
+                                <span class="badge badge-outline">CSS3</span>
+                                <span class="badge badge-outline">HTML5</span>
+                                <span class="badge badge-outline">LocalStorage</span>
+                            </div>
+                            <span class="project-badge">Live</span>
+                            <span class="project-badge">2024</span>
+                            <span class="project-badge">Intermediate</span>
+                        </div>
+
+                        <!-- PRIMARY CTAS -->
+                        <div class="project-ctas flex gap-3">
+                            <a href="https://taskmanager-demo.alexporter.dev" class="btn btn-primary">View Live Demo ↗</a>
+                            <a href="https://github.com/alexporter/task-manager-app" class="btn btn-outline">View on GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- PLACEHOLDER IMAGE -->
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label">Task Manager App Screenshot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <!-- LEFT: PROBLEM STATEMENT -->
+                <div class="problem-statement">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>
+                        Many professionals struggle with task overload and disorganization, leading to decreased productivity and increased stress. Existing task management apps often lack the flexibility to adapt to different workflows or are overly complex for simple daily task tracking.
+                    </p>
+                    <p>
+                        Users need a task management solution that balances power with simplicity - offering advanced features like drag-and-drop reordering and categorization while remaining intuitive and quick to use for daily task capture and completion.
+                    </p>
+                    <p>
+                        This gap in the market creates an opportunity for a task manager that provides professional-grade features without the learning curve, helping users stay organized and focused on what matters most.
+                    </p>
+                </div>
+
+                <!-- RIGHT: SIDEBAR METADATA -->
+                <div class="sidebar-metadata card-glass p-6">
+                    <h3 class="sidebar-title">Project Details</h3>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Role:</span>
+                        <span class="sidebar-value">Frontend Developer</span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Timeline:</span>
+                        <span class="sidebar-value">3 weeks</span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Team size:</span>
+                        <span class="sidebar-value">Solo</span>
+                    </div>
+                    <div class="sidebar-item mb-4">
+                        <span class="sidebar-label">Status:</span>
+                        <span class="sidebar-value badge">Live</span>
+                    </div>
+                    <div class="sidebar-item mb-6">
+                        <span class="sidebar-label">Tech Stack:</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline">React</span>
+                            <span class="badge badge-outline">JavaScript</span>
+                            <span class="badge badge-outline">CSS3</span>
+                            <span class="badge badge-outline">LocalStorage</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-links flex gap-3">
+                        <a href="https://github.com/alexporter/task-manager-app" class="sidebar-link">
+                            <!-- GitHub Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://taskmanager-demo.alexporter.dev" class="sidebar-link">
+                            <!-- External Link Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK DEEP DIVE -->
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
+                <h2 class="section-title">Technologies Used</h2>
+                <p class="section-subtitle">
+                    React was chosen for its component-based architecture and excellent state management capabilities, combined with modern CSS for responsive design and LocalStorage for client-side persistence.
+                </p>
+                <div class="tech-cards grid grid-3 gap-6">
+                    <!-- TECH CARD 1: HTML/CSS -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- HTML/CSS Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7s1.5 1 3 1c1.7 0 3.4-.5 4.8-1.5L16 10H4zM4 12c1.7 0 3.4.5 4.8 1.5l1.2-2.2C11.4 12 9.6 12.5 8 15l-4 1v3h6v-2z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">HTML5 & CSS3</h3>
+                            <p class="tech-description">
+                                Semantic markup for accessibility and SEO, modern CSS for responsive layouts, flexbox/grid for complex arrangements, and custom properties for theme consistency.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 2: REACT -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- React Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11.5l6.78 4.51 2.22-1.33.01-.01L11 14.77l3.89-2.59L22 7.91l-2.45 1.63-4.25 2.83L12 9.1l-1.78-1.18 2.82-4.36zM12 2.25c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">React</h3>
+                            <p class="tech-description">
+                                Chosen for its virtual DOM performance, component reusability, and extensive ecosystem. Hooks API enabled clean state management for drag-and-drop interactions and task state persistence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECH CARD 3: LOCAL STORAGE -->
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <!-- Local Storage Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 8h12v4H3v-4z"></path></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">LocalStorage</h3>
+                            <p class="tech-description">
+                                Selected for client-side persistence without requiring a backend. Ensures tasks remain available between sessions and provides offline functionality while keeping the project frontend-only.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREENSHOT GALLERY -->
+        <section class="screenshot-gallery section reveal-on-scroll">
+            <div class="screenshot-gallery-inner container">
+                <h2 class="section-title">Screenshots</h2>
+                <p class="section-subtitle">
+                    Showcasing the drag-and-drop interface, task categorization, and clean user experience of the task manager application.
+                </p>
+                <div class="screenshot-grid grid grid-3 gap-4">
+                    <!-- SCREENSHOT 1 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Drag & Drop Interface</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 1 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 2 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Task Categories View</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 2 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREENSHOT 3 -->
+                    <div class="screenshot-item">
+                        <div class="screenshot-image">
+                            <div class="image-placeholder">
+                                <div class="image-label">Empty State & Add Task</div>
+                            </div>
+                            <button class="screenshot-btn" aria-label="View screenshot 3 fullscreen">
+                                <!-- Expand Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGES & SOLUTIONS -->
+        <section class="challenges-solutions section reveal-on-scroll">
+            <div class="challenges-solutions-inner container">
+                <h2 class="section-title">Challenges Solved</h2>
+                <p class="section-subtitle">
+                    Building a smooth drag-and-drop interface with proper state persistence presented several technical challenges that required thoughtful solutions.
+                </p>
+                <div class="challenges-grid grid grid-3 gap-6">
+                    <!-- CHALLENGE 1 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Smooth Drag-and-Drop Reordering</h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Implementing a natural-feeling drag-and-drop experience for task reordering that works across different devices and provides visual feedback during the drag operation.
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Used the HTML5 Drag and Drop API combined with React state management to track dragged items. Implemented visual feedback with CSS transforms and transition effects, plus collision detection to prevent invalid drop positions.
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-comment">// Drag start handler</span>
+<span class="code-keyword">const</span> handleDragStart = (e, taskId) => {
+    e.dataTransfer.setTaskId(<span class="code-string">'text/plain'</span>, taskId);
+    e.dataTransfer.effectAllowed = <span class="code-string">'move'</span>;
+    <span class="code-builtin">document</span>.getElementById(<span class="code-string">`task-${taskId}`</span>).classList.add(<span class="code-string">"dragging"</span>);
+};
+
+<span class="code-comment">// Drag over handler</span>
+<span class="code-keyword">const</span> handleDragOver = (e) => {
+    e.preventDefault(); <span class="code-comment">// Required to allow drop</span>
+    e.dataTransfer.dropEffect = <span class="code-string">'move'</span>;
+
+    <span class="code-comment">// Get mouse position relative to task list</span>
+    <span class="code-keyword">const</span> rect = e.target.getBoundingClientRect();
+    <span class="code-keyword">const</span> relativeY = e.clientY - rect.top;
+    <span class="code-comment">// Find closest task element for visual feedback</span>
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 2 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Persistent State Management</h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Ensuring task data persists between browser sessions and page reloads without relying on a backend server, while maintaining data integrity.
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Implemented a custom LocalStorage wrapper with automatic serialization/deserialization of task objects. Used React useEffect to sync state with storage, and implemented conflict resolution for tab switching scenarios.
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-comment">// Custom LocalStorage hook</span>
+<span class="code-keyword">function</span> useLocalStorage(key, initialValue) {
+    <span class="code-comment">// Get from storage or use initial</span>
+    <span class="code-keyword">const</span> [storedValue, setStoredValue] = useState(() => {
+        <span class="code-keyword">try</span> {
+            <span class="code-keyword">const</span> item = window.localStorage.getItem(key);
+            <span class="code-keyword">return</span> item ? <span class="code-builtin">JSON</span>.parse(item) : initialValue;
+        } <span class="code-keyword">catch</span> (error) {
+            <span class="code-keyword">return</span> initialValue;
+        }
+    });
+
+    <span class="code-keyword">const</span> setValue = (value) => {
+        <span class="code-keyword">try</span> {
+            <span class="code-keyword">const</span> valueToStore =
+                value <span class="code-keyword">instanceof</span> <span class="code-function">Function</span> ? value(storedValue) : value;
+            setStoredValue(valueToStore);
+            window.localStorage.setItem(key, <span class="code-builtin">JSON</span>.stringify(valueToStore));
+        } <span class="code-keyword">catch</span> (error) {
+            <span class="code-keyword">console</span>.log(error);
+        }
+    };
+
+    <span class="code-keyword">return</span> [storedValue, setValue];
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHALLENGE 3 -->
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Responsive Touch Interface</h3>
+                        <div class="challenge-problem">
+                            <h4 class="problem-title">Problem:</h4>
+                            <p>
+                                Ensuring the drag-and-drop interface works well on touch devices where traditional mouse events don't apply, maintaining usability across all device types.
+                            </p>
+                        </div>
+                        <div class="challenge-solution">
+                            <h4 class="solution-title">Solution:</h4>
+                            <p>
+                                Implemented Touch Event API alongside mouse events for full touch support. Used pointer events where available with fallback to touch/mouse combinations. Optimized touch targets and added haptic feedback where supported for better mobile UX.
+                            </p>
+                            <div class="code-block">
+                                <pre><code>
+<span class="code-comment">// Unified event handler for drag start</span>
+<span class="code-keyword">const</span> handleDragStart = (e) => {
+    <span class="code-keyword">const</span> taskElement = e.target.closest(<span class="code-string">'.task-item'</span>);
+    <span class="code-keyword">if</span> (!taskElement) <span class="code-keyword">return</span>;
+
+    <span class="code-comment">// Get task ID from element</span>
+    <span class="code-keyword">const</span> taskId = taskElement.dataset.taskId;
+
+    <span class="code-comment">// Store data for both mouse and touch events</span>
+    <span class="code-keyword">if</span> (e.type.startsWith(<span class="code-string">'touch'</span>)) {
+        e.dataTransfer.setData(<span class="code-string">'text/plain'</span>, taskId);
+        <span class="code-builtin">document</span>.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY)
+            .classList.add(<span class="code-string">"dragging"</span>);
+    } <span class="code-keyword">else</span> {
+        e.dataTransfer.setData(<span class="code-string">'text/plain'</span>, taskId);
+        taskElement.classList.add(<span class="code-string">"dragging"</span>);
+    }
+};
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LESSONS LEARNED -->
+        <section class="lessons-learned section reveal-on-scroll">
+            <div class="lessons-learned-inner container">
+                <h2 class="section-title">What I Learned</h2>
+                <p class="section-subtitle">
+                    Building this task manager application deepened my understanding of React state management, user interaction patterns, and the importance of thoughtful UX details in productivity applications.
+                </p>
+                <div class="lessons-grid grid grid-3 gap-6">
+                    <!-- LESSON 1 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">State Management Complexity</h3>
+                        <p>
+                            Managing complex state interactions in React requires careful consideration of immutability, memoization, and side effects. Learned to use useReducer for complex state logic and custom hooks for encapsulating reusable state patterns like drag-and-drop.
+                        </p>
+                    </div>
+
+                    <!-- LESSON 2 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Interaction Design Nuances</h3>
+                        <p>
+                            Micro-interactions significantly impact perceived performance and usability. Visual feedback during drag operations, appropriate easing functions, and touch-friendly controls are essential for professional-grade applications.
+                        </p>
+                    </div>
+
+                    <!-- LESSON 3 -->
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Offline-First Thinking</h3>
+                        <p>
+                            Designing for offline capability from the start leads to more resilient applications. LocalStorage isn't just a fallback—it's a feature that enhances user trust and reliability when implemented thoughtfully.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- KEY TAKEAWAY -->
+                <blockquote class="key-takeaway">
+                    <p>
+                        The best productivity tools disappear into the background, letting users focus on their work rather than the tool itself. Every interaction should feel intentional and effortless.
+                    </p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- NEXT STEPS / FUTURE IMPROVEMENTS -->
+        <section class="next-steps section reveal-on-scroll">
+            <div class="next-steps-inner container">
+                <h2 class="section-title">What's Next</h2>
+                <p class="section-subtitle">
+                    Planned enhancements to further improve the task manager's functionality and user experience based on user feedback and evolving requirements.
+                </p>
+                <ul class="next-steps-list">
+                    <li>
+                        <h3 class="next-step-title">Collaboration Features</h3>
+                        <p>
+                            Add real-time collaboration using WebSockets or Firebase to allow teams to share and manage task lists together with presence indicators and conflict resolution.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Advanced Filtering & Search</h3>
+                        <p>
+                            Implement robust search, filtering, and tagging system to help users quickly find tasks in large lists with saved views and smart suggestions.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Calendar Integration</h3>
+                        <p>
+                            Add two-way sync with popular calendar services (Google Calendar, Outlook) to display tasks alongside scheduled events and enable time blocking.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Customizable Workflows</h3>
+                        <p>
+                            Allow users to create custom workflows with automated transitions, reminders, and notifications based on task properties and time-based triggers.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="next-step-title">Mobile App Version</h3>
+                        <p>
+                            Convert to React Native or Progressive Web App to provide native-like mobile experience with offline sync, push notifications, and platform-specific optimizations.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECT NAVIGATION -->
+        <section class="project-navigation section">
+            <div class="project-navigation-inner container flex justify-between items-center">
+                <a href="#" class="prev-project btn btn-outline">
+                    ← Previous Project
+                </a>
+                <a href="../../projects.html" class="btn btn-secondary">
+                    ↑ All Projects
+                </a>
+                <a href="project-two.html" class="next-project btn btn-outline">
+                    Next Project →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="footer-logo">AP</a>
+                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <!-- GitHub SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <!-- LinkedIn SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <!-- Twitter/X SVG -->
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <!-- Dribbble SVG -->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Work</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../experience.html">Experience</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="#">Mentoring</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../index.html">Privacy Policy</a></li>
+                        <li><a href="../../index.html">Terms of Service</a></li>
+                        <li><a href="../../index.html">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
+                <div class="footer-small-links">
+                    <a href="#">Sitemap</a>
+                    <a href="#">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/contact.js"></script>
+    <script src="../../js/lightbox.js"></script>
+</body>
+</html>

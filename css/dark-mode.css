@@ -1,0 +1,76 @@
+/* Light Theme Overrides - [data-theme="light"] */
+
+/* All color overrides are already defined in tokens.css with [data-theme="light"] */
+/* This file is kept for theme transition class and any additional light-specific styles */
+
+/* Theme transition class - to be toggled by JavaScript */
+.theme-transition {
+    transition: background-color 300ms ease, color 300ms ease,
+                border-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* Apply theme transition to body when theme changes */
+body.theme-transition {
+    transition: background-color 300ms ease, color 300ms ease,
+                border-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* Additional light-mode specific adjustments */
+[data-theme="light"] .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+[data-theme="light"] .card-glass {
+    background-color: rgba(240, 240, 237, 0.6);
+    backdrop-filter: var(--blur-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .badge {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .badge-outline {
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
+}
+
+[data-theme="light"] .btn-secondary {
+    border-color: var(--color-accent-primary);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+[data-theme="light"] .btn-ghost:hover {
+    color: var(--color-accent-primary);
+}
+
+[data-theme="light"] .skill-bar {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .timeline-item::before {
+    border: 2px solid var(--color-bg-primary);
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-textarea,
+[data-theme="light"] .form-select {
+    background-color: var(--color-bg-secondary);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: var(--color-text-primary);
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-textarea:focus,
+[data-theme="light"] .form-select:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}

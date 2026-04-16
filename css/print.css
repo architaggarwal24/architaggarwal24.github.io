@@ -1,0 +1,125 @@
+/* Print Stylesheet */
+
+/* Hide: nav, footer, .theme-toggle, all buttons except "Download Resume", ticker, animations, social links */
+.nav,
+.footer,
+.theme-toggle,
+.btn:not(.nav-cta),
+.ticker,
+[class*="animate"],
+.reveal-on-scroll,
+.social-links,
+.footer-social,
+.newsletter-section,
+.filter-controls,
+.view-toggle,
+#clear-filters-btn,
+.network-error {
+    display: none !important;
+}
+
+/* Show all content visible on screen */
+* {
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* Use black text on white background */
+body {
+    background: white !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+}
+
+/* Remove all backgrounds, shadows, gradients */
+*,
+*::before,
+*::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* Set font to serif for print legibility */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+
+/* Show URLs after links: a[href]::after { content: " (" attr(href) ")"; } */
+a[href]:not([href^="#"]):not([href^="mailto:"]):not(.btn)::after {
+    content: " (" attr(href) ") ";
+    font-size: 90%;
+    font-weight: normal;
+}
+
+/* Special handling for mailto links */
+a[href^="mailto:"]::after {
+    content: " (" attr(href) ") ";
+    font-size: 90%;
+    font-weight: normal;
+}
+
+/* Page break rules for timeline and project cards */
+.timeline-item,
+.project-card {
+    page-break-inside: avoid;
+}
+
+/* Adjust heading sizes for print */
+h1 {
+    font-size: 24pt !important;
+}
+h2 {
+    font-size: 18pt !important;
+}
+h3 {
+    font-size: 16pt !important;
+}
+h4 {
+    font-size: 14pt !important;
+}
+
+/* Ensure tables break well */
+table {
+    page-break-inside: auto;
+}
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+/* Adjust spacing */
+section {
+    margin-bottom: 20pt !important;
+}
+
+/* Hide empty sections */
+section:empty {
+    display: none;
+}
+
+/* Specific print adjustments for project cards */
+.project-card {
+    border: 1px solid #ddd !important;
+    margin-bottom: 10pt !important;
+    padding: 10pt !important;
+}
+
+.project-card-image,
+.project-card-body {
+    width: 100% !important;
+    float: none !important;
+}
+
+.project-card-tags {
+    margin: 5pt 0 !important;
+}
+
+/* Hide avatar and author details in print if they're not essential */
+.author-avatar,
+.blog-author {
+    display: none !important;
+}

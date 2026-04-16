@@ -1,0 +1,92 @@
+/* Modern CSS Reset */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset font properties */
+html {
+    font-size: 100%; /* 16px base */
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Min height */
+html,
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Image, video, svg */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove default button styling */
+button {
+    cursor: pointer;
+}
+
+/* Lists */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Reset typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+/* Table reset */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Preferred reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
