@@ -1,41 +1,26 @@
-<!-- PAGE: Weather Dashboard -->
+<!-- PAGE: CourseMateAI -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard | Portfolio</title>
-    <meta name="description" content="A live weather application built with vanilla JavaScript that fetches real-time data from weather APIs and displays it with beautiful visualizations">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alexporter.dev/projects/project-three.html">
-    <meta property="og:title" content="Weather Dashboard | Portfolio">
-    <meta property="og:description" content="A live weather application built with vanilla JavaScript that fetches real-time data from weather APIs and displays it with beautiful visualizations">
-    <meta property="og:image" content="https://alexporter.dev/assets/images/projects/weather-dashboard-og.jpg">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alexporter.dev/projects/project-three.html">
-    <meta property="twitter:title" content="Weather Dashboard | Portfolio">
-    <meta property="twitter:description" content="A live weather application built with vanilla JavaScript that fetches real-time data from weather APIs and displays it with beautiful visualizations">
-    <meta property="twitter:image" content="https://alexporter.dev/assets/images/projects/weather-dashboard-og.jpg">
-    <!-- Canonical -->
-    <link rel="canonical" href="https://alexporter.dev/projects/project-three.html">
-    <!-- Favicon -->
-    <link rel="icon" href="../../assets/icons/favicon.svg>
+    <title>CourseMateAI | Portfolio</title>
+    <meta name="description" content="A full-stack RAG study assistant with 5 autonomous learning modes and near-zero hallucination via document-grounded responses.">
+    <link rel="icon" href="../../assets/icons/favicon.svg">
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/nav.css">
     <link rel="stylesheet" href="../../css/animations.css">
-    <link rel="stylesheet" href="../../css/dark-mode.css>
-    <link rel="stylesheet" href="../../css/footer.css>
-    <link rel="stylesheet" href="css/project-detail.css>
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="css/project-detail.css">
 </head>
 <body>
     <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-inner container>
-            <a href="../../index.html" class="nav-logo">AP</a>
+        <div class="nav-inner container">
+            <a href="../../index.html" class="nav-logo">AA</a>
             <ul class="nav-links" role="list">
                 <li><a href="../../index.html" class="nav-link">Home</a></li>
                 <li><a href="../../projects.html" class="nav-link">Projects</a></li>
@@ -43,15 +28,11 @@
                 <li><a href="../../blog.html" class="nav-link">Blog</a></li>
                 <li><a href="../../contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-actions>
-                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
-                    <!-- Sun/Moon SVG icons will be injected by JS -->
-                </button>
-                <a href="../../assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="../../assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -68,51 +49,41 @@
 
     <main>
         <!-- PROJECT HERO -->
-        <section class="project-hero section reveal-on-scroll>
-            <div class="project-hero-inner container>
-                <!-- BREADCRUMB -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
                 <nav class="breadcrumb" aria-label="breadcrumb">
                     <ol>
                         <li><a href="../../index.html">Home</a></li>
                         <li><a href="../../projects.html">Projects</a></li>
-                        <li><span class="breadcrumb-current" aria-current="page">Weather Dashboard</span></li>
+                        <li><span class="breadcrumb-current" aria-current="page">CourseMateAI</span></li>
                     </ol>
                 </nav>
-
-                <div class="hero-content grid grid-2 items-center gap-8>
-                    <!-- TEXT CONTENT -->
+                <div class="hero-content grid grid-2 items-center gap-8">
                     <div class="hero-text">
-                        <h1 class="project-title">Weather Dashboard</h1>
+                        <h1 class="project-title">CourseMateAI</h1>
                         <p class="project-tagline">
-                            A live weather application that fetches real-time data from weather APIs and presents it with intuitive visualizations and location-based forecasting
+                            A full-stack RAG study assistant with 5 autonomous learning modes and near-zero hallucination via document-grounded responses.
                         </p>
-
-                        <!-- META BADGES -->
-                        <div class="project-meta flex flex-wrap gap-3 mb-6>
-                            <span class="project-badge">Web App</span>
-                            <div class="tech-badges flex flex-wrap gap-2>
-                                <span class="badge badge-outline">JavaScript</span>
-                                <span class="badge badge-outline">CSS3</span>
-                                <span class="badge badge-outline">HTML5</span>
-                                <span class="badge badge-outline">OpenWeatherMap API</span>
-                                <span class="badge badge-outline">Geolocation API</span>
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge">RAG AI</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline">FastAPI</span>
+                                <span class="badge badge-outline">LangChain</span>
+                                <span class="badge badge-outline">LangGraph</span>
+                                <span class="badge badge-outline">FAISS</span>
+                                <span class="badge badge-outline">Mistral AI</span>
                             </div>
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge">2024</span>
-                            <span class="project-badge">Beginner</span>
+                            <span class="project-badge">Completed</span>
+                            <span class="project-badge">2026</span>
+                            <span class="project-badge">Advanced</span>
                         </div>
-
-                        <!-- PRIMARY CTAS -->
-                        <div class="project-ctas flex gap-3>
-                            <a href="https://weather.alexporter.dev" class="btn btn-primary">View Live Demo ↗</a>
-                            <a href="https://github.com/alexporter/weather-dashboard" class="btn btn-outline">View on GitHub ↗</a>
+                        <div class="project-ctas flex gap-3">
+                            <a href="https://github.com/architaggarwal24/coursemateai" class="btn btn-outline">View on GitHub ↗</a>
                         </div>
                     </div>
-
-                    <!-- PLACEHOLDER IMAGE -->
-                    <div class="hero-image>
-                        <div class="image-placeholder>
-                            <div class="image-label">Weather Dashboard Interface</div>
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label">CourseMateAI Interface</div>
                         </div>
                     </div>
                 </div>
@@ -120,59 +91,49 @@
         </section>
 
         <!-- PROJECT OVERVIEW -->
-        <section class="project-overview section reveal-on-scroll>
-            <div class="project-overview-inner container grid grid-2 gap-12>
-                <!-- LEFT: PROBLEM STATEMENT -->
-                <div class="problem-statement>
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <div class="problem-statement">
                     <h2 class="section-title">The Problem</h2>
                     <p>
-                        Weather information is essential for daily planning, yet many weather applications are cluttered with ads, overly complex, or fail to provide timely, location-specific information that users actually need for their immediate plans.
+                        Students face information overload when studying from lecture slides, research papers, and textbooks. Rote memorization doesn't build understanding, and there's no AI tool specifically designed to support active recall and spaced repetition.
                     </p>
                     <p>
-                        Users need a clean, focused weather application that provides accurate, real-time information without distractions, with an emphasis on the data that matters most for immediate decision-making.
-                    </p>
-                    <p>
-                        Existing solutions often sacrifice usability for features or vice versa, creating a gap for a weather app that delivers essential information with excellent user experience and performance.
+                        Existing AI assistants hallucinate frequently when asked about specific course material, making them unreliable for studying. Students need a tool that stays grounded in their actual course materials.
                     </p>
                 </div>
-
-                <!-- RIGHT: SIDEBAR METADATA -->
-                <div class="sidebar-metadata card-glass p-6>
+                <div class="sidebar-metadata card-glass p-6">
                     <h3 class="sidebar-title">Project Details</h3>
-                    <div class="sidebar-item mb-4>
+                    <div class="sidebar-item mb-4">
                         <span class="sidebar-label">Role:</span>
-                        <span class="sidebar-value">Frontend Developer</span>
+                        <span class="sidebar-value">Agentic AI Engineer</span>
                     </div>
-                    <div class="sidebar-item mb-4>
+                    <div class="sidebar-item mb-4">
                         <span class="sidebar-label">Timeline:</span>
-                        <span class="sidebar-value">1 week</span>
+                        <span class="sidebar-value">2 months</span>
                     </div>
-                    <div class="sidebar-item mb-4>
+                    <div class="sidebar-item mb-4">
                         <span class="sidebar-label">Team size:</span>
                         <span class="sidebar-value">Solo</span>
                     </div>
-                    <div class="sidebar-item mb-4>
+                    <div class="sidebar-item mb-4">
                         <span class="sidebar-label">Status:</span>
-                        <span class="sidebar-value badge">Live</span>
+                        <span class="sidebar-value badge">Completed</span>
                     </div>
-                    <div class="sidebar-item mb-6>
+                    <div class="sidebar-item mb-6">
                         <span class="sidebar-label">Tech Stack:</span>
-                        <span class="badge badge-outline">JavaScript</span>
-                        <span class="badge badge-outline">CSS3</span>
-                        <span class="badge badge-outline">HTML5</span>
-                        <span class="badge badge-outline">OpenWeatherMap API</span>
-                        <span class="badge badge-outline">Geolocation API</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline">FastAPI</span>
+                            <span class="badge badge-outline">LangChain</span>
+                            <span class="badge badge-outline">LangGraph</span>
+                            <span class="badge badge-outline">FAISS</span>
+                            <span class="badge badge-outline">Mistral AI</span>
+                        </div>
                     </div>
-                    <div class="sidebar-links flex gap-3>
-                        <a href="https://github.com/alexporter/weather-dashboard" class="sidebar-link">
-                            <!-- GitHub Icon -->
+                    <div class="sidebar-links flex gap-3">
+                        <a href="https://github.com/architaggarwal24/coursemateai" class="sidebar-link">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             GitHub
-                        </a>
-                        <a href="https://weather.alexporter.dev" class="sidebar-link">
-                            <!-- External Link Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
-                            Live Demo
                         </a>
                     </div>
                 </div>
@@ -180,102 +141,44 @@
         </section>
 
         <!-- TECH STACK DEEP DIVE -->
-        <section class="tech-deep-dive section reveal-on-scroll>
-            <div class="tech-deep-dive-inner container>
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
                 <h2 class="section-title">Technologies Used</h2>
                 <p class="section-subtitle">
-                    Vanilla JavaScript was chosen for its simplicity and direct DOM manipulation capabilities, combined with modern CSS for animations and visualizations, and weather APIs for real-time data.
+                    Built with a focus on RAG accuracy, hallucination prevention, and multiple learning mode support.
                 </p>
-                <div class="tech-cards grid grid-3 gap-6>
-                    <!-- TECH CARD 1: HTML/CSS -->
-                    <div class="tech-card card-glass p-4>
+                <div class="tech-cards grid grid-3 gap-6">
+                    <div class="tech-card card-glass p-4">
                         <div class="tech-icon">
-                            <!-- HTML/CSS Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7s1.5 1 3 1c1.7 0 3.4-.5 4.8-1.5L16 10H4zM4 12c1.7 0 3.4.5 4.8 1.5l1.2-2.2C11.4 12 9.6 12.5 8 15l-4 1v3h6v-2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2.2L10.1 13.1l-4.3-4.3c-1.16-1.16-2.8-1.16-3.96 0l-4.2 4.2C4.6 14.6 3 16.5 3 18.5h1.6l3.89-3.89c0.59-0.59 1.38-0.77 1.83-0.46l5.58.61c1.13-0.33 2.05-0.38 2.87-0.11l1.87-4.62a3 3 0 0 0-.5-2.12z"></path></svg>
                         </div>
-                        <div class="tech-content>
-                            <h3 class="tech-title">HTML5 & CSS3</h3>
+                        <div class="tech-content">
+                            <h3 class="tech-title">LangChain + LangGraph</h3>
                             <p class="tech-description">
-                                Semantic markup for accessibility, modern CSS for layout and animations, CSS variables for theming, and advanced selectors for efficient styling without bloat.
+                                Orchestration framework for multi-step RAG pipelines. State machines manage the 5 learning modes: Quiz, Summary, Flashcards, Explain, Practice.
                             </p>
                         </div>
                     </div>
-
-                    <!-- TECH CARD 2: JAVASCRIPT -->
-                    <div class="tech-card card-glass p-4>
+                    <div class="tech-card card-glass p-4">
                         <div class="tech-icon">
-                            <!-- JavaScript Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-weight="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2.2L10.1 13.1l-4.3-4.3c-1.16-1.16-2.8-1.16-3.96 0l-4.2 4.2C4.6 14.6 3 16.5 3 18.5h1.6l3.89-3.89c0.59-0.59 1.38-0.77 1.83-0.46l5.58.61c1.13-0.33 2.05-0.38 2.87-0.11l1.87-4.62a3 3 0 0 0-.5-2.12z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 8h12v4H3v-4z"></path></svg>
                         </div>
-                        <div class="tech-content>
-                            <h3 class="tech-title">JavaScript</h3>
+                        <div class="tech-content">
+                            <h3 class="tech-title">FAISS</h3>
                             <p class="tech-description">
-                                Chosen for its ubiquity, performance, and direct access to browser APIs. Enabled direct manipulation of the DOM for real-time updates and efficient handling of asynchronous API calls without framework overhead.
+                                Efficient similarity search for document retrieval. Hierarchical navigable small world graphs for fast nearest-neighbor queries at scale.
                             </p>
                         </div>
                     </div>
-
-                    <!-- TECH CARD 3: WEATHER API -->
-                    <div class="tech-card card-glass p-4>
+                    <div class="tech-card card-glass p-4">
                         <div class="tech-icon">
-                            <!-- Weather API Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-weight="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5z"></path></svg>
                         </div>
-                        <div class="tech-content>
-                            <h3 class="tech-title">OpenWeatherMap API</h3>
+                        <div class="tech-content">
+                            <h3 class="tech-title">Mistral AI</h3>
                             <p class="tech-description">
-                                Selected for its reliability, global coverage, and generous free tier. Provides current weather, forecasts, and weather maps with well-documented endpoints and consistent response formats.
+                                Open-source model for document-grounded generation. Lower hallucination rates compared to larger models when properly prompted with retrieved context.
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SCREENSHOT GALLERY -->
-        <section class="screenshot-gallery section reveal-on-scroll>
-            <div class="screenshot-gallery-inner container>
-                <h2 class="section-title">Screenshots</h2>
-                <p class="section-subtitle>
-                    Showcasing the weather dashboard's clean interface, real-time data display, and location-based forecasting capabilities.
-                </p>
-                <div class="screenshot-grid grid grid-3 gap-4>
-                    <!-- SCREENSHOT 1 -->
-                    <div class="screenshot-item>
-                        <div class="screenshot-image>
-                            <div class="image-placeholder>
-                                <div class="image-label">Current Weather View</div>
-                            </div>
-                            <button class="screenshot-btn" aria-label="View screenshot 1 fullscreen">
-                                <!-- Expand Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- SCREENSHOT 2 -->
-                    <div class="screenshot-item>
-                        <div class="screenshot-image>
-                            <div class="image-placeholder>
-                                <div class="image-label">Forecast View</div>
-                            </div>
-                            <button class="screenshot-btn" aria-label="View screenshot 2 fullscreen">
-                                <!-- Expand Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2 2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0 2 2v3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- SCREENSHOT 3 -->
-                    <div class="screenshot-item>
-                        <div class="screenshot-image>
-                            <div class="image-placeholder>
-                                <div class="image-label">Location Search & Settings</div>
-                            </div>
-                            <button class="screenshot-btn" aria-label="View screenshot 3 fullscreen">
-                                <!-- Expand Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2 2h-3m0 18h3a2 2 0 0 0 2 2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0 2 2v3"></path></svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -283,153 +186,41 @@
         </section>
 
         <!-- CHALLENGES & SOLUTIONS -->
-        <section class="challenges-solutions section reveal-on-scroll>
-            <div class="challenges-solutions-inner container>
+        <section class="challenges-solutions section reveal-on-scroll">
+            <div class="challenges-solutions-inner container">
                 <h2 class="section-title">Challenges Solved</h2>
-                <p class="section-subtitle>
-                    Building a real-time weather application presented challenges related to asynchronous data handling, geolocation permissions, and creating meaningful visualizations from raw meteorological data.
-                </p>
-                <div class="challenges-grid grid grid-3 gap-6>
-                    <!-- CHALLENGE 1 -->
-                    <div class="challenge-card card-glass p-4>
-                        <h3 class="challenge-title">Asynchronous Data Handling</h3>
-                        <div class="challenge-problem>
+                <div class="challenges-grid grid grid-3 gap-6">
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Hallucination Prevention</h3>
+                        <div class="challenge-problem">
                             <h4 class="problem-title">Problem:</h4>
-                            <p>
-                                Managing asynchronous API calls for weather data while maintaining a responsive interface and handling various error states gracefully (network failures, invalid locations, rate limits).
-                            </p>
+                            <p>LLMs often generate plausible-sounding but factually incorrect responses when answering questions about course material.</p>
                         </div>
-                        <div class="challenge-solution>
+                        <div class="challenge-solution">
                             <h4 class="solution-title">Solution:</h4>
-                            <p>
-                                Used async/await with proper error handling and loading states. Implemented request deduplication and caching to minimize API calls, plus retry mechanisms with exponential backoff for transient failures.
-                            </p>
-                            <div class="code-block>
-                                <pre><code>
-<span class="code-keyword">async</span> function fetchWeatherData(lat, lon) {
-    <span class="code-keyword">try</span> {
-        <span class="code-comment">// Show loading state</span>
-        setLoading(<span class="code-keyword">true</span>);
-        setError(<span class="code-keyword">null</span>);
-
-        <span class="code-comment">// Fetch from API with timeout</span>
-        <span class="code-keyword">const</span> controller = <span class="code-keyword">new</span> AbortController();
-        <span class="code-keyword">const</span> timeout = setTimeout(() => controller.abort(), <span class="code-number">10000</span>);
-
-        <span class="code-keyword">const</span> response = await fetch(
-            <span class="code-string">`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`</span>,
-            { signal: controller.signal }
-        );
-
-        clearTimeout(timeout);
-
-        <span class="code-keyword">if</span> (!response.ok) {
-            <span class="code-keyword">throw</span> <span class="code-keyword">new</span> Error(<span class="code-string">`HTTP ${response.status}! ${response.statusText}`</span>);
-        }
-
-        <span class="code-keyword">const</span> data = await response.json();
-        setWeatherData(data);
-        setLoading(<span class="code-keyword">false</span>);
-    } <span class="code-keyword">catch</span> (error) {
-        <span class="code-keyword">if</span> (error.name !== <span class="code-string">"AbortError"</span>) {
-            setError(error.message);
-            setLoading(<span class="code-keyword">false</span>);
-        }
-        <span class="code-comment">// Ignore abort errors from timeouts</span>
-    }
-}
-                                </code></pre>
-                            </div>
+                            <p>Strict document-grounding with source citations. Responses must cite the exact document chunks used. If no relevant documents exist, the model explicitly states "I don't know."</p>
                         </div>
                     </div>
-
-                    <!-- CHALLENGE 2 -->
-                    <div class="challenge-card card-glass p-4>
-                        <h3 class="challenge-title">Geolocation Permissions & Fallbacks</h3>
-                        <div class="challenge-problem>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">5 Learning Modes</h3>
+                        <div class="challenge-problem">
                             <h4 class="problem-title">Problem:</h4>
-                            <p>
-                                Handling the various states of geolocation permission (granted, denied, unavailable) while providing a usable experience even when location access is not available.
-                            </p>
+                            <p>Each learning mode (Quiz, Summary, Flashcards, Explain, Practice) requires different retrieval strategies and prompting approaches.</p>
                         </div>
-                        <div class="challenge-solution>
+                        <div class="challenge-solution">
                             <h4 class="solution-title">Solution:</h4>
-                            <p>
-                                Implemented a graceful fallback system: first try HTML5 Geolocation API, then IP-based location estimation, finally allow manual city search. Clear permission explanations and easy retry mechanisms improve user trust.
-                            </p>
-                            <div class="code-block>
-                                <pre><code>
-<span class="code-keyword">async</span> function getUserLocation() {
-    <span class="code-comment">// Try HTML5 Geolocation first</span>
-    <span class="code-keyword">if</span> (<span class="code-builtin">navigator</span>.geolocation) {
-        <span class="code-keyword">return</span> <span class="code-keyword">new</span> Promise((resolve, reject) => {
-            <span class="code-builtin">navigator</span>.geolocation.getCurrentPosition(
-                (position) => resolve({
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
-                }),
-                (error) => reject(error),
-                { timeout: <span class="code-number">10000</span>, enableHighAccuracy: <span class="code-keyword">true</span> }
-            );
-        });
-    }
-
-    <span class="code-comment">// Fallback to IP-based location</span>
-    <span class="code-keyword">try</span> {
-        <span class="code-keyword">const</span> response = await fetch(<span class="code-string">"https://ipapi.co/json/"</span>);
-        <span class="code-keyword">const</span> data = await response.json();
-        <span class="code-keyword">return</span> {
-            latitude: data.latitude,
-            longitude: data.longitude
-        };
-    } <span class="code-keyword">catch</span> (error) {
-        <span class="code-keyword">//</span> Fall back to default location (e.g., New York City)
-        <span class="code-keyword">return</span> {
-            latitude: <span class="code-number">40.7128</span>,
-            longitude: <span class="code-number">-74.0060</span>
-        };
-    }
-}
-                                </code></pre>
-                            </div>
+                            <p>LangGraph state machines with mode-specific nodes. Each mode has its own retrieval query template, prompt engineering, and response format requirements.</p>
                         </div>
                     </div>
-
-                    <!-- CHALLENGE 3 -->
-                    <div class="challenge-card card-glass p-4>
-                        <h3 class="challenge-title">Weather Data Visualization</h3>
-                        <div class="challenge-problem>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Document Processing Pipeline</h3>
+                        <div class="challenge-problem">
                             <h4 class="problem-title">Problem:</h4>
-                            <p>
-                                Transforming raw meteorological data (temperature, humidity, pressure, wind speed) into intuitive visualizations that users can quickly understand at a glance.
-                            </p>
+                            <p>Lecture slides, PDFs, and research papers have different structures. Naive chunking loses important context boundaries.</p>
                         </div>
-                        <div class="challenge-solution>
+                        <div class="challenge-solution">
                             <h4 class="solution-title">Solution:</h4>
-                            <p>
-                                Used color coding, iconography, and proportional representations to make complex data accessible. Temperature shown with color gradients, wind speed with animated particles, and precipitation probability with fill levels.
-                            </p>
-                            <div class="code-block>
-                                <pre><code>
-<span class="code-comment">// Temperature to color conversion</span>
-<span class="code-keyword">function</span> getTemperatureColor(temp) {
-    <span class="code-comment">// Blue (cold) to red (hot) gradient</span>
-    <span class="code-keyword">const</span> t = (<span class="code-keyword">Math</span>.max(<span class="code-number">-10</span>, <span class="code-keyword">Math</span>.min(temp, <span class="code-number">40</span>) + <span class="code-number">10</span>) / <span class="code-number">50</span>;
-    <span class="code-keyword">return</span> `hsl(${<span class="code-number">240</span> * (1 - t)}, <span class="code-number">70</span>%, <span class="code-number">50</span>%)`;
-}
-
-<span class="code-comment">// Wind speed to particle count</span>
-<span class="code-keyword">function</span> getWindParticleCount(speed) {
-    <span class="code-comment">// 0-30 km/h maps to 0-20 particles</span>
-    <span class="code-keyword">return</span> <span class="code-keyword">Math</span>.floor((speed / <span class="code-number">30</span>) * <span class="code-number">20</span>);
-}
-
-<span class="code-comment">// Precipitation probability to fill level</span>
-<span class="code-keyword">function</span> getPrecipFill(probability) {
-    <span class="code-keyword">return</span> <span class="code-keyword">Math</span>.min(<span class="code-number">100</span>, probability);
-}
-                                </code></pre>
-                            </div>
+                            <p>Structure-aware chunking with sliding window overlap. Markdown conversion for slides preserves formatting. Metadata includes section headers for contextual retrieval.</p>
                         </div>
                     </div>
                 </div>
@@ -437,126 +228,47 @@
         </section>
 
         <!-- LESSONS LEARNED -->
-        <section class="lessons-learned section reveal-on-scroll>
-            <div class="lessons-learned-inner container>
+        <section class="lessons-learned section reveal-on-scroll">
+            <div class="lessons-learned-inner container">
                 <h2 class="section-title">What I Learned</h2>
-                <p class="section-subtitle>
-                    Building this weather application reinforced the importance of handling asynchronous operations gracefully, respecting user privacy and permissions, and transforming complex data into accessible visualizations.
-                </p>
-                <div class="lessons-grid grid grid-3 gap-6>
-                    <!-- LESSON 1 -->
-                    <div class="lesson-item>
-                        <h3 class="lesson-title">Asynchronous JavaScript Mastery</h3>
-                        <p>
-                            Properly handling promises, async/await, and error states is crucial for creating reliable applications that interact with external APIs. Learned to use abort controllers, retry mechanisms, and caching strategies effectively.
-                        </p>
+                <div class="lessons-grid grid grid-3 gap-6">
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">RAG Architecture Trade-offs</h3>
+                        <p>Chunk size, embedding model choice, and retrieval threshold tuning all significantly impact answer quality. A/B testing with real users is essential.</p>
                     </div>
-
-                    <!-- LESSON 2 -->
-                    <div class="lesson-item>
-                        <h3 class="lesson-title">Privacy-First Development</h3>
-                        <p>
-                            Location-based features require transparent communication about what data is collected and why, with easy opt-out mechanisms. Users trust applications that respect their privacy and give them control.
-                        </p>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Hallucination Mitigation</h3>
+                        <p>Citation enforcement and explicit uncertainty declarations are more effective than prompt engineering alone for reducing hallucinations in factual Q&A.</p>
                     </div>
-
-                    <!-- LESSON 3 -->
-                    <div class="lesson-item>
-                        <h3 class="lesson-title">Data Visualization Principles</h3>
-                        <p>
-                            Effective visualization isn't about showing all the data - it's about highlighting what matters most. Choose the right chart type, use color meaningfully, and always provide context for numbers.
-                        </p>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Learning Mode UX Design</h3>
+                        <p>Different learning modes have different cognitive goals. Quiz needs distractors, Summary needs hierarchy, Flashcards need cloze deletion support.</p>
                     </div>
                 </div>
-
-                <!-- KEY TAKEAWAY -->
-                <blockquote class="key-takeaway>
-                    <p>
-                        The best applications make complex information feel simple and accessible, turning data into understanding without overwhelming the user.
-                    </p>
-                </blockquote>
-            </div>
-        </section>
-
-        <!-- NEXT STEPS / FUTURE IMPROVEMENTS -->
-        <section class="next-steps section reveal-on-scroll>
-            <div class="next-steps-inner container>
-                <h2 class="section-title">What's Next</h2>
-                <p class="section-subtitle>
-                    Planned enhancements to improve the weather application's accuracy, features, and overall user experience.
-                </p>
-                <ul class="next-steps-list>
-                    <li>
-                        <h3 class="next-step-title">Weather Alerts & Notifications</h3>
-                        <p>
-                            Add push notifications for severe weather alerts and precipitation forecasts, allowing users to stay informed even when the app isn't open.
-                        </p>
-                    </li>
-                    <li>
-                        <h3 class="next-step-title">Weather Maps & Radar</h3>
-                        <p>
-                            Integrate interactive weather maps and radar overlays to show precipitation patterns, temperature distributions, and storm movements in real-time.
-                        </p>
-                    </li>
-                    <li>
-                        <h3 class="next-step-title">Air Quality & Pollen Data</h3>
-                        <p>
-                            Expand beyond basic weather to include air quality indices, pollen counts, and UV index measurements for comprehensive environmental awareness.
-                        </p>
-                    </li>
-                    <li>
-                        <h3 class="next-step-title">Historical Data & Trends</h3>
-                        <p>
-                            Add historical weather data viewing and trend analysis to help users understand patterns and make better long-term decisions.
-                        </p>
-                    </li>
-                    <li>
-                        <h3 class="next-step-title">Customizable Widgets</h3>
-                        <p>
-                            Allow users to create and customize weather widgets for their home screen or dashboard with selectable data points and refresh intervals.
-                        </p>
-                    </li>
-                </ul>
             </div>
         </section>
 
         <!-- PROJECT NAVIGATION -->
-        <section class="project-navigation section>
-            <div class="project-navigation-inner container flex justify-between items-center>
-                <a href="project-two.html" class="prev-project btn btn-outline>
-                    ← Previous Project
-                </a>
-                <a href="../../projects.html" class="btn btn-secondary>
-                    ↑ All Projects
-                </a>
-                <a href="#" class="next-project btn btn-outline>
-                    Next Project →
-                </a>
+        <section class="project-navigation section">
+            <div class="project-navigation-inner container flex justify-between items-center">
+                <a href="project-two.html" class="prev-project btn btn-outline">← Previous Project</a>
+                <a href="../../projects.html" class="btn btn-secondary">↑ All Projects</a>
+                <a href="project-one.html" class="next-project btn btn-outline">Next Project →</a>
             </div>
         </section>
     </main>
 
-    <footer class="footer>
-        <div class="footer-inner container>
-            <div class="footer-brand>
-                <a href="../../index.html" class="footer-logo">AP</a>
-                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
-                <div class="footer-social>
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <!-- GitHub SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <!-- LinkedIn SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <!-- Twitter/X SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Dribbble">
-                        <!-- Dribbble SVG -->
-                    </a>
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/architaggarwal24" class="social-link" aria-label="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/architaggarwal24/" class="social-link" aria-label="LinkedIn"></a>
                 </div>
             </div>
-            <div class="footer-links>
+            <div class="footer-links">
                 <div>
                     <h4>Work</h4>
                     <ul>
@@ -567,28 +279,9 @@
                         <li><a href="../../contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="https://github.com">Open Source</a></li>
-                        <li><a href="#">Mentoring</a></li>
-                        <li><a href="#">Workshops</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../../index.html">Privacy Policy</a></li>
-                        <li><a href="../../index.html">Terms of Service</a></li>
-                        <li><a href="../../index.html">Accessibility</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="footer-bottom>
-                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
-                <div class="footer-small-links>
-                    <a href="#">Sitemap
-                </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -596,7 +289,5 @@
     <script src="../../js/nav.js"></script>
     <script src="../../js/theme.js"></script>
     <script src="../../js/animations.js"></script>
-    <script src="../../js/contact.js"></script>
-    <script src="../../js/lightbox.js"></script>
 </body>
 </html>

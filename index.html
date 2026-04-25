@@ -1,27 +1,16 @@
-<!-- PAGE: Home/Hero -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer</title>
-    <meta name="description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alexporter.dev/">
-    <meta property="og:title" content="<!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer">
-    <meta property="og:description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
-    <meta property="og:image" content="<!-- REPLACE: /assets/images/og/og-home.png -->">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alexporter.dev/">
-    <meta property="twitter:title" content="<!-- REPLACE: Alex Porter --> | Frontend Developer & UI/UX Designer">
-    <meta property="twitter:description" content="<!-- REPLACE: Passionate frontend developer and UI/UX designer building accessible, performant web experiences. Specializing in React, modern CSS, and design systems. -->">
-    <meta property="twitter:image" content="<!-- REPLACE: /assets/images/og/og-home.png -->">
-    <!-- Canonical -->
-    <link rel="canonical" href="https://alexporter.dev/">
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/icons/favicon.svg">
+    <title>Archit Aggarwal | Agentic AI Engineer</title>
+    <meta name="description" content="Agentic AI Engineer and Full-Stack Developer specializing in LLM systems, RAG pipelines, and AI-powered products. Based in Delhi, India.">
+    <link rel="canonical" href="https://architaggarwal24.github.io/">
+    <link rel="icon" href="assets/icons/favicon.svg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/global.css">
@@ -29,29 +18,696 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" media="print" href="/css/print.css">
+    <link rel="stylesheet" href="css/light-theme.css">    <link rel="stylesheet" href="css/footer.css">
+    <style>
+    /* ============================================================
+       PAGE-LEVEL STYLES — all missing sections defined here
+    ============================================================ */
+
+    /* ---------- GRID / LAYOUT UTILITIES ---------- */
+    .grid { display: grid; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .gap-6 { gap: var(--space-6); }
+    .gap-8 { gap: var(--space-8); }
+    .items-center { align-items: center; }
+    .text-center { text-align: center; }
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .gap-2 { gap: var(--space-2); }
+    .gap-3 { gap: var(--space-3); }
+    .gap-4 { gap: var(--space-4); }
+    .mt-6 { margin-top: var(--space-6); }
+    .mt-8 { margin-top: var(--space-8); }
+    .mb-4 { margin-bottom: var(--space-4); }
+    .mb-6 { margin-bottom: var(--space-6); }
+    .mb-12 { margin-bottom: var(--space-12); }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .absolute { position: absolute; }
+    .relative { position: relative; }
+    .inset-0 { inset: 0; }
+    .-z-10 { z-index: -1; }
+    .text-xs { font-size: var(--font-size-xs); }
+    .text-sm { font-size: var(--font-size-sm); }
+    .text-secondary { color: var(--color-text-secondary); }
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0; }
+    .transform { transform: var(--tw-transform); }
+    .-translate-x-1\/2 { transform: translateX(-50%); }
+    .left-1\/2 { left: 50%; }
+    .-bottom-4 { bottom: -16px; }
+
+    /* ---------- CANVAS BACKGROUND ---------- */
+    #bg-canvas {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    main { position: relative; z-index: 1; }
+
+    /* ---------- SECTION BASE ---------- */
+    .section {
+        padding: var(--space-24) 0;
+    }
+    .section-title {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-4xl);
+        font-weight: var(--font-weight-black);
+        letter-spacing: var(--letter-spacing-tight);
+        color: var(--color-text-primary);
+        margin-bottom: var(--space-4);
+    }
+    .section-subtitle {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        max-width: 58ch;
+        margin: 0 auto var(--space-12);
+        line-height: var(--line-height-relaxed);
+    }
+    .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        letter-spacing: var(--letter-spacing-widest);
+        text-transform: uppercase;
+        color: var(--color-accent-primary);
+        margin-bottom: var(--space-4);
+    }
+    .section-label::before {
+        content: '';
+        width: 24px;
+        height: 1px;
+        background: var(--color-accent-primary);
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+        padding: var(--space-32) 0 var(--space-20);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .hero-inner {
+        align-items: center;
+        gap: var(--space-16);
+    }
+    .hero-text { max-width: 640px; }
+    .available-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2);
+        border: 1px solid rgba(74,222,128,0.25);
+        border-radius: var(--border-radius-full);
+        background: rgba(74,222,128,0.06);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        color: var(--color-accent-green);
+        letter-spacing: var(--letter-spacing-wide);
+        margin-bottom: var(--space-8);
+        width: fit-content;
+    }
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-accent-green);
+        box-shadow: 0 0 8px var(--color-accent-green);
+        animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 6vw, var(--font-size-6xl));
+        font-weight: var(--font-weight-black);
+        letter-spacing: var(--letter-spacing-tight);
+        line-height: var(--line-height-tight);
+        margin-bottom: var(--space-6);
+        color: var(--color-text-primary);
+    }
+    .hero-title .name-line {
+        display: block;
+    }
+    .hero-title .role-line {
+        display: block;
+        background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-tertiary) 60%, var(--color-accent-secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hero-bio {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-relaxed);
+        max-width: 52ch;
+        margin-bottom: var(--space-10);
+    }
+    .hero-ctas {
+        display: flex;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+        margin-bottom: var(--space-10);
+    }
+    .hero-social {
+        display: flex;
+        gap: var(--space-4);
+    }
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--color-border-strong);
+        border-radius: var(--border-radius-md);
+        color: var(--color-text-secondary);
+        transition: var(--transition-base);
+    }
+    .social-link svg { width: 18px; height: 18px; }
+    .social-link:hover {
+        border-color: var(--color-accent-primary);
+        color: var(--color-accent-primary);
+        background: var(--color-accent-glow);
+        transform: translateY(-2px);
+    }
+
+    /* HERO RIGHT — Metrics panel */
+    .hero-visual {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+    .hero-panel {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--space-5) var(--space-6);
+        backdrop-filter: var(--blur-sm);
+        transition: var(--transition-base);
+    }
+    .hero-panel:hover {
+        border-color: var(--color-border-accent);
+        box-shadow: var(--shadow-glow);
+    }
+    .panel-label {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        color: var(--color-text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-widest);
+        margin-bottom: var(--space-3);
+    }
+    .panel-metric {
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-2);
+    }
+    .panel-number {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-5xl);
+        font-weight: var(--font-weight-black);
+        letter-spacing: var(--letter-spacing-tight);
+        line-height: 1;
+        background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-tertiary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .panel-unit {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-tertiary);
+    }
+    .panel-desc {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        margin-top: var(--space-1);
+    }
+    .hero-panel-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+    }
+    .skill-chips-row {
+        display: flex;
+        gap: var(--space-2);
+        flex-wrap: wrap;
+    }
+    .skill-chip {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--border-radius-full);
+        border: 1px solid var(--color-border-accent);
+        color: var(--color-accent-primary);
+        background: rgba(99,102,241,0.06);
+        cursor: default;
+        transition: var(--transition-fast);
+        white-space: nowrap;
+    }
+    .skill-chip:hover {
+        background: rgba(99,102,241,0.14);
+        border-color: var(--color-accent-primary);
+    }
+    /* Activity bar */
+    .activity-bar {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 36px;
+    }
+    .activity-bar-col {
+        flex: 1;
+        border-radius: 2px 2px 0 0;
+        background: linear-gradient(to top, var(--color-accent-primary), var(--color-accent-tertiary));
+        opacity: 0.8;
+        transition: opacity var(--transition-fast);
+    }
+    .activity-bar-col:hover { opacity: 1; }
+
+    /* ---------- STATS SECTION ---------- */
+    .stats {
+        padding: var(--space-12) 0;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .stats-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2);
+    }
+    .stat-card {
+        padding: var(--space-8) var(--space-6);
+        text-align: center;
+        border-right: 1px solid var(--color-border);
+        transition: var(--transition-base);
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card:hover { background: rgba(99,102,241,0.04); }
+    .stat-number {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-6xl);
+        font-weight: var(--font-weight-black);
+        letter-spacing: var(--letter-spacing-tight);
+        line-height: 1;
+        background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-tertiary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: var(--space-2);
+    }
+    .stat-label {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-widest);
+        color: var(--color-text-tertiary);
+    }
+
+    /* ---------- WHAT I DO ---------- */
+    .what-i-do-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+    }
+    .what-i-do-card {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--space-8);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition-slow);
+        cursor: default;
+    }
+    .what-i-do-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-tertiary));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-slow);
+    }
+    .what-i-do-card:hover::before { transform: scaleX(1); }
+    .what-i-do-card:hover {
+        border-color: var(--color-border-accent);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-glow);
+    }
+    .card-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: var(--font-weight-black);
+        line-height: 1;
+        color: var(--color-bg-tertiary);
+        position: absolute;
+        top: var(--space-4);
+        right: var(--space-6);
+        user-select: none;
+    }
+    .what-i-do-title {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-4);
+        color: var(--color-text-primary);
+    }
+    .what-i-do-description {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-relaxed);
+        margin-bottom: var(--space-6);
+    }
+    .what-i-do-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .skill-tag {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--border-radius-sm);
+        background: var(--color-bg-tertiary);
+        color: var(--color-text-secondary);
+        border: 1px solid var(--color-border);
+    }
+
+    /* ---------- FEATURED PROJECTS ---------- */
+    .projects-preview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+    }
+    .project-card {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        transition: var(--transition-slow);
+        display: flex;
+        flex-direction: column;
+    }
+    .project-card:hover {
+        border-color: var(--color-border-accent);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--shadow-glow);
+    }
+    .project-card-image {
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+    }
+    .project-image-gradient {
+        position: absolute;
+        inset: 0;
+    }
+    .project-card:nth-child(1) .project-image-gradient {
+        background: linear-gradient(135deg, #1a1035 0%, #2d1b69 50%, #0a2a4a 100%);
+    }
+    .project-card:nth-child(2) .project-image-gradient {
+        background: linear-gradient(135deg, #0a2010 0%, #1a4030 50%, #0a3020 100%);
+    }
+    .project-card:nth-child(3) .project-image-gradient {
+        background: linear-gradient(135deg, #1a1020 0%, #3a1560 50%, #150a3a 100%);
+    }
+    .project-image-dots {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+    .project-image-label {
+        position: absolute;
+        bottom: var(--space-4);
+        left: var(--space-4);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        color: rgba(255,255,255,0.4);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-widest);
+    }
+    .project-card-body {
+        padding: var(--space-6);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+    .project-card-title {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-primary);
+        margin: 0;
+    }
+    .project-card-description {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-relaxed);
+        flex: 1;
+        margin: 0;
+    }
+    .project-card-tags {
+        display: flex;
+        gap: var(--space-2);
+        flex-wrap: wrap;
+    }
+    .badge-outline {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        padding: 2px var(--space-2);
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--color-border-accent);
+        color: var(--color-accent-primary);
+        background: transparent;
+        white-space: nowrap;
+    }
+
+    /* ---------- TICKER ---------- */
+    .ticker {
+        padding: var(--space-6) 0;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        overflow: hidden;
+        background: var(--color-bg-secondary);
+    }
+    .ticker-inner { overflow: hidden; position: relative; }
+    .ticker-inner::before,
+    .ticker-inner::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 80px;
+        z-index: 2;
+    }
+    .ticker-inner::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-bg-secondary), transparent);
+    }
+    .ticker-inner::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-bg-secondary), transparent);
+    }
+    .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: ticker-scroll 30s linear infinite;
+    }
+    .ticker-items {
+        display: flex;
+        gap: var(--space-12);
+        padding: var(--space-2) var(--space-6);
+        white-space: nowrap;
+    }
+    .ticker-item {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+    }
+    .ticker-item::before { content: '◆ '; color: var(--color-accent-primary); }
+    @keyframes ticker-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* ---------- CURRENTLY LEARNING / BUILDING ---------- */
+    .currently-learning-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+    .column-title {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-widest);
+        color: var(--color-text-tertiary);
+        margin-bottom: var(--space-6);
+        padding-bottom: var(--space-3);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .learning-card,
+    .building-card {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-md);
+        padding: var(--space-5);
+        margin-bottom: var(--space-4);
+        transition: var(--transition-base);
+    }
+    .learning-card:hover,
+    .building-card:hover {
+        border-color: var(--color-border-accent);
+    }
+    .progress-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--space-3);
+    }
+    .progress-name {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-medium);
+        color: var(--color-text-primary);
+    }
+    .progress-pct {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-xs);
+        color: var(--color-accent-primary);
+    }
+    .skill-bar {
+        width: 100%;
+        height: 4px;
+        background: var(--color-bg-tertiary);
+        border-radius: 2px;
+        overflow: hidden;
+        margin-bottom: var(--space-3);
+    }
+    .skill-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-tertiary));
+        border-radius: 2px;
+        width: 0%;
+        transition: width 1.5s ease-out;
+    }
+    .progress-desc {
+        font-size: var(--font-size-xs);
+        color: var(--color-text-tertiary);
+        line-height: 1.5;
+        margin-bottom: var(--space-2);
+    }
+    .progress-eta {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: var(--color-text-tertiary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-sm);
+        padding: 1px 6px;
+        display: inline-block;
+    }
+
+    /* ---------- TESTIMONIAL / CTA SECTION ---------- */
+    .vouch-section {
+        padding: var(--space-20) 0;
+        text-align: center;
+    }
+    .vouch-inner {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-xl);
+        padding: var(--space-16) var(--space-12);
+        position: relative;
+        overflow: hidden;
+    }
+    .vouch-inner::before {
+        content: '';
+        position: absolute;
+        top: -80px; left: 50%; transform: translateX(-50%);
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal-on-scroll.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .reveal-stagger-1 { transition-delay: 0.08s; }
+    .reveal-stagger-2 { transition-delay: 0.16s; }
+    .reveal-stagger-3 { transition-delay: 0.24s; }
+
+    /* Cards inside sections get CSS animation as fallback */
+    .what-i-do-card, .project-card, .learning-card, .building-card, .stat-card {
+        animation: fadeInUp 0.5s ease both;
+    }
+    .what-i-do-card:nth-child(1), .project-card:nth-child(1), .stat-card:nth-child(1) { animation-delay: 0.05s; }
+    .what-i-do-card:nth-child(2), .project-card:nth-child(2), .stat-card:nth-child(2) { animation-delay: 0.15s; }
+    .what-i-do-card:nth-child(3), .project-card:nth-child(3), .stat-card:nth-child(3) { animation-delay: 0.25s; }
+    .learning-card:nth-child(1), .building-card:nth-child(1) { animation-delay: 0.05s; }
+    .learning-card:nth-child(2), .building-card:nth-child(2) { animation-delay: 0.15s; }
+    .learning-card:nth-child(3), .building-card:nth-child(3) { animation-delay: 0.22s; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+        .hero-inner, .grid-2 { grid-template-columns: 1fr; }
+        .hero-visual { display: none; }
+        .grid-3, .what-i-do-grid, .projects-preview, .stats-inner {
+            grid-template-columns: 1fr 1fr;
+        }
+        .currently-learning-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+        .grid-3, .what-i-do-grid, .projects-preview, .stats-inner {
+            grid-template-columns: 1fr;
+        }
+        .stat-card { border-right: none; border-bottom: 1px solid var(--color-border); }
+        .stat-card:last-child { border-bottom: none; }
+        .hero-ctas { flex-direction: column; }
+    }
+    </style>
 </head>
 <body>
+    <!-- Animated background -->
+    <canvas id="bg-canvas"></canvas>
+
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner container">
-            <a href="index.html" class="nav-logo">AP</a>
+            <a href="index.html" class="nav-logo">AA</a>
             <ul class="nav-links" role="list">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
-                    <!-- Sun/Moon SVG icons will be injected by JS -->
-                </button>
-                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -60,513 +716,338 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- HERO SECTION -->
-        <section class="hero section reveal-on-scroll">
+        <!-- ======================== HERO ======================== -->
+        <section class="hero section">
             <div class="hero-inner container grid grid-2 items-center">
-                <!-- LEFT COLUMN - TEXT CONTENT -->
-                <div class="hero-text">
-                    <!-- AVAILABLE BADGE -->
+                <!-- LEFT -->
+                <div class="hero-text reveal-on-scroll">
                     <div class="available-badge">
                         <span class="status-dot" aria-hidden="true"></span>
-                        <span class="badge-text">Open to Work · Remote & On-site</span>
+                        Open to Work
                     </div>
-
-                    <!-- NAME AND ROTATING SUBTITLE -->
-                    <h1 class="hero-title" data-animate="fadeInLeft">
-                        <!-- REPLACE: Alex Porter -->
-                        <br>
-                        <span class="rotating-subtitle hero-subtitle-rotating" data-animate="fadeInRight" aria-hidden="true"></span>
-                        <span class="sr-only">
-                            Frontend Developer, UI/UX Designer, React Enthusiast, Problem Solver
-                        </span>
+                    <h1 class="hero-title">
+                        <span class="name-line">Archit Aggarwal</span>
+                        <span class="role-line">Agentic AI Engineer</span>
                     </h1>
-
-                    <!-- BIO PARAGRAPH -->
                     <p class="hero-bio">
-                        <!-- REPLACE: I build fast, accessible web experiences and design systems that scale. Focused on the intersection of clean code and thoughtful UI. Currently seeking frontend or product design roles. -->
+                        I build intelligent AI systems and full-stack products that solve real problems. Specializing in agentic AI, RAG pipelines, voice AI, and LLM-powered applications.
                     </p>
-
-                    <!-- CTA BUTTONS -->
-                    <div class="hero-ctas flex gap-3">
-                        <a href="projects.html" class="btn btn-primary">View My Projects →</a>
-                        <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-secondary">Download Resume ↓</a>
+                    <div class="hero-ctas">
+                        <a href="projects.html" class="btn btn-primary">View Projects →</a>
+                        <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-secondary">Resume ↓</a>
                         <a href="contact.html" class="btn btn-ghost">Let's Talk</a>
                     </div>
-
-                    <!-- SOCIAL LINKS -->
-                    <div class="hero-social flex gap-4 mt-6">
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <!-- GitHub SVG -->
+                    <div class="hero-social">
+                        <a href="https://github.com/architaggarwal24" class="social-link" aria-label="GitHub">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <!-- LinkedIn SVG -->
+                        <a href="https://www.linkedin.com/in/architaggarwal24/" class="social-link" aria-label="LinkedIn">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter/X">
-                            <!-- Twitter/X SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4.01c-1 .49-1.98 1-3 1.27-.94-.52-1.82-.98-2.46-1.78-.79 1.02-1.47 2.24-1.47 3.56v.05a1.43 1.43 0 0 0 .26.86 4.25 4.25 0 0 1-1.87 3.7v2.16c-.34.22-.76.35-1.2.38-.81.4-1.61.57-2.4.58-.95 0-1.79-.15-2.57-.43-.49-.97-.66-2.12-.36-3.23A4.42 4.42 0 0 0 4.42 2.07a4.42 4.42 0 0 0 1.56 6.06c-.64-.16-1.26-.37-1.78-.63-.14.41-.14.85-.14 1.26v.22c1.15.21 2.34.31 3.54.3.36-.4.72-.88 1.02-1.48 1.08-.95 1.87-2.26 1.87-4.02v-.07c.78-.4 1.47-.92 2.03-1.61C17.3 5.6 18.5 3.2 19.68 1.02 20.37.2 21.2.01 22 4.01z"></path></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Dribbble">
-                            <!-- Dribbble SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a2 2 0 0 1 2 2v1a6 6 0 0 0 0 12 2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm5 7.34a2.72 2.72 0 0 1-1.79 3.17 2.72 2.72 0 0 1-3.86 0 2.72 2.72 0 0 1-1.79-3.17a12.08 12.08 0 0 0 7.44 0zM2 12.2a2 2 0 0 1 2-2h2.58a12.08 12.08 0 0 0 5.91-1.66 2 2 0 0 1 2.16 0 2 2 0 0 1 2 2v4.75a2 2 0 0 1-2 2h-2.59a12.09 12.09 0 0 0-5.91 1.65a2 2 0 0 1-2-1.75V12.2z"></path></svg>
-                        </a>
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN - VISUAL ELEMENT -->
-                <div class="hero-visual relative">
-                    <!-- VIOLET GLOW -->
-                    <div class="hero-glow absolute inset-0 -z-10"></div>
-
-                    <!-- CODE CARD -->
-                    <div class="card-glass hero-code-card reveal-on-scroll reveal-stagger-1 p-6">
-                        <div class="code-header flex justify-between mb-4">
-                            <span class="text-xs text-secondary">index.html</span>
-                            <div class="code-actions flex gap-2">
-                                <button class="btn-icon hover:bg-tertiary/50 rounded">
-                                    <!-- Copy icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                </button>
-                                <button class="btn-icon hover:bg-tertiary/50 rounded">
-                                    <!-- Maximize icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3m-3 0v3a2 2 0 0 0 2 2h3m-18 0h-3a2 2 0 0 0-2 2v3"></path></svg>
-                                </button>
-                            </div>
+                <!-- RIGHT — metrics panel -->
+                <div class="hero-visual reveal-on-scroll reveal-stagger-1">
+                    <div class="hero-panel">
+                        <div class="panel-label">Stack</div>
+                        <div class="skill-chips-row">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">FastAPI</span>
+                            <span class="skill-chip">[SKILL_3]</span>
+                            <span class="skill-chip">[SKILL_4]</span>
+                            <span class="skill-chip">RAG</span>
+                            <span class="skill-chip">LLM APIs</span>
+                            <span class="skill-chip">Next.js</span>
+                            <span class="skill-chip">[SKILL_8]</span>
                         </div>
-                        <pre class="code-content"><span class="token">&lt;!DOCTYPE html&gt;</span>
-<span class="token">&lt;html </span><span class="token attr">lang</span><span class="token op">=</span><span class="token value">"</span><span class="token value">en</span><span class="token value">"</span><span class="token">&gt;</span>
-    <span class="token">&lt;head&gt;</span>
-        <span class="token">&lt;meta </span><span class="token attr">charset</span><span class="token op">=</span><span class="token value">"</span><span class="token value">UTF-8</span><span class="token value">"</span><span class="token">&gt;</span>
-        <span class="token">&lt;title&gt;</span><span class="token value">Portfolio</span><span class="token">&lt;/title&gt;</span>
-        <span class="token">&lt;link </span><span class="token attr">rel</span><span class="token op">=</span><span class="token value">"</span><span class="token value">stylesheet</span><span class="token value">"</span><span class="token>&gt;</span>
-    <span class="token">&lt;/head&gt;</span>
-    <span class="token">&lt;body&gt;</span>
-        <span class="token">&lt;header </span><span class="token attr">class</span><span class="token op">=</span><span class="token value">"</span><span class="token value">nav</span><span class="token value">"</span><span class="token">&gt;</span>
-            <span class="token">&lt;!-- Navigation --&gt;</span>
-        <span class="token">&lt;/header&gt;</span>
-        <span class="token">&lt;main </span><span class="token attr">class</span><span name="&#34;token op&#34;">=</span><span class="token value">"</span><span class="token value">content</span><span class="token value">"</span><span class="token">&gt;</span>
-            <span class="token">&lt;!-- Main Content --&gt;</span>
-        <span class="token">&lt;/main&gt;</span>
-        <span class="token">&lt;footer </span><span class="token attr">class</span><span class="token op">=</span><span class="token value">"</span><span class="token value">footer</span><span class="token value">"</span><span class="token">&gt;</span>
-            <span class="token">&lt;!-- Footer --&gt;</span>
-        <span class="token">&lt;/footer&gt;</span>
-        <span class="token">&lt;script </span><span class="token attr">src</span><span class="token op">=</span><span class="token value">"</span><span class="token value">main.js</span><span class="token value">"</span><span class="token">&gt;</span>
-        <span class="token">&lt;/script&gt;</span>
-    <span class="token">&lt;/body&gt;</span>
-<span class="token">&lt;/html&gt;</span></pre>
                     </div>
-
-                    <!-- SKILL CHIPS -->
-                    <div class="hero-skill-chips absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3">
-                        <div class="skill-chip tooltip-top" data-tooltip="React">
-                            <span class="chip-inner">React</span>
+                    <div class="hero-panel-row">
+                        <div class="hero-panel">
+                            <div class="panel-label">Projects</div>
+                            <div class="panel-metric">
+                                <span class="panel-number" data-count="8">0</span>
+                                <span class="panel-unit">built</span>
+                            </div>
+                            <div class="panel-desc">AI products shipped</div>
                         </div>
-                        <div class="skill-chip tooltip-top" data-tooltip="Figma">
-                            <span class="chip-inner">Figma</span>
+                        <div class="hero-panel">
+                            <div class="panel-label">Models</div>
+                            <div class="panel-metric">
+                                <span class="panel-number" data-count="6">0</span>
+                                <span class="panel-unit">LLMs</span>
+                            </div>
+                            <div class="panel-desc">Integrated & evaluated</div>
                         </div>
-                        <div class="skill-chip tooltip-top" data-tooltip="JavaScript">
-                            <span class="chip-inner">JS</span>
-                        </div>
-                        <div class="skill-chip tooltip-top" data-tooltip="CSS">
-                            <span class="chip-inner">CSS</span>
-                        </div>
-                        <div class="skill-chip tooltip-top" data-tooltip="Vue">
-                            <span class="chip-inner">Vue</span>
-                        </div>
-                        <div class="skill-chip tooltip-top" data-tooltip="Node">
-                            <span class="chip-inner">Node</span>
-                        </div>
+                    </div>
+                    <div class="hero-panel">
+                        <div class="panel-label">GitHub Activity — 2025</div>
+                        <div class="activity-bar" id="activity-bar"></div>
+                        <div style="margin-top:8px; font-family:var(--font-mono); font-size:10px; color:var(--color-text-tertiary);">200+ contributions this year</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- STATS SECTION -->
-        <section class="stats section reveal-on-scroll">
-            <div class="stats-inner container grid grid-3 text-center gap-6">
-                <div class="stat-card reveal-on-scroll reveal-stagger-1" data-animate="scaleIn">
-                    <div class="stat-number" data-count="12">0</div>
+        <!-- ======================== STATS ======================== -->
+        <section class="stats">
+            <div class="stats-inner container">
+                <div class="stat-card reveal-on-scroll reveal-stagger-1">
+                    <div class="stat-number" data-count="8">0</div>
                     <div class="stat-label">Projects Built</div>
                 </div>
-                <div class="stat-card reveal-on-scroll reveal-stagger-2" data-animate="scaleIn">
-                    <div class="stat-number" data-count="15">0</div>
+                <div class="stat-card reveal-on-scroll reveal-stagger-2">
+                    <div class="stat-number" data-count="20" data-suffix="+">0</div>
                     <div class="stat-label">Technologies</div>
                 </div>
-                <div class="stat-card reveal-on-scroll reveal-stagger-3" data-animate="scaleIn">
-                    <div class="stat-number" data-count="8">0</div>
-                    <div class="stat-label">Design Tools</div>
+                <div class="stat-card reveal-on-scroll reveal-stagger-3">
+                    <div class="stat-number" data-count="6">0</div>
+                    <div class="stat-label">AI Models Integrated</div>
                 </div>
             </div>
         </section>
 
-        <!-- WHAT I DO SECTION -->
-        <section class="what-i-do section reveal-on-scroll">
-            <div class="what-i-do-inner container">
-                <h2 class="section-title text-center mb-4">What I Do</h2>
-                <p class="section-subtitle text-center mb-12">I specialize in building beautiful, functional digital experiences that bridge the gap between design and development.</p>
-                <div class="what-i-do-grid grid grid-3 gap-8">
-                    <!-- FRONTEND DEVELOPMENT -->
-                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
-                        <div class="icon-wrapper mb-4">
-                            <!-- Frontend Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                        </div>
-                        <h3 class="what-i-do-title mb-3">Frontend Development</h3>
-                        <p class="what-i-do-description mb-4">
-                            I build responsive, performant web applications using modern JavaScript frameworks and semantic HTML/CSS. Focused on accessibility, SEO, and clean architecture.
+        <!-- ======================== WHAT I DO ======================== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">Expertise</div>
+                <h2 class="section-title">What I Do</h2>
+                <p class="section-subtitle">Building at the intersection of AI research and production engineering — agents that plan, execute, and verify.</p>
+                <div class="what-i-do-grid">
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-1">
+                        <div class="card-number">01</div>
+                        <h3 class="what-i-do-title">[SPECIALTY_1_TITLE]</h3>
+                        <p class="what-i-do-description">
+                            [SPECIALTY_1_DESCRIPTION]
                         </p>
-                        <ul class="what-i-do-skills flex flex-wrap gap-2 justify-center">
-                            <li class="skill-tag">React</li>
-                            <li class="skill-tag">TypeScript</li>
-                            <li class="skill-tag">CSS3</li>
+                        <ul class="what-i-do-skills">
+                            <li class="skill-tag">[SKILL_TAG_1]</li>
+                            <li class="skill-tag">[SKILL_TAG_2]</li>
+                            <li class="skill-tag">[SKILL_TAG_3]</li>
                         </ul>
                     </div>
-
-                    <!-- UI/UX DESIGN -->
-                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
-                        <div class="icon-wrapper mb-4">
-                            <!-- Design Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                        </div>
-                        <h3 class="what-i-do-title mb-3">UI/UX Design</h3>
-                        <p class="what-i-do-description mb-4">
-                            I craft intuitive user interfaces through research, wireframing, prototyping, and user testing. Focused on creating delightful experiences that solve real problems.
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-2">
+                        <div class="card-number">02</div>
+                        <h3 class="what-i-do-title">LLM-Powered Products</h3>
+                        <p class="what-i-do-description">
+                            [SPECIALTY_2_DESCRIPTION]
                         </p>
-                        <ul class="what-i-do-skills flex flex-wrap gap-2 justify-center">
-                            <li class="skill-tag">Figma</li>
-                            <li class="skill-tag">User Research</li>
-                            <li class="skill-tag">Interaction Design</li>
+                        <ul class="what-i-do-skills">
+                            <li class="skill-tag">[SKILL_TAG_6]</li>
+                            <li class="skill-tag">[SKILL_TAG_5]</li>
+                            <li class="skill-tag">[SKILL_TAG_4]</li>
                         </ul>
                     </div>
-
-                    <!-- CURRENTLY LEARNING -->
-                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp" flex flex-col items-center text-center p-6 bg-secondary/50 backdrop-filter-blur-sm rounded-xl border border-border">
-                        <div class="icon-wrapper mb-4">
-                            <!-- Learning Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <h3 class="what-i-do-title mb-3">Currently Learning</h3>
-                        <p class="what-i-do-description mb-4">
-                            <!-- REPLACE: Exploring advanced React patterns, server components, and edge computing to build faster, more scalable applications. -->
+                    <div class="what-i-do-card reveal-on-scroll reveal-stagger-3">
+                        <div class="card-number">03</div>
+                        <h3 class="what-i-do-title">Currently Building</h3>
+                        <p class="what-i-do-description">
+                            [SPECIALTY_3_DESCRIPTION]
                         </p>
-                        <div class="learning-progress mb-4 w-full">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="70"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-secondary">
-                                <span>React Advanced</span>
-                                <span>70%</span>
-                            </div>
-                        </div>
+                        <ul class="what-i-do-skills">
+                            <li class="skill-tag">Next.js</li>
+                            <li class="skill-tag">[SKILL_TAG_4]</li>
+                            <li class="skill-tag">[SKILL_TAG_9]</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section class="testimonials section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="testimonials-inner container">
-                <h2 class="section-title text-center mb-4">What Others Say</h2>
-                <p class="section-subtitle text-center mb-12">Feedback from colleagues, mentors, and collaborators</p>
-                <div class="testimonials-grid grid grid-3 gap-6">
-                    <!-- TESTIMONIAL 1 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">AT</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Alex Thompson --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Senior Engineer at TechStart Inc. --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Worked together on the task manager project --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: I had the pleasure of working closely with Alex on our task management application. Their attention to detail and commitment to clean code significantly improved our development process. They consistently delivered high-quality features ahead of schedule and were instrumental in implementing the drag-and-drop functionality that became a key selling point of our product. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TESTIMONIAL 2 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">JS</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Jamie Smith --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Lead Designer at DesignCo --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Professor for UI/UX Fundamentals course --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: As an educator, I'm always looking for students who go beyond the basics. Alex demonstrated exceptional design thinking throughout our course, particularly in their capstone project where they created a comprehensive design system from scratch. Their ability to bridge the gap between design and development is rare and valuable. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TESTIMONIAL 3 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">MK</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Morgan Kim --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Engineering Manager at WebSolutions --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Supervised freelance UI/UX work --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: Alex brought a refreshing combination of technical skill and design sensibility to our freelance projects. They consistently delivered pixel-perfect implementations that matched our Figma designs exactly, while also suggesting improvements that enhanced the overall user experience. Their communication was clear and proactive throughout. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURED PROJECTS SECTION -->
-        <section class="featured-projects section reveal-on-scroll">
-            <div class="featured-projects-inner container">
-                <h2 class="section-title text-center mb-4">Featured Projects</h2>
-                <p class="section-subtitle text-center mb-12">A selection of my recent work showcasing frontend development and UI/UX design capabilities.</p>
-                <div class="projects-preview grid grid-3 gap-6">
-                    <!-- PROJECT CARD 1 -->
-                    <div class="project-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
+        <!-- ======================== FEATURED PROJECTS ======================== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">Work</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A selection of my recent projects — explore the case studies below.</p>
+                <div class="projects-preview">
+                    <!-- F.R.I.D.A.Y -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-1">
                         <div class="project-card-image">
-                            <div class="image-placeholder">
-                                <div class="gradient-overlay"></div>
-                            </div>
+                            <div class="project-image-gradient"></div>
+                            <div class="project-image-dots"></div>
+                            <span class="project-image-label">Voice AI</span>
                         </div>
                         <div class="project-card-body">
-                            <h3 class="project-card-title">Dashboard Analytics Platform</h3>
+                            <h3 class="project-card-title">[PROJECT_1_NAME]</h3>
                             <p class="project-card-description">
-                                A comprehensive analytics dashboard for tracking key business metrics with real-time data visualization.
+                                [PROJECT_1_DESCRIPTION]
                             </p>
-                            <div class="project-card-tags flex gap-2 flex-wrap">
-                                <span class="badge badge-outline">React</span>
-                                <span class="badge badge-outline">TypeScript</span>
-                                <span class="badge badge-outline">D3.js</span>
-                                <span class="badge badge-outline">Chart.js</span>
+                            <div class="project-card-tags">
+                                <span class="badge-outline">Python</span>
+                                <span class="badge-outline">[PROJECT_1_TECH_2]</span>
+                                <span class="badge-outline">Gemini</span>
+                                <span class="badge-outline">[PROJECT_1_TECH_4]</span>
+                                <span class="badge-outline">[PROJECT_1_TECH_5]</span>
                             </div>
-                            <a href="projects/project-one.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                            <a href="projects/project-one.html" class="btn btn-sm btn-primary" style="width:fit-content;">View Case Study →</a>
                         </div>
                     </div>
-
-                    <!-- PROJECT CARD 2 -->
-                    <div class="project-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
+                    <!-- ResumeAI -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-2">
                         <div class="project-card-image">
-                            <div class="image-placeholder">
-                                <div class="gradient-overlay"></div>
-                            </div>
+                            <div class="project-image-gradient"></div>
+                            <div class="project-image-dots"></div>
+                            <span class="project-image-label">SaaS Product</span>
                         </div>
                         <div class="project-card-body">
-                            <h3 class="project-card-title">E-commerce Redesign</h3>
+                            <h3 class="project-card-title">[PROJECT_2_NAME]</h3>
                             <p class="project-card-description">
-                                Complete UI/UX redesign of an e-commerce platform focusing on conversion optimization and mobile experience.
+                                Full-stack AI resume optimizer that parses PDFs, scores bullet points against job descriptions, and generates LLM-powered improvement suggestions.
                             </p>
-                            <div class="project-card-tags flex gap-2 flex-wrap">
-                                <span class="badge badge-outline">Figma</span>
-                                <span class="badge badge-outline">HTML5</span>
-                                <span class="badge badge-outline">CSS3</span>
-                                <span class="badge badge-outline">JavaScript</span>
+                            <div class="project-card-tags">
+                                <span class="badge-outline">Next.js</span>
+                                <span class="badge-outline">FastAPI</span>
+                                <span class="badge-outline">Claude API</span>
+                                <span class="badge-outline">[PROJECT_2_TECH_4]</span>
+                                <span class="badge-outline">[PROJECT_2_TECH_5]</span>
                             </div>
-                            <a href="projects/project-two.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                            <a href="projects/project-two.html" class="btn btn-sm btn-primary" style="width:fit-content;">View Case Study →</a>
                         </div>
                     </div>
-
-                    <!-- PROJECT CARD 3 -->
-                    <div class="project-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
+                    <!-- CourseMateAI -->
+                    <div class="project-card reveal-on-scroll reveal-stagger-3">
                         <div class="project-card-image">
-                            <div class="image-placeholder">
-                                <div class="gradient-overlay"></div>
-                            </div>
+                            <div class="project-image-gradient"></div>
+                            <div class="project-image-dots"></div>
+                            <span class="project-image-label">RAG System</span>
                         </div>
                         <div class="project-card-body">
-                            <h3 class="project-card-title">Mobile App Companion</h3>
+                            <h3 class="project-card-title">[PROJECT_3_NAME]</h3>
                             <p class="project-card-description">
-                                Companion mobile app for a SaaS platform with offline capabilities and push notifications.
+                                [PROJECT_3_DESCRIPTION]
                             </p>
-                            <div class="project-card-tags flex gap-2 flex-wrap">
-                                <span class="badge badge-outline">React Native</span>
-                                <span class="badge badge-outline">Expo</span>
-                                <span class="badge badge-outline">Redux</span>
-                                <span class="badge badge-outline">AsyncStorage</span>
+                            <div class="project-card-tags">
+                                <span class="badge-outline">FastAPI</span>
+                                <span class="badge-outline">[PROJECT_3_TECH_2]</span>
+                                <span class="badge-outline">[PROJECT_3_TECH_3]</span>
+                                <span class="badge-outline">FAISS</span>
+                                <span class="badge-outline">[PROJECT_3_TECH_5]</span>
                             </div>
-                            <a href="projects/project-three.html" class="btn btn-sm btn-primary">View Case Study →</a>
+                            <a href="projects/project-three.html" class="btn btn-sm btn-primary" style="width:fit-content;">View Case Study →</a>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="projects.html" class="btn btn-primary btn-lg">View All Projects →</a>
+                    <a href="projects.html" class="btn btn-secondary btn-lg">View All Projects →</a>
                 </div>
             </div>
         </section>
 
-        <!-- CURRENTLY LEARNING / WHAT I'M WORKING ON -->
-        <section class="currently-learning section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="currently-learning-inner container">
-                <h2 class="section-title text-center mb-6">Currently Learning / What I'm Working On</h2>
-                <p class="section-subtitle text-center mb-10">Staying at the forefront of frontend development through continuous learning and side projects</p>
+        <!-- ======================== TICKER ======================== -->
+        <section class="ticker">
+            <div class="ticker-inner">
+                <div class="ticker-track">
+                    <div class="ticker-items">
+                        <span class="ticker-item">[TICKER_ITEM_1]</span>
+                        <span class="ticker-item">[TICKER_ITEM_2]</span>
+                        <span class="ticker-item">Attending: AI/ML workshops and hands-on bootcamps</span>
+                        <span class="ticker-item">[TICKER_ITEM_4]</span>
+                        <span class="ticker-item">[TICKER_ITEM_5]</span>
+                        <span class="ticker-item">Learning: Multi-agent orchestration patterns and evaluation loops</span>
+                    </div>
+                    <!-- duplicate for seamless loop -->
+                    <div class="ticker-items" aria-hidden="true">
+                        <span class="ticker-item">[TICKER_ITEM_1]</span>
+                        <span class="ticker-item">[TICKER_ITEM_2]</span>
+                        <span class="ticker-item">Attending: AI/ML workshops and hands-on bootcamps</span>
+                        <span class="ticker-item">[TICKER_ITEM_4]</span>
+                        <span class="ticker-item">[TICKER_ITEM_5]</span>
+                        <span class="ticker-item">Learning: Multi-agent orchestration patterns and evaluation loops</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Two Column Layout -->
-                <div class="currently-learning-grid grid grid-2 gap-8">
-                    <!-- NOW LEARNING COLUMN -->
-                    <div class="currently-learning-column">
-                        <h3 class="column-title mb-4">Now Learning</h3>
-
-                        <!-- Learning Card 1 -->
-                        <div class="learning-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="70"></div>
+        <!-- ======================== NOW LEARNING / BUILDING ======================== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">Progress</div>
+                <h2 class="section-title">Now Learning / Building</h2>
+                <div class="currently-learning-grid">
+                    <!-- LEARNING -->
+                    <div>
+                        <div class="column-title">Now Learning</div>
+                        <div class="learning-card reveal-on-scroll reveal-stagger-1">
+                            <div class="progress-header">
+                                <span class="progress-name">Advanced Agentic Patterns</span>
+                                <span class="progress-pct">80%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>Advanced React Patterns</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                Exploring compound components, render props, and custom hooks for reusable component patterns
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 4 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+                            <div class="progress-desc">[LEARNING_ITEM_1_DESCRIPTION]</div>
+                            <span class="progress-eta">Est. 3 weeks</span>
                         </div>
-
-                        <!-- Learning Card 2 -->
-                        <div class="learning-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="40"></div>
+                        <div class="learning-card reveal-on-scroll reveal-stagger-2">
+                                <span class="progress-pct">60%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>WebAssembly Basics</span>
-                                <span>40%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                Learning how to bring near-native performance to web applications for compute-intensive tasks
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 8 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="60"></div></div>
+                            <div class="progress-desc">Systems where multiple specialized agents collaborate and hand off tasks</div>
+                            <span class="progress-eta">Est. 6 weeks</span>
                         </div>
-
-                        <!-- Learning Card 3 -->
-                        <div class="learning-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="60"></div>
+                        <div class="learning-card reveal-on-scroll reveal-stagger-3">
+                            <div class="progress-header">
+                                <span class="progress-name">LLM Evaluation Loops</span>
+                                <span class="progress-pct">45%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>Server Components</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                Investigating React Server Components for improved performance and data fetching
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 6 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="45"></div></div>
+                            <div class="progress-desc">Automated quality assessment pipelines for LLM outputs in production</div>
+                            <span class="progress-eta">Est. 8 weeks</span>
                         </div>
                     </div>
-
-                    <!-- NOW BUILDING COLUMN -->
-                    <div class="currently-learning-column">
-                        <h3 class="column-title mb-4">Now Building</h3>
-
-                        <!-- Building Card 1 -->
-                        <div class="building-card reveal-on-scroll reveal-stagger-1" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="30"></div>
+                    <!-- BUILDING -->
+                    <div>
+                        <div class="column-title">Now Building</div>
+                        <div class="building-card reveal-on-scroll reveal-stagger-1">
+                            <div class="progress-header">
+                                <span class="progress-name">[BUILDING_ITEM_1]</span>
+                                <span class="progress-pct">70%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>Personal Finance App</span>
-                                <span>30%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                A comprehensive expense tracker with budgeting, investment tracking, and financial reporting
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 10 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="70"></div></div>
+                            <div class="progress-desc">[BUILDING_ITEM_1_DESCRIPTION]</div>
+                            <span class="progress-eta">Est. 3 weeks</span>
                         </div>
-
-                        <!-- Building Card 2 -->
-                        <div class="building-card reveal-on-scroll reveal-stagger-2" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="20"></div>
+                        <div class="building-card reveal-on-scroll reveal-stagger-2">
+                            <div class="progress-header">
+                                <span class="progress-name">[BUILDING_ITEM_2]</span>
+                                <span class="progress-pct">40%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>Design System Library</span>
-                                <span>20%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                Creating a reusable component library with documentation, testing, and theming capabilities
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 12 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="40"></div></div>
+                            <div class="progress-desc">A modular MCP tool server for exposing real-world APIs to AI agents at runtime</div>
+                            <span class="progress-eta">Est. 5 weeks</span>
                         </div>
-
-                        <!-- Building Card 3 -->
-                        <div class="building-card reveal-on-scroll reveal-stagger-3" data-animate="fadeInUp">
-                            <div class="skill-bar h-2">
-                                <div class="skill-bar-fill" data-level="50"></div>
+                        <div class="building-card reveal-on-scroll reveal-stagger-3">
+                            <div class="progress-header">
+                                <span class="progress-name">AI Portfolio Automations</span>
+                                <span class="progress-pct">60%</span>
                             </div>
-                            <div class="flex justify-between text-xs text-secondary mb-2">
-                                <span>Open Source Contributions Tool</span>
-                                <span>50%</span>
-                            </div>
-                            <div class="skill-progress-text text-sm">
-                                Building a CLI tool to help developers find and contribute to beginner-friendly open source projects
-                            </div>
-                            <div class="mt-2">
-                                <span class="badge badge-outline">Est. completion: 8 weeks</span>
-                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="60"></div></div>
+                            <div class="progress-desc">Automation scripts to keep GitHub activity and project stats updated automatically</div>
+                            <span class="progress-eta">Est. 2 weeks</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Original Ticker (kept for continuity) -->
-                <div class="ticker section mt-10">
-                    <div class="ticker-inner container">
-                        <div class="ticker-track animate-ticker">
-                            <div class="ticker-items">
-                                <div class="ticker-item">📚 Learning: <!-- REPLACE: Advanced React Patterns --></div>
-                                <div class="ticker-item">🔨 Building: <!-- REPLACE: Personal Finance App --></div>
-                                <div class="ticker-item">📖 Reading: <!-- REPLACE: Designing Interface Animations --></div>
-                                <div class="ticker-item">🎯 Goal: <!-- REPLACE: Senior Frontend Engineer at Product-Focused Company --></div>
-                                <div class="ticker-item">📚 Learning: <!-- REPLACE: WebAssembly Basics --></div>
-                                <div class="ticker-item">🔨 Building: <!-- REPLACE: Design System Library --></div>
-                                <div class="ticker-item">📖 Reading: <!-- REPLACE: Atomic Design Methodology --></div>
-                                <div class="ticker-item">🎯 Goal: <!-- REPLACE: Lead UI/UX Designer on Enterprise Project --></div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- ======================== VOUCH / CTA ======================== -->
+        <section class="vouch-section section">
+            <div class="container">
+                <div class="vouch-inner">
+                    <div class="section-label" style="justify-content:center;">Connect</div>
+                    <h2 class="section-title" style="margin-bottom:var(--space-4);">Want to vouch for my work?</h2>
+                    <p class="section-subtitle" style="margin-bottom:var(--space-8);">
+                        If we've worked together, I'd love a LinkedIn recommendation.
+                    </p>
+                    <a href="https://www.linkedin.com/in/architaggarwal24/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                        Connect on LinkedIn →
+                    </a>
                 </div>
             </div>
         </section>
@@ -575,20 +1056,14 @@
     <footer class="footer">
         <div class="footer-inner container">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo">AP</a>
-                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
+                <a href="index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <!-- GitHub SVG -->
+                    <a href="https://github.com/architaggarwal24" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <!-- LinkedIn SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <!-- Twitter/X SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Dribbble">
-                        <!-- Dribbble SVG -->
+                    <a href="https://www.linkedin.com/in/architaggarwal24/" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
                 </div>
             </div>
@@ -599,23 +1074,164 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="experience.html">Experience</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
+                        <!-- BLOG: uncomment when writing → <li><a href="blog.html">Blog</a></li> --></ul>
                 </div>
                 <div>
                     <h4>Community</h4>
                     <ul>
-                        <li><a href="https://github.com">Open Source</a></li>
+                        <li><a href="https://github.com/architaggarwal24">Open Source</a></li>
                         <li><a href="#">Mentoring</a></li>
                         <li><a href="#">Workshops</a></li>
                     </ul>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
+                <div class="footer-small-links">
+                    <a href="#">Sitemap</a>
+                    <a href="#">RSS</a>
+                </div>
+            </div>
         </div>
-        </footer>
+    </footer>
 
     <script src="js/nav.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/animations.js"></script>
+    <script>
+    // ---- CANVAS BACKGROUND: Drifting particle grid ----
+    (function() {
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, dots = [];
+        const N = 60;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        for (let i = 0; i < N; i++) {
+            dots.push({
+                x: Math.random() * 1400,
+                y: Math.random() * 900,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                r: Math.random() * 1.5 + 0.5
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            // Draw connections
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    const dx = dots[i].x - dots[j].x;
+                    const dy = dots[i].y - dots[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 160) {
+                        ctx.beginPath();
+                        ctx.moveTo(dots[i].x, dots[i].y);
+                        ctx.lineTo(dots[j].x, dots[j].y);
+                        ctx.strokeStyle = `rgba(99,102,241,${0.12 * (1 - dist / 160)})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            }
+            // Draw dots
+            dots.forEach(d => {
+                ctx.beginPath();
+                ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(99,102,241,0.35)';
+                ctx.fill();
+                d.x += d.vx;
+                d.y += d.vy;
+                if (d.x < 0 || d.x > W) d.vx *= -1;
+                if (d.y < 0 || d.y > H) d.vy *= -1;
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
+
+    // ---- ACTIVITY BAR ----
+    (function() {
+        const bar = document.getElementById('activity-bar');
+        if (!bar) return;
+        const heights = [20,45,30,70,55,40,80,60,35,50,75,40,65,85,45,70,55,30,90,60,40,75,50,35,80,55,45,70,60,40];
+        heights.forEach((h, i) => {
+            const col = document.createElement('div');
+            col.className = 'activity-bar-col';
+            col.style.height = h + '%';
+            col.style.animationDelay = (i * 30) + 'ms';
+            bar.appendChild(col);
+        });
+    })();
+
+    // ---- SCROLL REVEAL ----
+    (function() {
+        const els = document.querySelectorAll('.reveal-on-scroll');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('revealed');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+                el.classList.add('revealed');
+            } else {
+                io.observe(el);
+            }
+        });
+    })();
+
+    // ---- COUNT UP ----
+    (function() {
+        const els = document.querySelectorAll('[data-count]');
+        function countUp(el) {
+            const target = parseInt(el.dataset.count);
+            const suffix = el.dataset.suffix || '';
+            const dur = 1400;
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / dur, 1);
+                const ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(ease * target) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+                else el.textContent = target + suffix;
+            }
+            requestAnimationFrame(tick);
+        }
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { countUp(e.target); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.2 });
+        els.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) countUp(el);
+            else io.observe(el);
+        });
+    })();
+
+    // ---- SKILL BAR FILLS ----
+    (function() {
+        const fills = document.querySelectorAll('.skill-bar-fill');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.width = e.target.dataset.level + '%';
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        fills.forEach(el => io.observe(el));
+    })();
+    </script>
 </body>
 </html>

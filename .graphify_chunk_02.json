@@ -1,0 +1,427 @@
+{
+  "nodes": [
+    {
+      "id": "coach-agent",
+      "type": "Agent",
+      "label": "Coach Agent",
+      "properties": {
+        "specialization": "personal and professional development",
+        "capabilities": ["goal setting", "habit formation", "performance optimization", "accountability", "feedback"]
+      }
+    },
+    {
+      "id": "custom-agent",
+      "type": "Agent",
+      "label": "Custom Agent",
+      "properties": {
+        "description": "Template for creating specialized agents tailored to specific use cases",
+        "customizable": true
+      }
+    },
+    {
+      "id": "financial-agent",
+      "type": "Agent",
+      "label": "Financial Agent",
+      "properties": {
+        "specialization": "financial analysis and advice",
+        "capabilities": ["budgeting", "investment strategies", "risk assessment", "portfolio management", "financial planning"]
+      }
+    },
+    {
+      "id": "research-agent",
+      "type": "Agent",
+      "label": "Research Agent",
+      "properties": {
+        "specialization": "information gathering and analysis",
+        "capabilities": ["literature review", "data collection", "fact-checking", "trend analysis", "report synthesis"]
+      }
+    },
+    {
+      "id": "task-agent",
+      "type": "Agent",
+      "label": "Task Agent",
+      "properties": {
+        "specialization": "task management and productivity",
+        "capabilities": ["task prioritization", "deadline tracking", "workflow automation", "progress monitoring", "resource allocation"]
+      }
+    },
+    {
+      "id": "vision-agent",
+      "type": "Agent",
+      "label": "Vision Agent",
+      "properties": {
+        "specialization": "computer vision and image processing",
+        "capabilities": ["object detection", "image classification", "facial recognition", "scene understanding", "visual search"]
+      }
+    },
+    {
+      "id": "voice-agent",
+      "type": "Agent",
+      "label": "Voice Agent",
+      "properties": {
+        "specialization": "speech processing and voice interaction",
+        "capabilities": ["speech-to-text", "text-to-speech", "voice recognition", "natural language understanding", "conversational AI"]
+      }
+    },
+    {
+      "id": "web-agent",
+      "type": "Agent",
+      "label": "Web Agent",
+      "properties": {
+        "specialization": "web automation and interaction",
+        "capabilities": ["web scraping", "form filling", "navigation", "data extraction", "API integration"]
+      }
+    },
+    {
+      "id": "webpack-agent",
+      "type": "Agent",
+      "label": "Webpack Agent",
+      "properties": {
+        "specialization": "module bundling and build optimization",
+        "capabilities": ["code splitting", "asset optimization", "development server", "hot module replacement", "production builds"]
+      }
+    },
+    {
+      "id": "agent",
+      "type": "BaseAgent",
+      "label": "Base Agent",
+      "properties": {
+        "description": "Abstract base class defining common agent interface and functionality",
+        "methods": ["initialize", "process", "shutdown"],
+        "abstract": true
+      }
+    },
+    {
+      "id": "agent-sdk-verifier-py",
+      "type": "VerificationTool",
+      "label": "Python SDK Verifier",
+      "properties": {
+        "language": "Python",
+        "purpose": "Validate agent implementations against SDK specifications",
+        "checks": ["interface compliance", "method signatures", "return types", "error handling"]
+      }
+    },
+    {
+      "id": "agent-sdk-verifier-ts",
+      "type": "VerificationTool",
+      "label": "TypeScript SDK Verifier",
+      "properties": {
+        "language": "TypeScript",
+        "purpose": "Validate agent implementations against SDK specifications",
+        "checks": ["interface compliance", "method signatures", "return types", "error handling", "type safety"]
+      }
+    },
+    {
+      "id": "readme",
+      "type": "Documentation",
+      "label": "README",
+      "properties": {
+        "purpose": "Overview and usage instructions for the skill creator",
+        "sections": ["Introduction", "Installation", "Usage", "Examples", "API Reference"]
+      }
+    },
+    {
+      "id": "agent-ref",
+      "type": "Reference",
+      "label": "Agent Reference",
+      "properties": {
+        "topic": "Agent architecture and design patterns",
+        "content": "Core concepts, lifecycle, communication protocols"
+      }
+    },
+    {
+      "id": "agent-config-ref",
+      "type": "Reference",
+      "label": "Agent Configuration Reference",
+      "properties": {
+        "topic": "Configuration schema and options",
+        "content": "Settings, parameters, environment variables, validation rules"
+      }
+    },
+    {
+      "id": "agent-logo",
+      "type": "Asset",
+      "label": "Agent Logo SVG",
+      "properties": {
+        "format": "SVG",
+        "purpose": "Visual representation for agents",
+        "scalable": true
+      }
+    },
+    {
+      "id": "agents-ref",
+      "type": "Reference",
+      "label": "Agents Reference",
+      "properties": {
+        "topic": "Catalog of available agent types",
+        "content": "Pre-built agents, capabilities, use cases, configuration examples"
+      }
+    },
+    {
+      "id": "benchmarks-ref",
+      "type": "Reference",
+      "label": "Benchmarks Reference",
+      "properties": {
+        "topic": "Performance metrics and testing standards",
+        "content": "Response times, throughput, accuracy scores, resource usage"
+      }
+    },
+    {
+      "id": "changelog-ref",
+      "type": "Reference",
+      "label": "Changelog",
+      "properties": {
+        "topic": "Version history and updates",
+        "content": "Feature additions, bug fixes, breaking changes, migration guides"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "coach-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "custom-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "financial-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "research-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "task-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "vision-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "voice-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "web-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "webpack-agent",
+      "target": "agent",
+      "type": "INHERITS_FROM",
+      "label": "extends"
+    },
+    {
+      "source": "agent-sdk-verifier-py",
+      "target": "agent",
+      "type": "VERIFIES",
+      "label": "validates Python implementation"
+    },
+    {
+      "source": "agent-sdk-verifier-ts",
+      "target": "agent",
+      "type": "VERIFIES",
+      "label": "validates TypeScript implementation"
+    },
+    {
+      "source": "readme",
+      "target": "agent-sdk-verifier-py",
+      "type": "DOCUMENTS",
+      "label": "documents usage"
+    },
+    {
+      "source": "readme",
+      "target": "agent-sdk-verifier-ts",
+      "type": "DOCUMENTS",
+      "label": "documents usage"
+    },
+    {
+      "source": "agent-ref",
+      "target": "agent",
+      "type": "DESCRIBES",
+      "label": "defines architecture"
+    },
+    {
+      "source": "agent-config-ref",
+      "target": "agent",
+      "type": "SPECIFIES",
+      "label": "configuration options"
+    },
+    {
+      "source": "agent-logo",
+      "target": "agent",
+      "type": "REPRESENTS",
+      "label": "visual identity"
+    },
+    {
+      "source": "agents-ref",
+      "target": "coach-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "target": "custom-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "target": "financial-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "target": "research-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "task-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "vision-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "voice-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "web-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "agents-ref",
+      "webpack-agent",
+      "type": "LISTS",
+      "label": "includes in catalog"
+    },
+    {
+      "source": "benchmarks-ref",
+      "coach-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "financial-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "research-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "task-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "vision-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "voice-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "web-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "benchmarks-ref",
+      "webpack-agent",
+      "type": "MEASURES",
+      "label": "performance metrics"
+    },
+    {
+      "source": "changelog-ref",
+      "coach-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "financial-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "research-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "task-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "vision-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "voice-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "web-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    },
+    {
+      "source": "changelog-ref",
+      "webpack-agent",
+      "type": "DOCUMENTS_CHANGES",
+      "label": "tracks updates"
+    }
+  ]
+}

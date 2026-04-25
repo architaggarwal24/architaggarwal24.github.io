@@ -1,41 +1,140 @@
-<!-- PAGE: Contact form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Contact</title>
+    <title>Contact | Archit Aggarwal</title>
+    <meta name="description" content="Get in touch with Archit Aggarwal — open to full-time Agentic AI Engineer roles.">
+    <link rel="icon" href="assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" media="print" href="/css/print.css">
+    <link rel="stylesheet" href="css/light-theme.css">    <link rel="stylesheet" href="css/footer.css">
+    <style>
+    body { font-family: var(--font-body); }
+
+    .section { padding: var(--space-20) 0; }
+    .page-header { padding: var(--space-32) 0 var(--space-16); }
+    .section-label {
+        display:inline-flex; align-items:center; gap:var(--space-2);
+        font-family:var(--font-mono); font-size:var(--font-size-xs);
+        letter-spacing:0.1em; text-transform:uppercase;
+        color:var(--color-accent-primary); margin-bottom:var(--space-4);
+    }
+    .section-label::before{content:'';width:24px;height:1px;background:var(--color-accent-primary);}
+
+    /* ---- CONTACT LAYOUT ---- */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: var(--space-12);
+        align-items: start;
+        margin-top: var(--space-10);
+    }
+
+    /* Left panel */
+    .contact-info { display:flex; flex-direction:column; gap:var(--space-6); }
+    .contact-info-title {
+        font-family: var(--font-heading); font-size:var(--font-size-3xl);
+        font-weight:800; letter-spacing:-0.03em; color:var(--color-text-primary);
+        line-height:1.1; margin-bottom:var(--space-3);
+    }
+    .contact-info-title span {
+        background:linear-gradient(135deg,var(--color-accent-primary),var(--color-accent-tertiary));
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .contact-info-desc { font-size:var(--font-size-base); color:var(--color-text-secondary); line-height:1.7; margin-bottom:var(--space-6); }
+
+    .contact-links { display:flex; flex-direction:column; gap:var(--space-3); }
+    .contact-link-item {
+        display:flex; align-items:center; gap:var(--space-3);
+        padding:var(--space-4); border-radius:var(--border-radius-md);
+        border:1px solid var(--color-border); background:var(--color-bg-card);
+        text-decoration:none; transition:var(--transition-base);
+        color:var(--color-text-primary);
+    }
+    .contact-link-item:hover { border-color:var(--color-border-accent); transform:translateX(4px); }
+    .contact-link-icon {
+        width:36px; height:36px; border-radius:var(--border-radius-md);
+        background:rgba(99,102,241,0.1); border:1px solid var(--color-border-accent);
+        display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .contact-link-icon svg { width:16px; height:16px; color:var(--color-accent-primary); }
+    .contact-link-text { flex:1; }
+    .contact-link-label { font-family:var(--font-mono); font-size:10px; color:var(--color-text-tertiary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:2px; }
+    .contact-link-value { font-size:var(--font-size-sm); font-weight:500; color:var(--color-text-primary); }
+    .contact-link-arrow { color:var(--color-text-tertiary); font-size:var(--font-size-sm); }
+
+    /* Status card */
+    .status-card {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-lg); padding:var(--space-5) var(--space-6);
+        display:flex; align-items:center; gap:var(--space-4); margin-top:var(--space-2);
+    }
+    .status-dot { width:8px; height:8px; border-radius:50%; background:var(--color-accent-green); box-shadow:0 0 8px var(--color-accent-green); animation:pulse-dot 2s ease-in-out infinite; flex-shrink:0; }
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+    .status-text { font-size:var(--font-size-sm); color:var(--color-text-secondary); }
+    .status-text strong { color:var(--color-accent-green); font-weight:600; }
+
+    /* ---- FORM ---- */
+    .contact-form-wrap {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-xl); padding:var(--space-10);
+    }
+    .form-title { font-family:var(--font-heading); font-size:var(--font-size-xl); font-weight:700; margin-bottom:var(--space-2); color:var(--color-text-primary); }
+    .form-desc { font-size:var(--font-size-sm); color:var(--color-text-secondary); margin-bottom:var(--space-8); }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); }
+    .form-group { display:flex; flex-direction:column; gap:var(--space-2); margin-bottom:var(--space-5); }
+    .form-label { font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-text-tertiary); }
+    .form-input, .form-textarea {
+        background:var(--color-bg-secondary); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-md); padding:var(--space-3) var(--space-4);
+        font-family:var(--font-body); font-size:var(--font-size-base);
+        color:var(--color-text-primary); outline:none; transition:var(--transition-base);
+        width:100%;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--color-text-tertiary); }
+    .form-input:focus, .form-textarea:focus {
+        border-color:var(--color-accent-primary); box-shadow:0 0 0 3px var(--color-accent-glow);
+        background:var(--color-bg-card);
+    }
+    .form-textarea { resize:vertical; min-height:140px; }
+
+    .form-submit { width:100%; margin-top:var(--space-2); }
+    .form-success {
+        display:none; text-align:center; padding:var(--space-8);
+        font-size:var(--font-size-base); color:var(--color-accent-green);
+    }
+    .form-success svg { width:48px; height:48px; margin:0 auto var(--space-4); display:block; }
+
+    @media(max-width:860px){
+        .contact-grid{grid-template-columns:1fr;}
+        .form-row{grid-template-columns:1fr;}
+    }
+    </style>
 </head>
 <body>
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner container">
-            <a href="index.html" class="nav-logo">AP</a>
+            <a href="index.html" class="nav-logo">AA</a>
             <ul class="nav-links" role="list">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
-                    <!-- Sun/Moon SVG icons will be injected by JS -->
-                </button>
-                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
-                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
             </div>
         </div>
         <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
@@ -43,61 +142,98 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- CONTACT FORM -->
-        <section class="contact-section section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="contact-section-inner container">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">
-                    <!-- REPLACE: Have a project in mind? I'd love to hear about it! Reach out for collaborations, freelance work, or just to say hello. -->
-                </p>
+        <section class="section">
+            <div class="container">
+                <div class="section-label">Get In Touch</div>
 
-                <!-- Network Error Fallback -->
-                <div id="network-error-message" class="network-error hidden">
-                    <div class="network-error-content">
-                        <!-- WiFi Off SVG Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.12-.45V17a2 2 0 0 1-2 2 2 2 0 0 1-2 2v2"></path>
-                        </svg>
-                        <h3>It looks like you're offline</h3>
-                        <p>You can also reach me at <!-- REPLACE: email --></p>
-                        <a href="mailto:<!-- REPLACE: email -->" class="btn btn-outline">Email Me</a>
+                <div class="contact-grid">
+                    <!-- LEFT INFO -->
+                    <div class="contact-info">
+                        <div>
+                            <h1 class="contact-info-title">Let's Build<br><span>Something Great</span></h1>
+                            <p class="contact-info-desc">Open to full-time Agentic AI Engineer roles. If you're building something ambitious with AI, I'd love to hear about it.</p>
+                        </div>
+
+                        <div class="status-card">
+                            <span class="status-dot"></span>
+                            <div class="status-text"><strong>Available for work</strong> — actively seeking full-time roles</div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="mailto:architarwl123@gmail.com" class="contact-link-item">
+                                <div class="contact-link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="contact-link-text">
+                                    <div class="contact-link-label">Email</div>
+                                    <div class="contact-link-value">architarwl123@gmail.com</div>
+                                </div>
+                                <span class="contact-link-arrow">→</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/architaggarwal24/" target="_blank" rel="noopener" class="contact-link-item">
+                                <div class="contact-link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div class="contact-link-text">
+                                    <div class="contact-link-label">LinkedIn</div>
+                                    <div class="contact-link-value">architaggarwal24</div>
+                                </div>
+                                <span class="contact-link-arrow">↗</span>
+                            </a>
+                            <a href="https://github.com/architaggarwal24" target="_blank" rel="noopener" class="contact-link-item">
+                                <div class="contact-link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </div>
+                                <div class="contact-link-text">
+                                    <div class="contact-link-label">GitHub</div>
+                                    <div class="contact-link-value">architaggarwal24</div>
+                                </div>
+                                <span class="contact-link-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT FORM -->
+                    <div class="contact-form-wrap">
+                        <div class="form-title">Send a message</div>
+                        <div class="form-desc">I reply within 24 hours on weekdays.</div>
+
+                        <div id="form-success" class="form-success">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 13.01 9 10.01"></polyline></svg>
+                            <strong>Message sent!</strong><br>I'll get back to you shortly.
+                        </div>
+
+                        <form id="contact-form" name="contact" netlify netlify-honeypot="bot-field">
+                            <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your name" required class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="you@company.com" required class="form-input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell me about your project or role..." required class="form-textarea"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit">Send Message →</button>
+                        </form>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <form id="contact-form" name="contact" netlify netlify-honeypot="bot-field" hidden>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea"></textarea>
-                    </div>
-                    <!-- netlify honeypot -->
-                    <p class="hidden">
-                        <label>Don’t fill this out if you're human: </label>
-                        <input name="bot-field" />
-                    </p>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
         </section>
     </main>
@@ -105,63 +241,29 @@
     <footer class="footer">
         <div class="footer-inner container">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo">AP</a>
-                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <!-- GitHub SVG placeholder -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <!-- LinkedIn SVG placeholder -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <!-- Twitter/X SVG placeholder -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Dribbble">
-                        <!-- Dribbble SVG placeholder -->
-                    </a>
-                </div>
+                <a href="index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
             </div>
             <div class="footer-links">
-                <div>
-                    <h4>Work</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="https://github.com">Open Source</a></li>
-                        <li><a href="#">Mentoring</a></li>
-                        <li><a href="#">Workshops</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
+                <div><h4>Work</h4><ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <!-- BLOG: uncomment when writing → <li><a href="blog.html">Blog</a></li> --></ul></div>
+                <div><h4>Community</h4><ul>
+                    <li><a href="https://github.com/architaggarwal24">Open Source</a></li>
+                    <li><a href="#">Mentoring</a></li>
+                </ul></div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
-                <div class="footer-small-links">
-                    <a href="#">Sitemap</a>
-                    <a href="#">RSS</a>
-                </div>
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
+                <div class="footer-small-links"><a href="#">Sitemap</a></div>
             </div>
         </div>
     </footer>
 
     <script src="js/nav.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
     <script src="js/contact.js"></script>
 </body>
 </html>

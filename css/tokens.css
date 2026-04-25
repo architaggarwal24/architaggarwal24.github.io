@@ -1,122 +1,88 @@
-/* Design Tokens as CSS Custom Properties */
-/* Dark mode default, light mode via [data-theme="light"] */
+/* Design Tokens — Premium Dark Editorial */
 
 :root {
-    /* COLORS (dark mode default) */
-    --color-bg-primary: #0d0d0f;
-    --color-bg-secondary: #141417;
-    --color-color-bg-tertiary: #1e1e24;
-    --color-text-primary: #f0f0ec;
-    --color-text-secondary: #9a9a96;
-    --color-text-tertiary: #5a5a58;
-    --color-accent-primary: #7c3aed;
+    --color-bg-primary: #080810;
+    --color-bg-secondary: #0e0e1a;
+    --color-bg-tertiary: #161626;
+    --color-bg-card: #111120;
+    --color-text-primary: #ededf0;
+    --color-text-secondary: #8888a0;
+    --color-text-tertiary: #44445a;
+    --color-accent-primary: #6366f1;
     --color-accent-secondary: #f59e0b;
-    --color-accent-tertiary: #0ea5e9;
-    --color-accent-glow: rgba(124, 58, 237, 0.15);
-    --color-border: rgba(255,255,255,0.08);
-    --color-border-strong: rgba(255,255,255,0.16);
-    --color-success: #10b981;
+    --color-accent-tertiary: #22d3ee;
+    --color-accent-green: #4ade80;
+    --color-accent-glow: rgba(99,102,241,0.18);
+    --color-accent-glow-amber: rgba(245,158,11,0.15);
+    --color-border: rgba(255,255,255,0.06);
+    --color-border-strong: rgba(255,255,255,0.12);
+    --color-border-accent: rgba(99,102,241,0.3);
+    --color-success: #4ade80;
     --color-warning: #f59e0b;
-    --color-error: #ef4444;
+    --color-error: #f87171;
 
-    /* TYPOGRAPHY */
     --font-heading: 'Syne', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
 
-    /* Font sizes (12px base) */
-    --font-size-xs: 12px;
-    --font-size-sm: 14px;
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
     --font-size-base: 16px;
     --font-size-lg: 18px;
     --font-size-xl: 20px;
     --font-size-2xl: 24px;
-    --font-size-3xl: 30px;
-    --font-size-4xl: 36px;
-    --font-size-5xl: 48px;
-    --font-size-6xl: 64px;
+    --font-size-3xl: 32px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 76px;
 
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --font-weight-black: 800;
 
-    --line-height-tight: 1.2;
+    --line-height-tight: 1.1;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
 
-    --letter-spacing-tight: -0.02em;
+    --letter-spacing-tight: -0.03em;
     --letter-spacing-normal: 0;
-    --letter-spacing-wide: 0.02em;
-    --letter-spacing-widest: 0.05em;
+    --letter-spacing-wide: 0.04em;
+    --letter-spacing-widest: 0.1em;
 
-    /* SPACING (4px base unit) */
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 20px;
-    --space-6: 24px;
-    --space-7: 28px;
-    --space-8: 32px;
-    --space-9: 36px;
-    --space-10: 40px;
-    --space-11: 44px;
-    --space-12: 48px;
-    --space-13: 52px;
-    --space-14: 56px;
-    --space-15: 60px;
-    --space-16: 64px;
-    --space-20: 80px;
-    --space-24: 96px;
-    --space-28: 112px;
-    --space-32: 128px;
-    --space-40: 160px;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+    --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px;
+    --space-9: 36px; --space-10: 40px; --space-12: 48px; --space-14: 56px;
+    --space-16: 64px; --space-20: 80px; --space-24: 96px; --space-32: 128px; --space-40: 160px;
 
-    /* LAYOUT */
     --container-max: 1200px;
-    --container-padding: clamp(1rem, 5vw, 3rem);
+    --container-padding: clamp(1.25rem, 5vw, 3rem);
     --grid-gap: clamp(1rem, 3vw, 2rem);
-    --border-radius-sm: 6px;
-    --border-radius-md: 10px;
-    --border-radius-lg: 16px;
-    --border-radius-xl: 24px;
-    --border-radius-full: 9999px;
+    --border-radius-sm: 4px; --border-radius-md: 8px;
+    --border-radius-lg: 14px; --border-radius-xl: 20px; --border-radius-full: 9999px;
 
-    /* EFFECTS */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
-    --shadow-glow: 0 0 20px var(--color-accent-glow);
-    --transition-fast: 150ms ease;
-    --transition-base: 250ms ease;
-    --transition-slow: 400ms ease;
-    --blur-sm: blur(4px);
-    --blur-md: blur(8px);
-
-    /* Z-INDEX */
-    --z-base: 0;
-    --z-raised: 10;
-    --z-overlay: 20;
-    --z-nav: 100;
-    --z-modal: 200;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+    --shadow-glow: 0 0 40px var(--color-accent-glow);
+    --transition-fast: 120ms ease;
+    --transition-base: 220ms ease;
+    --transition-slow: 400ms cubic-bezier(0.16,1,0.3,1);
+    --blur-sm: blur(4px); --blur-md: blur(12px); --blur-lg: blur(24px);
+    --z-base: 0; --z-raised: 10; --z-overlay: 20; --z-nav: 100; --z-modal: 200;
 }
 
-/* Light mode overrides */
 [data-theme="light"] {
-    --color-bg-primary: #fafaf8;
-    --color-bg-secondary: #f0f0ed;
-    --color-bg-tertiary: #e4e4e0;
-    --color-text-primary: #0d0d0f;
-    --color-text-secondary: #5a5a56;
-    --color-text-tertiary: #9a9a96;
-    --color-accent-primary: #7c3aed;
-    --color-accent-secondary: #f59e0b;
-    --color-accent-tertiary: #0ea5e9;
-    --color-accent-glow: rgba(124, 58, 237, 0.1);
-    --color-border: rgba(0,0,0,0.08);
-    --color-border-strong: rgba(0,0,0,0.16);
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
-    --color-error: #ef4444;
+    --color-bg-primary: #f7f7fc;
+    --color-bg-secondary: #eeeef6;
+    --color-bg-tertiary: #e0e0f0;
+    --color-bg-card: #ffffff;
+    --color-text-primary: #0d0d1a;
+    --color-text-secondary: #555570;
+    --color-text-tertiary: #9898b0;
+    --color-accent-glow: rgba(99,102,241,0.1);
+    --color-border: rgba(0,0,0,0.07);
+    --color-border-strong: rgba(0,0,0,0.14);
+    --color-border-accent: rgba(99,102,241,0.25);
 }

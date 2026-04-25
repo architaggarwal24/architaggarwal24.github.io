@@ -1,163 +1,107 @@
-/* Contact form validation and network error handling */
+/* Contact form — Netlify Forms submission with fetch + UI feedback */
 
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('#contact-form');
-    const networkErrorMessage = document.getElementById('network-error-message');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const successEl = document.getElementById('form-success');
+    if (!form) return;
 
-    if (!contactForm) return;
-
-    const formElements = {
-        name: contactForm.querySelector('#name'),
-        email: contactForm.querySelector('#email'),
-        subject: contactForm.querySelector('#subject'),
-        message: contactForm.querySelector('#message')
+    // Validation helpers
+    const rules = {
+        name:    v => v.trim().length >= 2,
+        email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+        subject: v => v.trim().length >= 3,
+        message: v => v.trim().length >= 10,
+    };
+    const msgs = {
+        name:    'Please enter your name (min 2 characters)',
+        email:   'Please enter a valid email address',
+        subject: 'Please enter a subject (min 3 characters)',
+        message: 'Please enter a message (min 10 characters)',
     };
 
-    // Network error handling functions
-    function checkNetworkStatus() {
-        if (!navigator.onLine) {
-            // We're offline - show network error, hide form
-            if (networkErrorMessage) {
-                networkErrorMessage.classList.remove('hidden');
-            }
-            if (contactForm) {
-                contactForm.hidden = true;
-            }
-            return false;
-        } else {
-            // We're online - hide network error, show form
-            if (networkErrorMessage) {
-                networkErrorMessage.classList.add('hidden');
-            }
-            if (contactForm) {
-                contactForm.hidden = false;
-            }
-            return true;
-        }
+    function showError(input, msg) {
+        clearError(input);
+        const err = document.createElement('div');
+        err.className = 'field-error';
+        err.textContent = msg;
+        err.style.cssText = 'color:var(--color-error);font-size:11px;margin-top:4px;font-family:var(--font-mono)';
+        input.parentElement.appendChild(err);
+        input.style.borderColor = 'var(--color-error)';
     }
 
-    // Initial network check
-    checkNetworkStatus();
-
-    // Listen for online/offline events
-    window.addEventListener('online', checkNetworkStatus);
-    window.addEventListener('offline', checkNetworkStatus);
-
-    // Validation functions
-    const validateName = (name) => {
-        return name.trim().length >= 2;
-    };
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    const validateSubject = (subject) => {
-        return subject.trim().length >= 3;
-    };
-
-    const validateMessage = (message) => {
-        return message.trim().length >= 10;
-    };
-
-    // Show error message
-    const showError = (input, message) => {
-        const formGroup = input.parentElement;
-        const errorElement = formGroup.querySelector('.error-message') || document.createElement('div');
-
-        errorElement.className = 'error-message';
-        errorElement.textContent = message;
-        errorElement.style.color = 'var(--color-error, #ef4444)';
-        errorElement.style.fontSize = 'var(--font-size-sm)';
-        errorElement.style.marginTop = 'var(--spacing-1)';
-
-        if (!formGroup.querySelector('.error-message')) {
-            formGroup.appendChild(errorElement);
-        }
-
-        input.classList.add('error');
-        input.style.borderColor = 'var(--color-error, #ef4444)';
-    };
-
-    // Clear error message
-    const clearError = (input) => {
-        const formGroup = input.parentElement;
-        const errorElement = formGroup.querySelector('.error-message');
-
-        if (errorElement) {
-            errorElement.remove();
-        }
-
-        input.classList.remove('error');
+    function clearError(input) {
+        const prev = input.parentElement.querySelector('.field-error');
+        if (prev) prev.remove();
         input.style.borderColor = '';
-    };
+    }
 
-    // Validate form
-    const validateForm = () => {
-        let isValid = true;
+    function validate() {
+        let ok = true;
+        ['name', 'email', 'subject', 'message'].forEach(id => {
+            const el = form.querySelector('#' + id);
+            if (!el) return;
+            if (!rules[id](el.value)) {
+                showError(el, msgs[id]);
+                ok = false;
+            } else {
+                clearError(el);
+            }
+        });
+        return ok;
+    }
 
-        // Validate name
-        if (!validateName(formElements.name.value)) {
-            showError(formElements.name, 'Please enter your full name (minimum 2 characters)');
-            isValid = false;
-        } else {
-            clearError(formElements.name);
-        }
+    // Encode for Netlify fetch submission
+    function encode(data) {
+        return Object.keys(data)
+            .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+            .join('&');
+    }
 
-        // Validate email
-        if (!validateEmail(formElements.email.value)) {
-            showError(formElements.email, 'Please enter a valid email address');
-            isValid = false;
-        } else {
-            clearError(formElements.email);
-        }
-
-        // Validate subject
-        if (!validateSubject(formElements.subject.value)) {
-            showError(formElements.subject, 'Please enter a subject (minimum 3 characters)');
-            isValid = false;
-        } else {
-            clearError(formElements.subject);
-        }
-
-        // Validate message
-        if (!validateMessage(formElements.message.value)) {
-            showError(formElements.message, 'Please enter a message (minimum 10 characters)');
-            isValid = false;
-        } else {
-            clearError(formElements.message);
-        }
-
-        return isValid;
-    };
-
-    // Handle form submission
-    contactForm.addEventListener('submit', function(e) {
-        // Don't submit if offline
-        if (!navigator.onLine) {
-            e.preventDefault();
-            return;
-        }
-
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
+        if (!validate()) return;
 
-        if (validateForm()) {
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'alert alert-success';
-            successMessage.textContent = 'Thank you! Your message has been sent.';
+        const submitBtn = form.querySelector('[type="submit"]');
+        submitBtn.textContent = 'Sending…';
+        submitBtn.disabled = true;
 
-            // Insert success message before form
-            contactForm.parentNode.insertBefore(successMessage, contactForm);
+        const data = {
+            'form-name': 'contact',
+            name:    form.querySelector('#name')?.value || '',
+            email:   form.querySelector('#email')?.value || '',
+            subject: form.querySelector('#subject')?.value || '',
+            message: form.querySelector('#message')?.value || '',
+        };
 
-            // Reset form
-            contactForm.reset();
+        try {
+            const res = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encode(data),
+            });
 
-            // Remove success message after 5 seconds
-            setTimeout(() => {
-                successMessage.remove();
-            }, 5000);
+            if (res.ok || res.status === 200 || res.redirected) {
+                // Success
+                form.style.display = 'none';
+                if (successEl) successEl.style.display = 'block';
+            } else {
+                throw new Error('Server returned ' + res.status);
+            }
+        } catch (err) {
+            // Netlify Forms returns 200 when hosted; locally show success anyway
+            // since the form will work once deployed
+            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                // Dev mode — show success UI so you can test the look
+                form.style.display = 'none';
+                if (successEl) successEl.style.display = 'block';
+            } else {
+                submitBtn.textContent = 'Send Message →';
+                submitBtn.disabled = false;
+                const errDiv = document.createElement('div');
+                errDiv.style.cssText = 'color:var(--color-error);font-size:13px;margin-top:12px;font-family:var(--font-mono)';
+                errDiv.textContent = '⚠ Something went wrong. Try emailing directly: architarwl123@gmail.com';
+                form.appendChild(errDiv);
+            }
         }
     });
 });

@@ -1,41 +1,239 @@
-<!-- PAGE: Skills & Experience -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Experience</title>
+    <title>Experience & Skills | Archit Aggarwal</title>
+    <meta name="description" content="Experience and skills of Archit Aggarwal — Agentic AI Engineer and Full-Stack Developer.">
+    <link rel="icon" href="assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" media="print" href="/css/print.css">
+    <link rel="stylesheet" href="css/light-theme.css">    <link rel="stylesheet" href="css/footer.css">
+    <style>
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    body { font-family: var(--font-body); }
+    .flex{display:flex}.flex-wrap{flex-wrap:wrap}.grid{display:grid}.gap-2{gap:var(--space-2)}.gap-4{gap:var(--space-4)}.gap-6{gap:var(--space-6)}.gap-8{gap:var(--space-8)}.items-center{align-items:center}.justify-between{justify-content:space-between}.text-center{text-align:center}.mb-2{margin-bottom:var(--space-2)}.mb-4{margin-bottom:var(--space-4)}.mb-6{margin-bottom:var(--space-6)}.mb-8{margin-bottom:var(--space-8)}.mt-8{margin-top:var(--space-8)}.mt-12{margin-top:var(--space-12)}
+
+    .section { padding: var(--space-20) 0; }
+    .page-header { padding: var(--space-32) 0 var(--space-16); }
+
+    .section-label {
+        display:inline-flex; align-items:center; gap:var(--space-2);
+        font-family:var(--font-mono); font-size:var(--font-size-xs);
+        letter-spacing:0.1em; text-transform:uppercase;
+        color:var(--color-accent-primary); margin-bottom:var(--space-4);
+    }
+    .section-label::before{content:'';width:24px;height:1px;background:var(--color-accent-primary);}
+
+    /* ---- TIMELINE ---- */
+    .timeline {
+        position: relative;
+        padding-left: 48px;
+        margin-top: var(--space-10);
+    }
+    .timeline::before {
+        content:''; position:absolute; top:0; bottom:0; left:16px; width:1px;
+        background: linear-gradient(to bottom, var(--color-accent-primary) 0%, var(--color-border) 100%);
+    }
+    .timeline-item {
+        position:relative; margin-bottom: var(--space-10);
+        animation: fadeUp 0.5s ease both;
+    }
+    .timeline-item:nth-child(1){animation-delay:0.05s}
+    .timeline-item:nth-child(2){animation-delay:0.15s}
+    .timeline-item:nth-child(3){animation-delay:0.25s}
+
+    .timeline-dot {
+        position:absolute; left:-40px; top:20px;
+        width:32px; height:32px; border-radius:50%;
+        background: var(--color-bg-tertiary);
+        border: 1px solid var(--color-border-accent);
+        display:flex; align-items:center; justify-content:center;
+        flex-shrink:0;
+    }
+    .timeline-dot svg { width:14px; height:14px; color:var(--color-accent-primary); }
+    .timeline-dot.work { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.4); }
+    .timeline-dot.education { background: rgba(34,211,238,0.08); border-color: rgba(34,211,238,0.3); }
+    .timeline-dot.education svg { color: var(--color-accent-tertiary); }
+
+    .timeline-content {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--space-6) var(--space-8);
+        transition: var(--transition-base);
+    }
+    .timeline-content:hover { border-color: var(--color-border-accent); }
+
+    .timeline-header {
+        display:flex; justify-content:space-between; align-items:flex-start;
+        gap:var(--space-4); flex-wrap:wrap; margin-bottom:var(--space-3);
+    }
+    .timeline-title {
+        font-family:var(--font-heading); font-size:var(--font-size-xl);
+        font-weight:700; color:var(--color-text-primary); margin:0 0 var(--space-1);
+    }
+    .timeline-org {
+        font-size:var(--font-size-sm); color:var(--color-text-secondary); margin:0;
+    }
+    .timeline-meta { display:flex; gap:var(--space-2); flex-shrink:0; flex-wrap:wrap; }
+    .tl-badge {
+        font-family:var(--font-mono); font-size:10px; padding:2px 8px;
+        border-radius:var(--border-radius-sm); border:1px solid var(--color-border);
+        color:var(--color-text-tertiary); background:var(--color-bg-tertiary); white-space:nowrap;
+    }
+    .tl-badge.accent { border-color:var(--color-border-accent); color:var(--color-accent-primary); background:rgba(99,102,241,0.06); }
+    .timeline-description { font-size:var(--font-size-sm); color:var(--color-text-secondary); line-height:1.7; margin-bottom:var(--space-4); }
+    .timeline-achievements { padding-left:var(--space-4); margin-bottom:var(--space-4); }
+    .timeline-achievements li { font-size:var(--font-size-sm); color:var(--color-text-secondary); line-height:1.7; margin-bottom:var(--space-2); position:relative; }
+    .timeline-achievements li::marker { color:var(--color-accent-primary); }
+    .timeline-skills { display:flex; flex-wrap:wrap; gap:var(--space-2); }
+    .skill-pill {
+        font-family:var(--font-mono); font-size:10px; padding:2px 8px;
+        border-radius:var(--border-radius-sm); border:1px solid var(--color-border-accent);
+        color:var(--color-accent-primary); background:rgba(99,102,241,0.06);
+    }
+
+    /* Timeline filter */
+    .tl-filters { display:flex; gap:var(--space-2); margin-bottom:var(--space-6); }
+    .tl-filter-btn {
+        font-family:var(--font-mono); font-size:var(--font-size-xs); text-transform:uppercase; letter-spacing:0.05em;
+        padding:var(--space-2) var(--space-4); border-radius:var(--border-radius-full);
+        border:1px solid var(--color-border); background:transparent;
+        color:var(--color-text-secondary); cursor:pointer; transition:var(--transition-fast);
+    }
+    .tl-filter-btn:hover { border-color:var(--color-border-strong); color:var(--color-text-primary); }
+    .tl-filter-btn.active { background:var(--color-accent-primary); border-color:var(--color-accent-primary); color:#fff; }
+    .timeline-item.hidden { display:none; }
+
+    /* ---- SKILLS ---- */
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-8); margin-top:var(--space-10); }
+    .skills-col-title {
+        font-family:var(--font-mono); font-size:var(--font-size-xs); text-transform:uppercase; letter-spacing:0.1em;
+        color:var(--color-text-tertiary); margin-bottom:var(--space-6);
+        padding-bottom:var(--space-3); border-bottom:1px solid var(--color-border);
+    }
+
+    .skill-bar-item { margin-bottom:var(--space-5); }
+    .skill-row { display:flex; justify-content:space-between; margin-bottom:var(--space-2); }
+    .skill-name { font-size:var(--font-size-sm); color:var(--color-text-primary); font-weight:500; }
+    .skill-pct { font-family:var(--font-mono); font-size:var(--font-size-xs); color:var(--color-accent-primary); }
+    .skill-bar { height:4px; background:var(--color-bg-tertiary); border-radius:2px; overflow:hidden; }
+    .skill-bar-fill {
+        height:100%; width:0;
+        background:linear-gradient(90deg,var(--color-accent-primary),var(--color-accent-tertiary));
+        border-radius:2px; transition:width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .tool-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-3); }
+    .tool-card {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-md); padding:var(--space-3) var(--space-4);
+        display:flex; align-items:center; gap:var(--space-3); transition:var(--transition-fast);
+    }
+    .tool-card:hover { border-color:var(--color-border-accent); }
+    .tool-icon {
+        width:32px; height:32px; border-radius:var(--border-radius-sm);
+        background:var(--color-bg-tertiary); display:flex; align-items:center; justify-content:center;
+        font-family:var(--font-mono); font-size:var(--font-size-xs); font-weight:700;
+        color:var(--color-accent-primary); flex-shrink:0;
+    }
+    .tool-name { font-size:var(--font-size-sm); font-weight:500; color:var(--color-text-primary); line-height:1.2; }
+    .tool-level { font-family:var(--font-mono); font-size:10px; color:var(--color-text-tertiary); }
+
+    .badge-cloud { display:flex; flex-wrap:wrap; gap:var(--space-2); }
+    .cloud-tag {
+        font-family:var(--font-mono); font-size:10px; padding:3px 10px;
+        border-radius:var(--border-radius-full); border:1px solid var(--color-border);
+        color:var(--color-text-secondary); background:var(--color-bg-card);
+        transition:var(--transition-fast);
+    }
+    .cloud-tag:hover { border-color:var(--color-border-accent); color:var(--color-accent-primary); }
+
+    /* ---- VALUE CARDS ---- */
+    .value-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); margin-top:var(--space-10); }
+    .value-card {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-lg); padding:var(--space-8);
+        transition:var(--transition-slow); position:relative; overflow:hidden;
+    }
+    .value-card::before {
+        content:''; position:absolute; top:0; left:0; right:0; height:2px;
+        background:linear-gradient(90deg,var(--color-accent-primary),var(--color-accent-tertiary));
+        transform:scaleX(0); transform-origin:left; transition:transform var(--transition-slow);
+    }
+    .value-card:hover::before { transform:scaleX(1); }
+    .value-card:hover { border-color:var(--color-border-accent); transform:translateY(-3px); }
+    .value-icon {
+        width:40px; height:40px; border-radius:var(--border-radius-md);
+        background:rgba(99,102,241,0.1); border:1px solid var(--color-border-accent);
+        display:flex; align-items:center; justify-content:center; margin-bottom:var(--space-5);
+    }
+    .value-icon svg { width:18px; height:18px; color:var(--color-accent-primary); }
+    .value-title { font-family:var(--font-heading); font-size:var(--font-size-lg); font-weight:700; margin-bottom:var(--space-3); color:var(--color-text-primary); }
+    .value-desc { font-size:var(--font-size-sm); color:var(--color-text-secondary); line-height:1.7; }
+
+    /* ---- CERTS ---- */
+    .certs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-5); margin-top:var(--space-10); }
+    .cert-card {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-md); padding:var(--space-5) var(--space-6);
+        display:flex; flex-direction:column; gap:var(--space-3); transition:var(--transition-base);
+    }
+    .cert-card:hover { border-color:var(--color-border-accent); }
+    .cert-title { font-size:var(--font-size-base); font-weight:600; color:var(--color-text-primary); }
+    .cert-issuer { font-family:var(--font-mono); font-size:var(--font-size-xs); color:var(--color-accent-primary); }
+    .cert-footer { display:flex; justify-content:space-between; align-items:center; }
+    .cert-date { font-family:var(--font-mono); font-size:10px; color:var(--color-text-tertiary); }
+    .cert-link { font-family:var(--font-mono); font-size:10px; color:var(--color-accent-primary); text-decoration:none; padding:2px 8px; border:1px solid var(--color-border-accent); border-radius:var(--border-radius-sm); transition:var(--transition-fast); }
+    .cert-link:hover { background:var(--color-accent-glow); }
+
+    /* Resume CTA */
+    .resume-cta {
+        background:var(--color-bg-card); border:1px solid var(--color-border);
+        border-radius:var(--border-radius-xl); padding:var(--space-16) var(--space-12);
+        text-align:center; position:relative; overflow:hidden;
+    }
+    .resume-cta::before {
+        content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%);
+        width:300px; height:300px;
+        background:radial-gradient(circle,var(--color-accent-glow),transparent 70%);
+        pointer-events:none;
+    }
+
+    @media(max-width:900px){
+        .skills-grid,.value-grid{grid-template-columns:1fr 1fr;}
+        .certs-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:600px){
+        .skills-grid,.value-grid{grid-template-columns:1fr;}
+        .tool-grid{grid-template-columns:1fr 1fr;}
+    }
+    </style>
 </head>
 <body>
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner container">
-            <a href="index.html" class="nav-logo">AP</a>
+            <a href="index.html" class="nav-logo">AA</a>
             <ul class="nav-links" role="list">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
-                    <!-- Sun/Moon SVG icons will be injected by JS -->
-                </button>
-                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
-                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
             </div>
         </div>
         <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
@@ -43,7 +241,7 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -51,654 +249,253 @@
 
     <main>
         <!-- PAGE HEADER -->
-        <section class="page-header section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="page-header-inner container text-center">
-                <h1 class="section-title">Experience & Skills</h1>
-                <p class="section-subtitle">
-                    <!-- REPLACE: Passionate frontend developer and UI/UX designer driven by creating accessible, performant digital experiences that solve real problems. -->
-                </p>
-            </div>
+        <section class="page-header container">
+            <div class="section-label">Background</div>
+            <h1 class="section-title">Experience & Skills</h1>
+            <p class="section-subtitle" style="max-width:52ch;">
+                [YOUR_EXPERIENCE_PAGE_SUBTITLE]
+            </p>
         </section>
 
-        <!-- WORK / EDUCATION TIMELINE -->
-        <section class="timeline-section section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="timeline-section-inner container">
-                <h2 class="section-title mb-8">Work & Education Timeline</h2>
+        <!-- TIMELINE -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">History</div>
+                <h2 class="section-title">Work & Education</h2>
 
-                <!-- TIMELINE FILTER -->
-                <div class="timeline-filters flex gap-3 mb-6">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="work">Work</button>
-                    <button class="filter-btn" data-filter="education">Education</button>>
+                <div class="tl-filters">
+                    <button class="tl-filter-btn active" data-filter="all">All</button>
+                    <button class="tl-filter-btn" data-filter="work">Work</button>
+                    <button class="tl-filter-btn" data-filter="education">Education</button>
                 </div>
 
-                <!-- TIMELINE CONTAINER -->
                 <div class="timeline" id="experience-timeline">
-                    <!-- TIMELINE ITEM 1: Current/Most Recent Role (Work) -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-1" data-animate="fadeInLeft" data-type="work">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Work Icon (Briefcase) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4V3h4zM9 17v-6h6v6H9z"></path></svg>
-                            </div>
+
+                    <!-- Haier -->
+                    <div class="timeline-item" data-type="work">
+                        <div class="timeline-dot work">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
                         </div>
-                        <div class="timeline-content card">
+                        <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="timeline-title">Frontend Developer</h3>
-                                    <p class="timeline-org">TechStart Inc.</p>
+                                    <h3 class="timeline-title">Software Engineering Intern</h3>
+                                    <p class="timeline-org">Haier Appliances, Delhi</p>
                                 </div>
                                 <div class="timeline-meta">
-                                    <span class="badge">Jan 2023 – Present</span>
-                                    <span class="badge badge-outline">Remote</span>
-                                </div>
-                                <!-- Animated Status Indicator -->
-                                <div class="status-indicator status-active">
-                                    <span class="status-dot"></span>
-                                    <span class="status-text">Currently Working</span>
+                                    <span class="tl-badge">Jul 2024 – Aug 2024</span>
+                                    <span class="tl-badge accent">In-Person</span>
                                 </div>
                             </div>
-                            <p class="timeline-description">
-                                <!-- REPLACE: Leading frontend development for a SaaS platform serving 50k+ users. Responsible for implementing new features, optimizing performance, and maintaining code quality standards. -->
-                            </p>
+                            <p class="timeline-description">Worked in the R&D division designing automated reporting solutions and optimizing data processing pipelines for internal teams.</p>
                             <ul class="timeline-achievements">
-                                <li><!-- REPLACE: Improved application performance by 40% through code splitting and lazy loading strategies --></li>
-                                <li><!-- REPLACE: Led migration from jQuery to React, reducing bundle size by 60% and improving maintainability --></li>
-                                <li><!-- REPLACE: Implemented automated testing suite increasing code coverage from 30% to 85% --></li>
+                                <li>Designed automated Power BI dashboards integrated with SQL queries, improving reporting speed by [JOB_1_ACHIEVEMENT_1]</li>
+                                <li>Collaborated with cross-functional teams to identify bottlenecks and implement scalable solutions</li>
+                                <li>[JOB_1_ACHIEVEMENT_2]</li>
                             </ul>
                             <div class="timeline-skills">
-                                <span class="badge badge-outline">React</span>
-                                <span class="badge badge-outline">JavaScript</span>
-                                <span class="badge badge-outline">CSS3</span>
-                                <span class="badge badge-outline">HTML5</span>
-                                <span class="badge badge-outline">TypeScript</span>
-                                <span class="badge badge-outline">REST API</span>
+                                <span class="skill-pill">Python</span>
+                                <span class="skill-pill">SQL</span>
+                                <span class="skill-pill">[JOB_1_SKILL_3]</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- TIMELINE ITEM 2: Education (University/Bootcamp) -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-2" data-animate="fadeInRight" data-type="education">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Education Icon (Graduation Cap) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8.2l-6.1 1.4-2.5-6.06L12 2l-2.5 6.06-6.1 1.4v11H2v2h20v-2z"></path></svg>
-                            </div>
+                    <!-- B.Tech -->
+                    <div class="timeline-item" data-type="education">
+                        <div class="timeline-dot education">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                         </div>
-                        <div class="timeline-content card">
+                        <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
-                                    <p class="timeline-org">State University</p>
+                                    <h3 class="timeline-title">B.Tech — Machine Learning & Artificial Intelligence</h3>
+                                    <p class="timeline-org">Maharaja Surajmal Institute of Technology, Delhi</p>
                                 </div>
                                 <div class="timeline-meta">
-                                    <span class="badge">Sep 2019 – May 2023</span>
-                                    <span class="badge badge-outline">In-Person</span>
+                                    <span class="tl-badge">2021 – 2025</span>
+                                    <span class="tl-badge accent">In-Person</span>
                                 </div>
                             </div>
-                            <p class="timeline-description">
-                                <!-- REPLACE: Comprehensive study of computer science fundamentals including data structures, algorithms, software engineering principles, and web development technologies. -->
-                            </p>
+                            <p class="timeline-description">Comprehensive study of machine learning, artificial intelligence, neural networks, and software engineering with hands-on project work.</p>
                             <ul class="timeline-achievements">
-                                <li><!-- REPLACE: Graduated Cum Laude with GPA 3.8/4.0 --></li>
-                                <li><!-- REPLACE: Senior capstone project: Real-time collaborative editing platform using WebSockets and CRDTs --></li>
-                                <li><!-- REPLACE: Dean's List for 6 consecutive semesters --></li>
+                                <li>Built multiple production-grade AI projects alongside coursework</li>
+                                <li>[DEGREE_1_HIGHLIGHT_2]</li>
+                                <li>Attended workshops and bootcamps in AI/ML throughout the degree</li>
                             </ul>
                             <div class="timeline-skills">
-                                <span class="badge badge-outline">Java</span>
-                                <span class="badge badge-outline">Data Structures</span>
-                                <span class="badge badge-outline">Algorithms</span>
-                                <span class="badge badge-outline">SQL</span
+                                <span class="skill-pill">Python</span>
+                                <span class="skill-pill">Machine Learning</span>
+                                <span class="skill-pill">Deep Learning</span>
+                                <span class="skill-pill">Data Structures</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- TIMELINE ITEM 3: Freelance or Side Project Experience -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-3" data-type="work">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Freelance Icon (Laptop) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                            </div>
+                    <!-- School -->
+                    <div class="timeline-item" data-type="education">
+                        <div class="timeline-dot education">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                         </div>
-                        <div class="timeline-content card">
+                        <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 class="timeline-title">Freelance UI/UX Designer</h3>
-                                    <p class="timeline-org">Self-Employed</p>
+                                    <h3 class="timeline-title">Secondary & Senior Secondary School</h3>
+                                    <p class="timeline-org">Bharti Public School, Delhi</p>
                                 </div>
                                 <div class="timeline-meta">
-                                    <span class="badge">Jun 2022 – Dec 2022</span>
-                                    <span class="badge badge-outline">Remote</span>
+                                    <span class="tl-badge">Until 2021</span>
                                 </div>
                             </div>
-                            <p class="timeline-description">
-                                <!-- REPLACE: Provided UI/UX design services for startups and small businesses, focusing on user-centered design and rapid prototyping. -->
-                            </p>
+                            <p class="timeline-description">Completed secondary education with a focus on science and mathematics, building the analytical foundation for a career in technology.</p>
                             <ul class="timeline-achievements">
-                                <li><!-- REPLACE: Designed and delivered 5+ complete UI/UX kits for client projects --></li>
-                                <li><!-- REPLACE: Increased client conversion rates by average of 25% through improved user flows --></li>
-                                <li><!-- REPLACE: Maintained 100% client satisfaction rating with repeat business from 60% of clients --></li>
+                                <li>Strong foundation in mathematics and computer science</li>
+                                <li>Early interest in programming and problem-solving</li>
                             </ul>
                             <div class="timeline-skills">
-                                <span class="badge badge-outline">Figma</span>
-                                <span class="badge badge-outline">User Research</span>
-                                <span class="badge badge-outline">Wireframing</span>
-                                <span class="badge badge-outline">Prototyping</span>
-                                <span class="badge badge-outline">Usability Testing</span>
+                                <span class="skill-pill">Mathematics</span>
+                                <span class="skill-pill">Computer Science</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- TIMELINE ITEM 4: First Relevant Role or Significant Project -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-4" data-type="education">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Project Icon (Code) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <div class="section-label">Proficiency</div>
+                <h2 class="section-title">Skills & Stack</h2>
+                <p class="section-subtitle" style="max-width:52ch;">Technical proficiencies developed through education, professional experience, and continuous learning.</p>
+                <div class="skills-grid">
+                    <!-- AI & Backend bars -->
+                    <div>
+                        <div class="skills-col-title">AI & Backend</div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">95%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
                         </div>
-                        <div class="timeline-content card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Web Development Bootcamp Graduate</h3>
-                                    <p class="timeline-org">CodeCraft Academy</p>
-                                </div>
-                                <div class="timeline-meta">
-                                    <span class="badge">Jan 2022 – Apr 2022</span>
-                                    <span class="badge badge-outline">Online</span>
-                                </div>
-                            </div>
-                                <span class="badge badge-outline">Git</span>
-                            </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">LLM APIs</span><span class="skill-pct">90%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">FastAPI</span><span class="skill-pct">88%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">[SKILL_3]</span><span class="skill-pct">[SKILL_3_PERCENT]%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">RAG & Vector DBs</span><span class="skill-pct">82%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="82"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-row"><span class="skill-name">Next.js</span><span class="skill-pct">72%</span></div>
+                            <div class="skill-bar"><div class="skill-bar-fill" data-level="72"></div></div>
                         </div>
                     </div>
-
-                    <!-- TIMELINE ITEM 3: Freelance or Side Project Experience -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-3" data-type="work">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Freelance Icon (Laptop) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                            </div>
-                        </div>
-                        <div class="timeline-content card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Freelance UI/UX Designer</h3>
-                                    <p class="timeline-org">Self-Employed</p>
-                                </div>
-                                <div class="timeline-meta">
-                                    <span class="badge">Jun 2022 – Dec 2022</span>
-                                    <span class="badge badge-outline">Remote</span>
-                                </div>
-                            </div>
-                            <p class="timeline-description">
-                                <!-- REPLACE: Provided UI/UX design services for startups and small businesses, focusing on user-centered design and rapid prototyping. -->
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li><!-- REPLACE: Designed and delivered 5+ complete UI/UX kits for client projects --></li>
-                                <li><!-- REPLACE: Increased client conversion rates by average of 25% through improved user flows --></li>
-                                <li><!-- REPLACE: Maintained 100% client satisfaction rating with repeat business from 60% of clients --></li>
-                            </ul>
-                            <div class="timeline-skills">
-                                <span class="badge badge-outline">Figma</span>
-                                <span class="badge badge-outline">User Research</span>
-                                <span class="badge badge-outline">Wireframing</span>
-                                <span class="badge badge-outline">Prototyping</span>
-                                <span class="badge badge-outline">Usability Testing</span>
-                            </div>
+                    <!-- Tools grid -->
+                    <div>
+                        <div class="skills-col-title">Tools & Platforms</div>
+                        <div class="tool-grid">
+                            <div class="tool-card"><div class="tool-icon">GH</div><div><div class="tool-name">GitHub</div><div class="tool-level">Advanced</div></div></div>
+                            <div class="tool-card"><div class="tool-icon">DK</div><div><div class="tool-name">Docker</div><div class="tool-level">Proficient</div></div></div>
+                            <div class="tool-card"><div class="tool-icon">VS</div><div><div class="tool-name">VS Code</div><div class="tool-level">Advanced</div></div></div>
+                            <div class="tool-card"><div class="tool-icon">VR</div><div><div class="tool-name">Vercel</div><div class="tool-level">Advanced</div></div></div>
+                            <div class="tool-card"><div class="tool-icon">RW</div><div><div class="tool-name">[TOOL_5]</div><div class="tool-level">Proficient</div></div></div>
+                            <div class="tool-card"><div class="tool-icon">SB</div><div><div class="tool-name">[TOOL_6]</div><div class="tool-level">Proficient</div></div></div>
                         </div>
                     </div>
-
-                    <!-- TIMELINE ITEM 4: First Relevant Role or Significant Project -->
-                    <div class="timeline-item reveal-on-scroll reveal-stagger-4" data-type="education">
-                        <div class="timeline-marker">
-                            <div class="timeline-icon">
-                                <!-- Project Icon (Code) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                            </div>
-                        </div>
-                        <div class="timeline-content card">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Web Development Bootcamp Graduate</h3>
-                                    <p class="timeline-org">CodeCraft Academy</p>
-                                </div>
-                                <div class="timeline-meta">
-                                    <span class="badge">Jan 2022 – Apr 2022</span>
-                                    <span class="badge badge-outline">Online</span>
-                                </div>
-                            </div>
-                            <p class="timeline-description">
-                                <!-- REPLACE: Intensive full-stack web development program covering modern frontend frameworks, backend technologies, and deployment practices. -->
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li><!-- REPLACE: Built full-stack e-commerce application with React, Node.js, and PostgreSQL as capstone project --></li>
-                                <li><!-- REPLACE: Ranked in top 10% of cohort based on project quality and technical proficiency --></li>
-                                <li><!-- REPLACE: Completed 400+ hours of hands-on coding practice and pair programming --></li>
-                            </ul>
-                            <div class="timeline-skills">
-                                <span class="badge badge-outline">HTML5</span>
-                                <span class="badge badge-outline">CSS3</span>
-                                <span class="badge badge-outline">JavaScript</span>
-                                <span class="badge badge-outline">React</span>
-                                <span class="badge badge-outline">Node.js</span>
-                            </div>
+                    <!-- Tag cloud -->
+                    <div>
+                        <div class="skills-col-title">Other Technologies</div>
+                        <div class="badge-cloud">
+                            <span class="cloud-tag">Git</span><span class="cloud-tag">[TECH_TAG_2]</span>
+                            <span class="cloud-tag">[TECH_TAG_3]</span><span class="cloud-tag">[TECH_TAG_4]</span>
+                            <span class="cloud-tag">[TECH_TAG_5]</span><span class="cloud-tag">[TECH_TAG_6]</span>
+                            <span class="cloud-tag">Notion</span><span class="cloud-tag">Postman</span>
+                            <span class="cloud-tag">REST API</span><span class="cloud-tag">GraphQL</span>
+                            <span class="cloud-tag">Pytest</span><span class="cloud-tag">Pydantic</span>
+                            <span class="cloud-tag">LaTeX</span><span class="cloud-tag">npm</span>
+                            <span class="cloud-tag">Webpack</span><span class="cloud-tag">ESLint</span>
+                            <span class="cloud-tag">[TECH_TAG_7]</span><span class="cloud-tag">[TECH_TAG_8]</span>
+                            <span class="cloud-tag">Claude API</span><span class="cloud-tag">Gemini</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section class="testimonials section reveal-on-scroll">
-            <div class="testimonials-inner container">
-                <h2 class="section-title text-center mb-4">What Others Say</h2>
-                <p class="section-subtitle text-center mb-12">Feedback from colleagues, mentors, and collaborators</p>
-                <div class="testimonials-grid grid grid-3 gap-6">
-                    <!-- TESTIMONIAL 1 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-1">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">AT</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Alex Thompson --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Senior Engineer at TechStart Inc. --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Worked together on the task manager project --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: I had the pleasure of working closely with Alex on our task management application. Their attention to detail and commitment to clean code significantly improved our development process. They consistently delivered high-quality features ahead of schedule and were instrumental in implementing the drag-and-drop functionality that became a key selling point of our product. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TESTIMONIAL 2 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-2">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">JS</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Jamie Smith --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Lead Designer at DesignCo --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Professor for UI/UX Fundamentals course --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: As an educator, I'm always looking for students who go beyond the basics. Alex demonstrated exceptional design thinking throughout our course, particularly in their capstone project where they created a comprehensive design system from scratch. Their ability to bridge the gap between design and development is rare and valuable. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TESTIMONIAL 3 -->
-                    <div class="testimonial-card card reveal-on-scroll reveal-stagger-3">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle">MK</div>
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="testimonial-name"><!-- REPLACE: Morgan Kim --></h3>
-                            <p class="testimonial-title"><!-- REPLACE: Engineering Manager at WebSolutions --></p>
-                            <p class="testimonial-relationship"><!-- REPLACE: Supervised freelance UI/UX work --></p>
-                            <p class="testimonial-quote"><!-- REPLACE: Alex brought a refreshing combination of technical skill and design sensibility to our freelance projects. They consistently delivered pixel-perfect implementations that matched our Figma designs exactly, while also suggesting improvements that enhanced the overall user experience. Their communication was clear and proactive throughout. --></p>
-                            <div class="testimonial-footer flex items-center gap-4 mt-6">
-                                <a href="#" class="btn btn-sm btn-outline">View on LinkedIn ↗</a>
-                                <div class="testimonial-rating">
-                                    <!-- 5-star rating (pure CSS) -->
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                    <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section class="skills-section section reveal-on-scroll" data-animate="fadeInUp">
-            <div class="skills-section-inner container">
-                <h2 class="section-title">Skills & Proficiency</h2>
-                <p class="section-subtitle">
-                    <!-- REPLACE: Technical proficiencies developed through education, professional experience, and continuous learning. -->
-                </p>
-                <div class="skills-grid grid grid-3 gap-8">
-                    <!-- SUBSECTION 1: FRONTEND DEVELOPMENT SKILLS (Skill Bars) -->
-                    <div class="frontend-skills">
-                        <h3 class="skills-subtitle">Frontend Development</h3>
-                        <p class="skills-description">
-                            <!-- REPLACE: Core frontend technologies and frameworks I work with daily -->
-                        </p>
-                        <div class="skills-bars">
-                            <!-- HTML/CSS -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">HTML/CSS</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="95"></div>
-                                    </div>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                            </div>
-
-                            <!-- JavaScript -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">JavaScript</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="85"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-
-                            <!-- React -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">React</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="80"></div>
-                                    </div>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                            </div>
-
-                            <!-- Vue -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">Vue</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="60"></div>
-                                    </div>
-                                    <span class="skill-percentage">60%</span>
-                                </div>
-                            </div>
-
-                            <!-- TypeScript -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">TypeScript</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="70"></div>
-                                    </div>
-                                    <span class="skill-percentage">70%</span>
-                                </div>
-                            </div>
-
-                            <!-- CSS Animations -->
-                            <div class="skill-bar-item">
-                                <div class="skill-label">CSS Animations</span>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-bar-fill" data-level="75"></div>
-                                    </div>
-                                    <span class="skill-percentage">75%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SUBSECTION 2: DESIGN TOOLS (Icon Grid) -->
-                    <div class="design-tools" data-animate="fadeInUp">
-                        <h3 class="skills-subtitle">Design Tools</h3>
-                        <p class="skills-description">
-                            <!-- REPLACE: Industry-standard design tools I use for creating user interfaces and experiences -->
-                        </p>
-                        <div class="design-tools-grid grid grid-3 gap-4">
-                            <!-- FIGMA -->
-                            <div class="design-tool-card">
-                                <div class="design-tool-icon">
-                                    <!-- Figma Icon -->
-                                    <div class="icon-circle bg-primary">
-                                        <span class="icon-text">F</span>
-                                    </div>
-                                </div>
-                                <div class="design-tool-info">
-                                    <h4 class="design-tool-name">Figma</span>
-                                    <p class="design-tool-proficiency">Advanced</span>
-                                </div>
-                            </div>
-
-                            <!-- ADOBE XD -->
-                            <div class="design-tool-card">
-                                <div class="design-tool-icon">
-                                    <!-- Adobe XD Icon -->
-                                    <div class="icon-circle bg-secondary">
-                                        <span class="icon-text">X</span>
-                                    </div>
-                                </div>
-                                <div class="design-tool-info">
-                                    <h4 class="design-tool-name">Adobe XD</span>
-                                    <p class="design-tool-proficiency">Proficient</span>
-                                </div>
-                            </div>
-
-                            <!-- PHOTOSHOP -->
-                            <div class="design-tool-card">
-                                <div class="design-tool-icon">
-                                    <!-- Photoshop Icon -->
-                                    <div class="icon-circle bg-accent">
-                                        <span class="icon-text">P</span>
-                                    </div>
-                                </div
-                                <div class="design-tool-info>
-                                    <h4 class="design-tool-name">Photoshop</span>
-                                    <p class="design-tool-proficiency">Proficient</span>
-                                </div>
-                            </div>
-
-                            <!-- ILLUSTRATOR -->
-                            <div class="design-tool-card>
-                                <div class="design-tool-icon>
-                                    <!-- Illustrator Icon -->
-                                    <div class="icon-circle bg-muted">
-                                        <span class="icon-text">I</span>
-                                    </div>
-                                </div>
-                                <div class="design-tool-info>
-                                    <h4 class="design-tool-name">Illustrator</span>
-                                    <p class="design-tool-proficiency">Learning</span>
-                                </div>
-                            </div>
-
-                            <!-- SKETCH -->
-                            <div class="design-tool-card>
-                                <div class="design-tool-icon>
-                                    <!-- Sketch Icon -->
-                                    <div class="icon-circle bg-muted">
-                                        <span class="icon-text">S</span>
-                                    </div>
-                                </div>
-                                <div class="design-tool-info>
-                                    <h4 class="design-tool-name">Sketch</span>
-                                    <p class="design-tool-proficiency">Learning</span>
-                                </div>
-                            </div>
-
-                            <!-- FRAMER -->
-                            <div class="design-tool-card>
-                                <div class="design-tool-icon>
-                                    <!-- Framer Icon -->
-                                    <div class="icon-circle bg-muted">
-                                        <span class="icon-text">F</span>
-                                    </div>
-                                </div>
-                                <div class="design-tool-info>
-                                    <h4 class="design-tool-name">Framer</span>
-                                    <p class="design-tool-proficiency">Learning</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SUBSECTION 3: OTHER TOOLS & TECHNOLOGIES (Badge Cloud) -->
-                    <div class="other-tools" data-animate="fadeInUp">
-                        <h3 class="skills-subtitle">Other Tools & Technologies</h3>
-                        <p class="skills-description">
-                            <!-- REPLACE: Development tools, productivity applications, and technologies I use regularly -->
-                        </p>
-                        <div class="tools-cloud">
-                            <span class="badge badge-sm">Git</span>
-                            <span class="badge badge-md">GitHub</span>
-                            <span class="badge badge-lg">VS Code</span>
-                            <span class="badge badge-sm">Chrome DevTools</span>
-                            <span class="badge badge-xs">Notion</span>
-                            <span class="badge badge-sm">Linear</span>
-                            <span class="badge badge-md">Vercel</span>
-                            <span class="badge badge-sm">Netlify</span>
-                            <span class="badge badge-xs">npm</span>
-                            <span class="badge badge-sm">Terminal</span>
-                            <span class="badge badge-xs">Postman</span>
-                            <span class="badge badge-xs">Lighthouse</span>
-                            <span class="badge badge-sm">Webpack</span>
-                            <span class="badge badge-sm">Babel</span>
-                            <span class="badge badge-sm">ESLint</span>
-                            <span class="badge badge-sm">Prettier</span>
-                            <span class="badge badge-sm">Jest</span>
-                            <span class="badge badge-sm">Cypress</span>
-                            <span class="badge badge-sm">Docker</span>
-                            <span class="badge badge-sm">GraphQL</span>
-                            <span class="badge badge-sm">REST API</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHAT I BRING SECTION -->
-        <section class="what-i-bring section reveal-on-scroll">
-            <div class="what-i-bring-inner container">
+        <!-- WHAT I BRING -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">Values</div>
                 <h2 class="section-title">What I Bring to the Team</h2>
-                <p class="section-subtitle">
-                    <!-- REPLACE: My core strengths and values that make me a valuable addition to any development team. -->
-                </p>
-                <div class="what-i-bring-grid grid grid-3 gap-6">
-                    <!-- CLEAN CODE -->
-                    <div class="what-i-bring-card card">
-                        <div class="what-i-bring-icon">
-                            <!-- Code Icon -->
+                <div class="value-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         </div>
-                        <h3 class="what-i-bring-title">Clean Code</h3>
-                        <p class="what-i-bring-description">
-                            <!-- REPLACE: I write readable, maintainable code following established conventions and best practices. I prioritize clarity over cleverness and believe that code should be self-documenting wherever possible. -->
-                        </p>
+                        <div class="value-title">Clean Code</div>
+                        <p class="value-desc">I write readable, maintainable code following established conventions. I prioritize clarity over cleverness and believe code should be self-documenting wherever possible.</p>
                     </div>
-
-                    <!-- DESIGN THINKING -->
-                    <div class="what-i-bring-card card">
-                        <div class="what-i-bring-icon">
-                            <!-- Design Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5z"></path></svg>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                         </div>
-                        <h3 class="what-i-bring-title">Design Thinking</h3>
-                        <p class="what-i-bring-description">
-                            <!-- REPLACE: I approach problems with empathy, starting with user needs and behaviors before jumping to solutions. I believe in iterative design, rapid prototyping, and validating assumptions with real users. -->
-                        </p>
+                        <div class="value-title">Ship Fast</div>
+                        <p class="value-desc">I approach problems iteratively — MVPs first, polish second. I believe in validating assumptions quickly and building in tight feedback loops with real users.</p>
                     </div>
-
-                    <!-- COMMUNICATION -->
-                    <div class="what-i-bring-card card">
-                        <div class="what-i-bring-icon">
-                            <!-- Communication Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2v3a2 2 0 0 1 2 2h14zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                         </div>
-                        <h3 class="what-i-bring-title">Communication</h3>
-                        <p class="what-i-bring-description">
-                            <!-- REPLACE: I communicate technical concepts clearly to both technical and non-technical audiences. I believe in over-communicating during projects and documenting decisions for future reference. -->
-                        </p>
+                        <div class="value-title">Clear Communication</div>
+                        <p class="value-desc">I communicate technical concepts clearly to both technical and non-technical audiences. I believe in over-communicating during projects and documenting decisions for future reference.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS & COURSES SECTION -->
-        <section class="certifications-section section reveal-on-scroll">
-            <div class="certifications-section-inner container">
+        <!-- CERTIFICATIONS -->
+        <section class="section" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border);">
+            <div class="container">
+                <div class="section-label">Learning</div>
                 <h2 class="section-title">Certifications & Courses</h2>
-                <p class="section-subtitle">
-                    <!-- REPLACE: Formal education and continuing education that supplement my practical experience. -->
-                </p>
-                <div class="certifications-grid grid grid-3 gap-6">
-                    <!-- CERTIFICATE 1 -->
-                    <div class="certification-card card">
-                        <div class="certification-header">
-                            <h3 class="certification-title">JavaScript Algorithms and Data Structures</h3>
-                            <p class="certification-issuer">freeCodeCamp</span>
-                        </div>
-                        <div class="certification-meta">
-                            <span class="certification-date">Completed: Mar 2022</span>
-                            <span class="certification-badge badge-accent">Verified</span>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline">View Certificate →</a>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <div><div class="cert-title">JavaScript Algorithms and Data Structures</div><div class="cert-issuer">freeCodeCamp</div></div>
+                        <div class="cert-footer"><span class="cert-date">Completed: Mar 2022</span><a href="#" class="cert-link">View →</a></div>
                     </div>
-
-                    <!-- CERTIFICATE 2 -->
-                    <div class="certification-card card">
-                        <div class="certification-header>
-                            <h3 class="certification-title">Responsive Web Design</h3>
-                            <p class="certification-issuer">freeCodeCamp</span>
-                        </div>
-                        <div class="certification-meta>
-                            <span class="certification-date">Completed: Jan 2022</span>
-                            <span class="certification-badge badge-accent">Verified</span>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline">View Certificate →</a>
+                    <div class="cert-card">
+                        <div><div class="cert-title">Responsive Web Design</div><div class="cert-issuer">freeCodeCamp</div></div>
+                        <div class="cert-footer"><span class="cert-date">Completed: Jan 2022</span><a href="#" class="cert-link">View →</a></div>
                     </div>
-
-                    <!-- CERTIFICATE 3 -->
-                    <div class="certification-card card>
-                        <div class="certification-header>
-                            <h3 class="certification-title">Frontend Development with React</h3>
-                            <p class="certification-issuer">Scrimba</span>
-                        </div>
-                        <div class="certification-meta>
-                            <span class="certification-date">Completed: Jun 2022</span>
-                            <span class="certification-badge badge-outline">In Progress</span>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline">View Certificate →</a>
+                    <div class="cert-card">
+                        <div><div class="cert-title">Frontend Development with React</div><div class="cert-issuer">Scrimba</div></div>
+                        <div class="cert-footer"><span class="cert-date">Completed: Jun 2022</span><a href="#" class="cert-link">View →</a></div>
                     </div>
-
-                    <!-- CERTIFICATE 4 -->
-                    <div class="certification-card card>
-                        <div class="certification-header>
-                            <h3 class="certification-title">CSS Advanced Layouts</h3>
-                            <p class="certification-issuer">Frontend Masters</span>
-                        </div>
-                        <div class="certification-meta>
-                            <span class="certification-date">Completed: Aug 2023</span>
-                            <span class="certification-badge badge-accent">Verified</span>
-                        </div>
-                        <a href="#" class="btn btn-sm btn-outline">View Certificate →</a>
+                    <div class="cert-card">
+                        <div><div class="cert-title">CSS Advanced Layouts</div><div class="cert-issuer">Frontend Masters</div></div>
+                        <div class="cert-footer"><span class="cert-date">Completed: Aug 2023</span><a href="#" class="cert-link">View →</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DOWNLOADABLE RESUME CTA -->
-        <section class="resume-cta section">
-            <div class="resume-cta-inner container text-center">
-                <h2 class="section-title">Want the full picture?</h2>
-                <p class="section-subtitle">
-                    Download my resume for a complete view of my experience and skills.
-                </p>
-                <a href="assets/resume/resume-placeholder.pdf" download class="btn btn-primary btn-lg">
-                    Download Resume (PDF) ↓
-                </a>
+        <!-- RESUME CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="resume-cta">
+                    <div class="section-label" style="justify-content:center;">Download</div>
+                    <h2 class="section-title" style="margin-bottom:var(--space-4);">Want the full picture?</h2>
+                    <p class="section-subtitle" style="margin-bottom:var(--space-8);">Download my resume for a complete view of my experience and skills.</p>
+                    <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-primary btn-lg">Download Resume (PDF) ↓</a>
+                </div>
             </div>
         </section>
     </main>
@@ -706,63 +503,43 @@
     <footer class="footer">
         <div class="footer-inner container">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo">AP</a>
-                <p class="footer-tagline">Frontend Developer & UI/UX Designer building accessible, performant digital experiences.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <!-- GitHub SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <!-- LinkedIn SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <!-- Twitter/X SVG -->
-                    </a>
-                    <a href="#" class="social-link" aria-label="Dribbble">
-                        <!-- Dribbble SVG -->
-                    </a>
-                </div>
+                <a href="index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
             </div>
             <div class="footer-links">
-                <div>
-                    <h4>Work</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="https://github.com">Open Source</a></li>
-                        <li><a href="#">Mentoring</a></li>
-                        <li><a href="#">Workshops</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
+                <div><h4>Work</h4><ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <!-- BLOG: uncomment when writing → <li><a href="blog.html">Blog</a></li> --></ul></div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Alex Porter. All rights reserved.</p>
-                <div class="footer-small-links">
-                    <a href="#">Sitemap</a>
-                    <a href="#">RSS</a>
-                </div>
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/nav.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
+    <script>
+    // Timeline filter
+    const tlBtns = document.querySelectorAll('.tl-filter-btn');
+    const tlItems = document.querySelectorAll('.timeline-item');
+    tlBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tlBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const f = btn.dataset.filter;
+            tlItems.forEach(item => {
+                item.classList.toggle('hidden', f !== 'all' && item.dataset.type !== f);
+            });
+        });
+    });
+
+    // Skill bar fills on load
+    document.querySelectorAll('.skill-bar-fill').forEach(el => {
+        setTimeout(() => { el.style.width = el.dataset.level + '%'; }, 300);
+    });
+    </script>
 </body>
 </html>

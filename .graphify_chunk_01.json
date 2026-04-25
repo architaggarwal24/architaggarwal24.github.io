@@ -1,0 +1,297 @@
+{
+  "entities": [
+    {
+      "id": "run_eval-py",
+      "type": "script",
+      "attributes": {
+        "name": "run_eval.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\hookify\\scripts\\run_eval.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "run_loop-py",
+      "type": "script",
+      "attributes": {
+        "name": "run_loop.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\hookify\\scripts\\run_loop.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "utils-py-hookify",
+      "type": "script",
+      "attributes": {
+        "name": "utils.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\hookify\\scripts\\utils.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "__init__-py-hookify",
+      "type": "module",
+      "attributes": {
+        "name": "__init__.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\hookify\\scripts\\__init__.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "utils-py-skill-creator",
+      "type": "script",
+      "attributes": {
+        "name": "utils.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\scripts\\utils.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "__init__-py-skill-creator",
+      "type": "module",
+      "attributes": {
+        "name": "__init__.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\scripts\\__init__.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "task-controller-py",
+      "type": "script",
+      "attributes": {
+        "name": "task-controller.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\task-controller\\task-controller.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "__init__-py-task-controller",
+      "type": "module",
+      "attributes": {
+        "name": "__init__.py",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\task-controller\\__init__.py",
+        "language": "python"
+      }
+    },
+    {
+      "id": "schemas-md",
+      "type": "reference",
+      "attributes": {
+        "name": "schemas.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\references\\schemas.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "claude-automation-recommender-skill",
+      "type": "skill",
+      "attributes": {
+        "name": "claude-automation-recommender",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-code-setup\\skills\\claude-automation-recommender\\SKILL.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "templates-md",
+      "type": "reference",
+      "attributes": {
+        "name": "templates.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\references\\templates.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "quality-criteria-md",
+      "type": "reference",
+      "attributes": {
+        "name": "quality-criteria.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\references\\quality-criteria.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "update-guidelines-md",
+      "type": "reference",
+      "attributes": {
+        "name": "update-guidelines.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\references\\update-guidelines.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "skill-creator-original-md",
+      "type": "reference",
+      "attributes": {
+        "name": "skill-creator-original.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\references\\skill-creator-original.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "claude-md-improver-skill",
+      "type": "skill",
+      "attributes": {
+        "name": "claude-md-improver",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\SKILL.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "analyzer-md",
+      "type": "reference",
+      "attributes": {
+        "name": "analyzer.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\agents\\analyzer.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "comparator-md",
+      "type": "reference",
+      "attributes": {
+        "name": "comparator.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\agents\\comparator.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "grader-md",
+      "type": "reference",
+      "attributes": {
+        "name": "grader.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\agents\\grader.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "agent-sdk-verifier-py-md",
+      "type": "reference",
+      "attributes": {
+        "name": "agent-sdk-verifier-py.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\agents\\\\agent-sdk-verifier-py.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "agent-sdk-verifier-ts-md",
+      "type": "reference",
+      "attributes": {
+        "name": "agent-sdk-verifier-ts.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\agents\\\\agent-sdk-verifier-ts.md",
+        "format": "markdown"
+      }
+    },
+    {
+      "id": "new-sdk-app-md",
+      "type": "reference",
+      "attributes": {
+        "name": "new-sdk-app.md",
+        "location": "C:\\Users\\Archit\\.claude\\plugins\\marketplaces\\claude-plugins-official\\plugins\\skill-creator\\skills\\skill-creator\\commands\\new-sdk-app.md",
+        "format": "markdown"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "from": "run_eval-py",
+      "to": "utils-py-hookify",
+      "type": "imports",
+      "attributes": {}
+    },
+    {
+      "from": "run_loop-py",
+      "to": "utils-py-hookify",
+      "type": "imports",
+      "attributes": {}
+    },
+    {
+      "from": "utils-py-skill-creator",
+      "to": "__init__-py-skill-creator",
+      "type": "in_module",
+      "attributes": {}
+    },
+    {
+      "from": "__init__-py-skill-creator",
+      "to": "utils-py-skill-creator",
+      "type": "contains",
+      "attributes": {}
+    },
+    {
+      "from": "task-controller-py",
+      "to": "__init__-py-task-controller",
+      "type": "in_module",
+      "attributes": {}
+    },
+    {
+      "from": "__init__-py-task-controller",
+      "to": "task-controller-py",
+      "type": "contains",
+      "attributes": {}
+    },
+    {
+      "from": "schemas-md",
+      "to": "skill-creator-original-md",
+      "type": "references",
+      "attributes": {}
+    },
+    {
+      "from": "claude-md-improver-skill",
+      "to": "templates-md",
+      "type": "uses",
+      "attributes": {}
+    },
+    {
+      "from": "claude-md-improver-skill",
+      "to": "quality-criteria-md",
+      "type": "uses",
+      "attributes": {}
+    },
+    {
+      "from": "claude-md-improver-skill",
+      "to": "update-guidelines-md",
+      "type": "uses",
+      "attributes": {}
+    },
+    {
+      "from": "claude-md-improver-skill",
+      "to": "skill-creator-original-md",
+      "type": "references",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "analyzer-md",
+      "type": "contains_agent",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "comparator-md",
+      "type": "contains_agent",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "grader-md",
+      "type": "contains_agent",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "agent-sdk-verifier-py-md",
+      "type": "contains_agent",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "agent-sdk-verifier-ts-md",
+      "type": "contains_agent",
+      "attributes": {}
+    },
+    {
+      "from": "skill-creator-skill",
+      "to": "new-sdk-app-md",
+      "type": "contains_command",
+      "attributes": {}
+    }
+  ]
+}
