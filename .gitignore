@@ -1,0 +1,58 @@
+# ========================
+# Node / Package managers
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.npm
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# ========================
+# Editor / IDE
+# ========================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.cursor/
+
+# ========================
+# Debug / temp files
+# ========================
+*.log
+*.tmp
+*.temp
+debug-*.png
+debug-*.jpg
+.cache/
+.puppeteer/
+
+# ========================
+# Environment / secrets
+# ========================
+.env
+.env.local
+.env.*.local
+
+# ========================
+# Build output (if ever added)
+# ========================
+dist/
+build/
+out/
