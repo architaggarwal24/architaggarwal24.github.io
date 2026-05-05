@@ -1,3 +1,398 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Projects | Archit Aggarwal</title>-->
+<!--    <meta name="description" content="AI projects by Archit Aggarwal — agentic AI, RAG pipelines, voice AI, LLM-powered applications.">-->
+<!--    <link rel="icon" href="assets/icons/favicon.svg">-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="css/reset.css">-->
+<!--    <link rel="stylesheet" href="css/tokens.css">-->
+<!--    <link rel="stylesheet" href="css/global.css">-->
+<!--    <link rel="stylesheet" href="css/components.css">-->
+<!--    <link rel="stylesheet" href="css/nav.css">-->
+<!--    <link rel="stylesheet" href="css/dark-mode.css">-->
+<!--    <link rel="stylesheet" href="css/light-theme.css">    <link rel="stylesheet" href="css/footer.css">-->
+<!--    <style>-->
+<!--    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }-->
+
+<!--    .flex{display:flex}.flex-wrap{flex-wrap:wrap}.gap-2{gap:var(&#45;&#45;space-2)}.gap-4{gap:var(&#45;&#45;space-4)}.gap-6{gap:var(&#45;&#45;space-6)}.gap-8{gap:var(&#45;&#45;space-8)}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.text-center{text-align:center}.text-secondary{color:var(&#45;&#45;color-text-secondary)}.text-sm{font-size:var(&#45;&#45;font-size-sm)}.mt-6{margin-top:var(&#45;&#45;space-6)}.mb-6{margin-bottom:var(&#45;&#45;space-6)}.mb-12{margin-bottom:var(&#45;&#45;space-12)}-->
+
+<!--    .section { padding: var(&#45;&#45;space-20) 0; }-->
+<!--    .page-header.section { padding: var(&#45;&#45;space-32) 0 var(&#45;&#45;space-12); }-->
+
+<!--    .section-label {-->
+<!--        display: inline-flex; align-items: center; gap: var(&#45;&#45;space-2);-->
+<!--        font-family: var(&#45;&#45;font-mono); font-size: var(&#45;&#45;font-size-xs);-->
+<!--        letter-spacing: 0.1em; text-transform: uppercase;-->
+<!--        color: var(&#45;&#45;color-accent-primary); margin-bottom: var(&#45;&#45;space-4);-->
+<!--    }-->
+<!--    .section-label::before { content:''; width:24px; height:1px; background:var(&#45;&#45;color-accent-primary); }-->
+
+<!--    /* -&#45;&#45; STATS ROW -&#45;&#45; */-->
+<!--    .stats-row { display:flex; gap:var(&#45;&#45;space-12); justify-content:center; margin-top:var(&#45;&#45;space-8); }-->
+<!--    .stat-item { text-align:center; }-->
+<!--    .stat-number {-->
+<!--        font-family: var(&#45;&#45;font-heading); font-size: var(&#45;&#45;font-size-5xl);-->
+<!--        font-weight: var(&#45;&#45;font-weight-black); letter-spacing: -0.03em; line-height:1;-->
+<!--        background: linear-gradient(135deg, var(&#45;&#45;color-accent-primary), var(&#45;&#45;color-accent-tertiary));-->
+<!--        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;-->
+<!--        margin-bottom: var(&#45;&#45;space-1);-->
+<!--    }-->
+<!--    .stat-label { font-family:var(&#45;&#45;font-mono); font-size:var(&#45;&#45;font-size-xs); text-transform:uppercase; letter-spacing:0.1em; color:var(&#45;&#45;color-text-tertiary); }-->
+
+<!--    /* -&#45;&#45; CONTROLS -&#45;&#45; */-->
+<!--    .projects-controls { padding: 0 0 var(&#45;&#45;space-8); }-->
+<!--    .controls-bar { display:flex; align-items:center; gap:var(&#45;&#45;space-4); flex-wrap:wrap; }-->
+<!--    .search-wrapper { position:relative; flex:0 0 260px; }-->
+<!--    .search-input {-->
+<!--        width:100%; padding: var(&#45;&#45;space-2) var(&#45;&#45;space-4) var(&#45;&#45;space-2) 36px;-->
+<!--        background: var(&#45;&#45;color-bg-card); border:1px solid var(&#45;&#45;color-border);-->
+<!--        border-radius: var(&#45;&#45;border-radius-md); color: var(&#45;&#45;color-text-primary);-->
+<!--        font-family: var(&#45;&#45;font-body); font-size: var(&#45;&#45;font-size-sm);-->
+<!--        transition: var(&#45;&#45;transition-base); outline:none;-->
+<!--    }-->
+<!--    .search-input:focus { border-color: var(&#45;&#45;color-accent-primary); box-shadow: 0 0 0 3px var(&#45;&#45;color-accent-glow); }-->
+<!--    .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(&#45;&#45;color-text-tertiary); pointer-events:none; }-->
+<!--    .search-icon svg { width:16px; height:16px; }-->
+<!--    .filter-group { display:flex; gap:var(&#45;&#45;space-2); }-->
+<!--    .filter-btn {-->
+<!--        font-family: var(&#45;&#45;font-mono); font-size: var(&#45;&#45;font-size-xs);-->
+<!--        padding: var(&#45;&#45;space-2) var(&#45;&#45;space-4); border-radius: var(&#45;&#45;border-radius-full);-->
+<!--        border: 1px solid var(&#45;&#45;color-border); background: transparent;-->
+<!--        color: var(&#45;&#45;color-text-secondary); cursor:pointer; transition:var(&#45;&#45;transition-fast);-->
+<!--        letter-spacing: 0.04em; text-transform:uppercase;-->
+<!--    }-->
+<!--    .filter-btn:hover { border-color:var(&#45;&#45;color-border-strong); color:var(&#45;&#45;color-text-primary); }-->
+<!--    .filter-btn.active { background:var(&#45;&#45;color-accent-primary); border-color:var(&#45;&#45;color-accent-primary); color:#fff; }-->
+<!--    #results-count { font-family:var(&#45;&#45;font-mono); font-size:var(&#45;&#45;font-size-xs); color:var(&#45;&#45;color-text-tertiary); margin-left:auto; }-->
+
+<!--    /* -&#45;&#45; PROJECTS GRID -&#45;&#45; */-->
+<!--    #project-grid {-->
+<!--        display: grid;-->
+<!--        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));-->
+<!--        gap: var(&#45;&#45;space-6);-->
+<!--    }-->
+
+<!--    /* -&#45;&#45; PROJECT CARD -&#45;&#45; */-->
+<!--    .project-card {-->
+<!--        background: var(&#45;&#45;color-bg-card);-->
+<!--        border: 1px solid var(&#45;&#45;color-border);-->
+<!--        border-radius: var(&#45;&#45;border-radius-lg);-->
+<!--        overflow: hidden; display:flex; flex-direction:column;-->
+<!--        transition: var(&#45;&#45;transition-slow);-->
+<!--        animation: fadeUp 0.5s ease both;-->
+<!--    }-->
+<!--    .project-card:nth-child(1){animation-delay:0.05s}-->
+<!--    .project-card:nth-child(2){animation-delay:0.12s}-->
+<!--    .project-card:nth-child(3){animation-delay:0.19s}-->
+<!--    .project-card:nth-child(4){animation-delay:0.26s}-->
+<!--    .project-card:hover {-->
+<!--        border-color: var(&#45;&#45;color-border-accent); transform: translateY(-4px);-->
+<!--        box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px var(&#45;&#45;color-accent-glow);-->
+<!--    }-->
+<!--    .project-card.hidden { display:none; }-->
+
+<!--    .project-card-image {-->
+<!--        height: 180px; position:relative; overflow:hidden;-->
+<!--    }-->
+<!--    .card-img-bg { position:absolute; inset:0; }-->
+<!--    .card-img-dots {-->
+<!--        position:absolute; inset:0;-->
+<!--        background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);-->
+<!--        background-size: 20px 20px;-->
+<!--    }-->
+<!--    .card-img-label {-->
+<!--        position:absolute; bottom:var(&#45;&#45;space-3); left:var(&#45;&#45;space-4);-->
+<!--        font-family:var(&#45;&#45;font-mono); font-size:var(&#45;&#45;font-size-xs);-->
+<!--        color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.1em;-->
+<!--    }-->
+<!--    .card-img-type {-->
+<!--        position:absolute; top:var(&#45;&#45;space-3); right:var(&#45;&#45;space-3);-->
+<!--        font-family:var(&#45;&#45;font-mono); font-size:10px; padding:2px 8px;-->
+<!--        border-radius:var(&#45;&#45;border-radius-full); border:1px solid rgba(255,255,255,0.15);-->
+<!--        color:rgba(255,255,255,0.5); backdrop-filter:blur(4px);-->
+<!--    }-->
+<!--    .project-card:nth-child(1) .card-img-bg { background:linear-gradient(135deg,#1a1035,#2d1b69,#0a2a4a); }-->
+<!--    .project-card:nth-child(2) .card-img-bg { background:linear-gradient(135deg,#0a2010,#1a4030,#062818); }-->
+<!--    .project-card:nth-child(3) .card-img-bg { background:linear-gradient(135deg,#1a1020,#3a1560,#150a3a); }-->
+<!--    .project-card:nth-child(4) .card-img-bg { background:linear-gradient(135deg,#101820,#1a3040,#080f18); }-->
+
+<!--    .project-card-content { padding:var(&#45;&#45;space-6); flex:1; display:flex; flex-direction:column; gap:var(&#45;&#45;space-3); }-->
+<!--    .project-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:var(&#45;&#45;space-2); }-->
+<!--    .project-card-title { font-family:var(&#45;&#45;font-heading); font-size:var(&#45;&#45;font-size-xl); font-weight:700; color:var(&#45;&#45;color-text-primary); margin:0; }-->
+<!--    .project-status-badge {-->
+<!--        font-family:var(&#45;&#45;font-mono); font-size:10px; padding:2px 8px;-->
+<!--        border-radius:var(&#45;&#45;border-radius-sm); border:1px solid var(&#45;&#45;color-border-accent);-->
+<!--        color:var(&#45;&#45;color-accent-primary); white-space:nowrap; flex-shrink:0;-->
+<!--    }-->
+<!--    .project-status-badge.completed { border-color:rgba(74,222,128,0.3); color:var(&#45;&#45;color-accent-green); }-->
+<!--    .project-status-badge.open-source { border-color:rgba(34,211,238,0.3); color:var(&#45;&#45;color-accent-tertiary); }-->
+<!--    .project-card-description { font-size:var(&#45;&#45;font-size-sm); color:var(&#45;&#45;color-text-secondary); line-height:1.7; flex:1; margin:0; }-->
+<!--    .project-card-tech { display:flex; flex-wrap:wrap; gap:var(&#45;&#45;space-2); }-->
+<!--    .badge-sm { font-family:var(&#45;&#45;font-mono); font-size:10px; padding:2px 8px; border-radius:var(&#45;&#45;border-radius-sm); border:1px solid var(&#45;&#45;color-border); color:var(&#45;&#45;color-text-secondary); background:var(&#45;&#45;color-bg-tertiary); }-->
+<!--    .project-card-footer {-->
+<!--        display:flex; justify-content:space-between; align-items:center;-->
+<!--        padding-top:var(&#45;&#45;space-4); border-top:1px solid var(&#45;&#45;color-border);-->
+<!--        margin-top:auto;-->
+<!--    }-->
+<!--    .project-year { font-family:var(&#45;&#45;font-mono); font-size:var(&#45;&#45;font-size-xs); color:var(&#45;&#45;color-text-tertiary); }-->
+<!--    .btn-outline {-->
+<!--        font-family:var(&#45;&#45;font-mono); font-size:var(&#45;&#45;font-size-xs); padding:var(&#45;&#45;space-2) var(&#45;&#45;space-3);-->
+<!--        border-radius:var(&#45;&#45;border-radius-md); border:1px solid var(&#45;&#45;color-border-accent);-->
+<!--        color:var(&#45;&#45;color-accent-primary); background:transparent; cursor:pointer;-->
+<!--        text-decoration:none; transition:var(&#45;&#45;transition-fast); display:inline-flex; align-items:center;-->
+<!--        letter-spacing:0.04em;-->
+<!--    }-->
+<!--    .btn-outline:hover { background:var(&#45;&#45;color-accent-glow); border-color:var(&#45;&#45;color-accent-primary); }-->
+
+<!--    @media(max-width:600px) { #project-grid{grid-template-columns:1fr;} .stats-row{gap:var(&#45;&#45;space-8);} }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <nav class="nav" role="navigation" aria-label="Main navigation">-->
+<!--        <div class="nav-inner container">-->
+<!--            <a href="index.html" class="nav-logo">AA</a>-->
+<!--            <ul class="nav-links" role="list">-->
+<!--                <li><a href="index.html" class="nav-link">Home</a></li>-->
+<!--                <li><a href="projects.html" class="nav-link">Projects</a></li>-->
+<!--                <li><a href="experience.html" class="nav-link">Experience</a></li>-->
+<!--                &lt;!&ndash; BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> &ndash;&gt;-->
+<!--                <li><a href="contact.html" class="nav-link">Contact</a></li>-->
+<!--            </ul>-->
+<!--            <div class="nav-actions">-->
+<!--                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>-->
+<!--                <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>-->
+<!--                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">-->
+<!--            <ul role="list">-->
+<!--                <li><a href="index.html" class="nav-link">Home</a></li>-->
+<!--                <li><a href="projects.html" class="nav-link">Projects</a></li>-->
+<!--                <li><a href="experience.html" class="nav-link">Experience</a></li>-->
+<!--                &lt;!&ndash; BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> &ndash;&gt;-->
+<!--                <li><a href="contact.html" class="nav-link">Contact</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+<!--    <main>-->
+<!--        &lt;!&ndash; PAGE HEADER &ndash;&gt;-->
+<!--        <section class="page-header section">-->
+<!--            <div class="container text-center">-->
+<!--                <div class="section-label" style="justify-content:center;">Work</div>-->
+<!--                <h1 class="section-title">My Projects</h1>-->
+<!--                <p class="section-subtitle" style="margin:0 auto;">-->
+<!--                    [YOUR_PROJECTS_PAGE_SUBTITLE]-->
+<!--                </p>-->
+<!--                <div class="stats-row">-->
+<!--                    <div class="stat-item">-->
+<!--                        <div class="stat-number" data-count="4">4</div>-->
+<!--                        <div class="stat-label">Total Projects</div>-->
+<!--                    </div>-->
+<!--                    <div class="stat-item">-->
+<!--                        <div class="stat-number" data-count="20">20</div>-->
+<!--                        <div class="stat-label">Technologies</div>-->
+<!--                    </div>-->
+<!--                    <div class="stat-item">-->
+<!--                        <div class="stat-number">2021–2026</div>-->
+<!--                        <div class="stat-label">Date Range</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        &lt;!&ndash; CONTROLS &ndash;&gt;-->
+<!--        <section class="projects-controls">-->
+<!--            <div class="container">-->
+<!--                <div class="controls-bar">-->
+<!--                    <div class="search-wrapper">-->
+<!--                        <span class="search-icon">-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>-->
+<!--                        </span>-->
+<!--                        <input type="search" id="project-search" placeholder="Search projects..." class="search-input" aria-label="Search projects">-->
+<!--                    </div>-->
+<!--                    <div class="filter-group" id="filter-group">-->
+<!--                        <button class="filter-btn active" data-filter="all">All</button>-->
+<!--                        <button class="filter-btn" data-filter="ai-app">AI App</button>-->
+<!--                        <button class="filter-btn" data-filter="web-app">Web App</button>-->
+<!--                        <button class="filter-btn" data-filter="open-source">Open Source</button>-->
+<!--                    </div>-->
+<!--                    <span id="results-count">4 projects</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        &lt;!&ndash; GRID &ndash;&gt;-->
+<!--        <section class="section" style="padding-top:0">-->
+<!--            <div class="container">-->
+<!--                <div id="project-grid">-->
+
+<!--                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_1_NAME]" data-tech="[project-1-tech-tags]">-->
+<!--                        <div class="project-card-image">-->
+<!--                            <div class="card-img-bg"></div>-->
+<!--                            <div class="card-img-dots"></div>-->
+<!--                            <span class="card-img-type">Voice AI</span>-->
+<!--                            <span class="card-img-label">[PROJECT_1_NAME]</span>-->
+<!--                        </div>-->
+<!--                        <div class="project-card-content">-->
+<!--                            <div class="project-card-header">-->
+<!--                                <h3 class="project-card-title">[PROJECT_1_NAME]</h3>-->
+<!--                                <span class="project-status-badge">In Progress</span>-->
+<!--                            </div>-->
+<!--                            <p class="project-card-description">Voice-first AI assistant with real-time agentic tool execution, persistent semantic memory, and 100% test coverage.</p>-->
+<!--                            <div class="project-card-tech">-->
+<!--                                <span class="badge-sm">Python</span><span class="badge-sm">LiveKit</span><span class="badge-sm">Gemini</span><span class="badge-sm">FastMCP</span><span class="badge-sm">ChromaDB</span>-->
+<!--                            </div>-->
+<!--                            <div class="project-card-footer">-->
+<!--                                <span class="project-year">2026</span>-->
+<!--                                <a href="projects/project-one.html" class="btn-outline">View Case Study →</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_2_NAME]" data-tech="[project-2-tech-tags]">-->
+<!--                        <div class="project-card-image">-->
+<!--                            <div class="card-img-bg"></div>-->
+<!--                            <div class="card-img-dots"></div>-->
+<!--                            <span class="card-img-type">SaaS</span>-->
+<!--                            <span class="card-img-label">[PROJECT_2_NAME]</span>-->
+<!--                        </div>-->
+<!--                        <div class="project-card-content">-->
+<!--                            <div class="project-card-header">-->
+<!--                                <h3 class="project-card-title">[PROJECT_2_NAME]</h3>-->
+<!--                                <span class="project-status-badge">In Progress</span>-->
+<!--                            </div>-->
+<!--                            <p class="project-card-description">Full-stack AI resume optimizer that parses PDFs, scores bullet points against job descriptions, and generates LLM-powered improvement suggestions.</p>-->
+<!--                            <div class="project-card-tech">-->
+<!--                                <span class="badge-sm">Next.js</span><span class="badge-sm">FastAPI</span><span class="badge-sm">Claude API</span><span class="badge-sm">Supabase</span><span class="badge-sm">Stripe</span>-->
+<!--                            </div>-->
+<!--                            <div class="project-card-footer">-->
+<!--                                <span class="project-year">2026</span>-->
+<!--                                <a href="projects/project-two.html" class="btn-outline">View Case Study →</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_3_NAME]" data-tech="[project-3-tech-tags]">-->
+<!--                        <div class="project-card-image">-->
+<!--                            <div class="card-img-bg"></div>-->
+<!--                            <div class="card-img-dots"></div>-->
+<!--                            <span class="card-img-type">RAG System</span>-->
+<!--                            <span class="card-img-label">[PROJECT_3_NAME]</span>-->
+<!--                        </div>-->
+<!--                        <div class="project-card-content">-->
+<!--                            <div class="project-card-header">-->
+<!--                                <h3 class="project-card-title">[PROJECT_3_NAME]</h3>-->
+<!--                                <span class="project-status-badge completed">Completed</span>-->
+<!--                            </div>-->
+<!--                            <p class="project-card-description">Full-stack RAG study assistant with 5 autonomous learning modes and near-zero hallucination via document-grounded responses.</p>-->
+<!--                            <div class="project-card-tech">-->
+<!--                                <span class="badge-sm">FastAPI</span><span class="badge-sm">LangChain</span><span class="badge-sm">LangGraph</span><span class="badge-sm">FAISS</span><span class="badge-sm">Mistral AI</span>-->
+<!--                            </div>-->
+<!--                            <div class="project-card-footer">-->
+<!--                                <span class="project-year">2026</span>-->
+<!--                                <a href="projects/project-three.html" class="btn-outline">View Case Study →</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="project-card" data-type="ai-app open-source" data-title="[PROJECT_4_NAME]" data-tech="[project-4-tech-tags]">-->
+<!--                        <div class="project-card-image">-->
+<!--                            <div class="card-img-bg"></div>-->
+<!--                            <div class="card-img-dots"></div>-->
+<!--                            <span class="card-img-type">Open Source</span>-->
+<!--                            <span class="card-img-label">[PROJECT_4_NAME]</span>-->
+<!--                        </div>-->
+<!--                        <div class="project-card-content">-->
+<!--                            <div class="project-card-header">-->
+<!--                                <h3 class="project-card-title">[PROJECT_4_NAME]</h3>-->
+<!--                                <span class="project-status-badge open-source">Open Source</span>-->
+<!--                            </div>-->
+<!--                            <p class="project-card-description">Discord bot with GPT-4 integration for server management, natural language commands, and automated support workflows.</p>-->
+<!--                            <div class="project-card-tech">-->
+<!--                                <span class="badge-sm">Python</span><span class="badge-sm">Discord.py</span><span class="badge-sm">GPT-4</span><span class="badge-sm">LangChain</span>-->
+<!--                            </div>-->
+<!--                            <div class="project-card-footer">-->
+<!--                                <span class="project-year">2024</span>-->
+<!--                                <a href="https://github.com/architaggarwal24/morphie-bot" target="_blank" class="btn-outline">GitHub ↗</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </main>-->
+
+<!--    <footer class="footer">-->
+<!--        <div class="footer-inner container">-->
+<!--            <div class="footer-brand">-->
+<!--                <a href="index.html" class="footer-logo">AA</a>-->
+<!--                <p class="footer-tagline">[YOUR_FOOTER_TAGLINE]</p>-->
+<!--            </div>-->
+<!--            <div class="footer-links">-->
+<!--                <div>-->
+<!--                    <h4>Work</h4>-->
+<!--                    <ul>-->
+<!--                        <li><a href="index.html">Home</a></li>-->
+<!--                        <li><a href="projects.html">Projects</a></li>-->
+<!--                        <li><a href="experience.html">Experience</a></li>-->
+<!--                        &lt;!&ndash; BLOG: uncomment when writing → <li><a href="blog.html">Blog</a></li> &ndash;&gt;</ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="footer-bottom">-->
+<!--                <p class="footer-copyright">© [YEAR] [YOUR_FULL_NAME]. All rights reserved.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+
+<!--    <script src="js/nav.js"></script>-->
+<!--    <script src="js/theme.js"></script>-->
+<!--    <script>-->
+<!--    // Filter-->
+<!--    const cards = document.querySelectorAll('.project-card');-->
+<!--    const filterBtns = document.querySelectorAll('.filter-btn');-->
+<!--    const searchInput = document.getElementById('project-search');-->
+<!--    const resultsCount = document.getElementById('results-count');-->
+
+<!--    function updateCount() {-->
+<!--        const visible = document.querySelectorAll('.project-card:not(.hidden)').length;-->
+<!--        resultsCount.textContent = visible + ' project' + (visible !== 1 ? 's' : '');-->
+<!--    }-->
+
+<!--    filterBtns.forEach(btn => {-->
+<!--        btn.addEventListener('click', () => {-->
+<!--            filterBtns.forEach(b => b.classList.remove('active'));-->
+<!--            btn.classList.add('active');-->
+<!--            applyFilters();-->
+<!--        });-->
+<!--    });-->
+
+<!--    searchInput.addEventListener('input', applyFilters);-->
+
+<!--    function applyFilters() {-->
+<!--        const filter = document.querySelector('.filter-btn.active').dataset.filter;-->
+<!--        const query = searchInput.value.toLowerCase();-->
+<!--        cards.forEach(card => {-->
+<!--            const matchesType = filter === 'all' || card.dataset.type.includes(filter);-->
+<!--            const matchesSearch = !query ||-->
+<!--                card.dataset.title.toLowerCase().includes(query) ||-->
+<!--                card.dataset.tech.toLowerCase().includes(query);-->
+<!--            card.classList.toggle('hidden', !(matchesType && matchesSearch));-->
+<!--        });-->
+<!--        updateCount();-->
+<!--    }-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,141 +410,62 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/light-theme.css">    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link rel="stylesheet" href="css/footer.css">
     <style>
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-    .flex{display:flex}.flex-wrap{flex-wrap:wrap}.gap-2{gap:var(--space-2)}.gap-4{gap:var(--space-4)}.gap-6{gap:var(--space-6)}.gap-8{gap:var(--space-8)}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.text-center{text-align:center}.text-secondary{color:var(--color-text-secondary)}.text-sm{font-size:var(--font-size-sm)}.mt-6{margin-top:var(--space-6)}.mb-6{margin-bottom:var(--space-6)}.mb-12{margin-bottom:var(--space-12)}
-
-    .section { padding: var(--space-20) 0; }
-    .page-header.section { padding: var(--space-32) 0 var(--space-12); }
-
-    .section-label {
-        display: inline-flex; align-items: center; gap: var(--space-2);
-        font-family: var(--font-mono); font-size: var(--font-size-xs);
-        letter-spacing: 0.1em; text-transform: uppercase;
-        color: var(--color-accent-primary); margin-bottom: var(--space-4);
-    }
-    .section-label::before { content:''; width:24px; height:1px; background:var(--color-accent-primary); }
-
-    /* --- STATS ROW --- */
-    .stats-row { display:flex; gap:var(--space-12); justify-content:center; margin-top:var(--space-8); }
-    .stat-item { text-align:center; }
-    .stat-number {
-        font-family: var(--font-heading); font-size: var(--font-size-5xl);
-        font-weight: var(--font-weight-black); letter-spacing: -0.03em; line-height:1;
-        background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-tertiary));
-        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-        margin-bottom: var(--space-1);
-    }
-    .stat-label { font-family:var(--font-mono); font-size:var(--font-size-xs); text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-tertiary); }
-
-    /* --- CONTROLS --- */
-    .projects-controls { padding: 0 0 var(--space-8); }
-    .controls-bar { display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap; }
-    .search-wrapper { position:relative; flex:0 0 260px; }
-    .search-input {
-        width:100%; padding: var(--space-2) var(--space-4) var(--space-2) 36px;
-        background: var(--color-bg-card); border:1px solid var(--color-border);
-        border-radius: var(--border-radius-md); color: var(--color-text-primary);
-        font-family: var(--font-body); font-size: var(--font-size-sm);
-        transition: var(--transition-base); outline:none;
-    }
-    .search-input:focus { border-color: var(--color-accent-primary); box-shadow: 0 0 0 3px var(--color-accent-glow); }
-    .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--color-text-tertiary); pointer-events:none; }
-    .search-icon svg { width:16px; height:16px; }
-    .filter-group { display:flex; gap:var(--space-2); }
-    .filter-btn {
-        font-family: var(--font-mono); font-size: var(--font-size-xs);
-        padding: var(--space-2) var(--space-4); border-radius: var(--border-radius-full);
-        border: 1px solid var(--color-border); background: transparent;
-        color: var(--color-text-secondary); cursor:pointer; transition:var(--transition-fast);
-        letter-spacing: 0.04em; text-transform:uppercase;
-    }
-    .filter-btn:hover { border-color:var(--color-border-strong); color:var(--color-text-primary); }
-    .filter-btn.active { background:var(--color-accent-primary); border-color:var(--color-accent-primary); color:#fff; }
-    #results-count { font-family:var(--font-mono); font-size:var(--font-size-xs); color:var(--color-text-tertiary); margin-left:auto; }
-
-    /* --- PROJECTS GRID --- */
-    #project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: var(--space-6);
-    }
-
-    /* --- PROJECT CARD --- */
-    .project-card {
-        background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-lg);
-        overflow: hidden; display:flex; flex-direction:column;
-        transition: var(--transition-slow);
-        animation: fadeUp 0.5s ease both;
-    }
-    .project-card:nth-child(1){animation-delay:0.05s}
-    .project-card:nth-child(2){animation-delay:0.12s}
-    .project-card:nth-child(3){animation-delay:0.19s}
-    .project-card:nth-child(4){animation-delay:0.26s}
-    .project-card:hover {
-        border-color: var(--color-border-accent); transform: translateY(-4px);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px var(--color-accent-glow);
-    }
-    .project-card.hidden { display:none; }
-
-    .project-card-image {
-        height: 180px; position:relative; overflow:hidden;
-    }
-    .card-img-bg { position:absolute; inset:0; }
-    .card-img-dots {
-        position:absolute; inset:0;
-        background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-        background-size: 20px 20px;
-    }
-    .card-img-label {
-        position:absolute; bottom:var(--space-3); left:var(--space-4);
-        font-family:var(--font-mono); font-size:var(--font-size-xs);
-        color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.1em;
-    }
-    .card-img-type {
-        position:absolute; top:var(--space-3); right:var(--space-3);
-        font-family:var(--font-mono); font-size:10px; padding:2px 8px;
-        border-radius:var(--border-radius-full); border:1px solid rgba(255,255,255,0.15);
-        color:rgba(255,255,255,0.5); backdrop-filter:blur(4px);
-    }
-    .project-card:nth-child(1) .card-img-bg { background:linear-gradient(135deg,#1a1035,#2d1b69,#0a2a4a); }
-    .project-card:nth-child(2) .card-img-bg { background:linear-gradient(135deg,#0a2010,#1a4030,#062818); }
-    .project-card:nth-child(3) .card-img-bg { background:linear-gradient(135deg,#1a1020,#3a1560,#150a3a); }
-    .project-card:nth-child(4) .card-img-bg { background:linear-gradient(135deg,#101820,#1a3040,#080f18); }
-
-    .project-card-content { padding:var(--space-6); flex:1; display:flex; flex-direction:column; gap:var(--space-3); }
-    .project-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:var(--space-2); }
-    .project-card-title { font-family:var(--font-heading); font-size:var(--font-size-xl); font-weight:700; color:var(--color-text-primary); margin:0; }
-    .project-status-badge {
-        font-family:var(--font-mono); font-size:10px; padding:2px 8px;
-        border-radius:var(--border-radius-sm); border:1px solid var(--color-border-accent);
-        color:var(--color-accent-primary); white-space:nowrap; flex-shrink:0;
-    }
-    .project-status-badge.completed { border-color:rgba(74,222,128,0.3); color:var(--color-accent-green); }
-    .project-status-badge.open-source { border-color:rgba(34,211,238,0.3); color:var(--color-accent-tertiary); }
-    .project-card-description { font-size:var(--font-size-sm); color:var(--color-text-secondary); line-height:1.7; flex:1; margin:0; }
-    .project-card-tech { display:flex; flex-wrap:wrap; gap:var(--space-2); }
-    .badge-sm { font-family:var(--font-mono); font-size:10px; padding:2px 8px; border-radius:var(--border-radius-sm); border:1px solid var(--color-border); color:var(--color-text-secondary); background:var(--color-bg-tertiary); }
-    .project-card-footer {
-        display:flex; justify-content:space-between; align-items:center;
-        padding-top:var(--space-4); border-top:1px solid var(--color-border);
-        margin-top:auto;
-    }
-    .project-year { font-family:var(--font-mono); font-size:var(--font-size-xs); color:var(--color-text-tertiary); }
-    .btn-outline {
-        font-family:var(--font-mono); font-size:var(--font-size-xs); padding:var(--space-2) var(--space-3);
-        border-radius:var(--border-radius-md); border:1px solid var(--color-border-accent);
-        color:var(--color-accent-primary); background:transparent; cursor:pointer;
-        text-decoration:none; transition:var(--transition-fast); display:inline-flex; align-items:center;
-        letter-spacing:0.04em;
-    }
-    .btn-outline:hover { background:var(--color-accent-glow); border-color:var(--color-accent-primary); }
-
-    @media(max-width:600px) { #project-grid{grid-template-columns:1fr;} .stats-row{gap:var(--space-8);} }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .flex{display:flex}.flex-wrap{flex-wrap:wrap}.gap-2{gap:var(--space-2)}.gap-4{gap:var(--space-4)}.gap-6{gap:var(--space-6)}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.text-center{text-align:center}.text-secondary{color:var(--color-text-secondary)}.text-sm{font-size:var(--font-size-sm)}.mt-6{margin-top:var(--space-6)}.mb-6{margin-bottom:var(--space-6)}.mb-12{margin-bottom:var(--space-12)}
+    .section{padding:var(--space-20) 0;}
+    .page-header.section{padding:var(--space-32) 0 var(--space-12);}
+    .section-label{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-mono);font-size:var(--font-size-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-primary);margin-bottom:var(--space-4);}
+    .section-label::before{content:'';width:24px;height:1px;background:var(--color-accent-primary);}
+    .stats-row{display:flex;gap:var(--space-12);justify-content:center;margin-top:var(--space-8);}
+    .stat-item{text-align:center;}
+    .stat-number{font-family:var(--font-heading);font-size:var(--font-size-5xl);font-weight:var(--font-weight-black);letter-spacing:-0.03em;line-height:1;background:linear-gradient(135deg,var(--color-accent-primary),var(--color-accent-tertiary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:var(--space-1);}
+    .stat-label{font-family:var(--font-mono);font-size:var(--font-size-xs);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-tertiary);}
+    .projects-controls{padding:0 0 var(--space-8);}
+    .controls-bar{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;}
+    .search-wrapper{position:relative;flex:0 0 260px;}
+    .search-input{width:100%;padding:var(--space-2) var(--space-4) var(--space-2) 36px;background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--border-radius-md);color:var(--color-text-primary);font-family:var(--font-body);font-size:var(--font-size-sm);transition:var(--transition-base);outline:none;}
+    .search-input:focus{border-color:var(--color-accent-primary);box-shadow:0 0 0 3px var(--color-accent-glow);}
+    .search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--color-text-tertiary);pointer-events:none;}
+    .search-icon svg{width:16px;height:16px;}
+    .filter-group{display:flex;gap:var(--space-2);}
+    .filter-btn{font-family:var(--font-mono);font-size:var(--font-size-xs);padding:var(--space-2) var(--space-4);border-radius:var(--border-radius-full);border:1px solid var(--color-border);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:var(--transition-fast);letter-spacing:0.04em;text-transform:uppercase;}
+    .filter-btn:hover{border-color:var(--color-border-strong);color:var(--color-text-primary);}
+    .filter-btn.active{background:var(--color-accent-primary);border-color:var(--color-accent-primary);color:#fff;}
+    #results-count{font-family:var(--font-mono);font-size:var(--font-size-xs);color:var(--color-text-tertiary);margin-left:auto;}
+    #project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-6);}
+    .project-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--border-radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:var(--transition-slow);animation:fadeUp 0.5s ease both;}
+    .project-card:nth-child(1){animation-delay:0.05s}.project-card:nth-child(2){animation-delay:0.10s}.project-card:nth-child(3){animation-delay:0.15s}.project-card:nth-child(4){animation-delay:0.20s}.project-card:nth-child(5){animation-delay:0.25s}.project-card:nth-child(6){animation-delay:0.30s}.project-card:nth-child(7){animation-delay:0.35s}
+    .project-card:hover{border-color:var(--color-border-accent);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px var(--color-accent-glow);}
+    .project-card.hidden{display:none;}
+    .project-card-image{height:180px;position:relative;overflow:hidden;}
+    .card-img-bg{position:absolute;inset:0;}
+    .card-img-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:20px 20px;}
+    .card-img-label{position:absolute;bottom:var(--space-3);left:var(--space-4);font-family:var(--font-mono);font-size:var(--font-size-xs);color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;}
+    .card-img-type{position:absolute;top:var(--space-3);right:var(--space-3);font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:var(--border-radius-full);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);backdrop-filter:blur(4px);}
+    .project-card:nth-child(1) .card-img-bg{background:linear-gradient(135deg,#1a1035,#2d1b69,#0a2a4a);}
+    .project-card:nth-child(2) .card-img-bg{background:linear-gradient(135deg,#0a2010,#1a4030,#062818);}
+    .project-card:nth-child(3) .card-img-bg{background:linear-gradient(135deg,#1a1020,#3a1560,#150a3a);}
+    .project-card:nth-child(4) .card-img-bg{background:linear-gradient(135deg,#101820,#1a3040,#080f18);}
+    .project-card:nth-child(5) .card-img-bg{background:linear-gradient(135deg,#201010,#401a1a,#180808);}
+    .project-card:nth-child(6) .card-img-bg{background:linear-gradient(135deg,#101a10,#1a3020,#081208);}
+    .project-card:nth-child(7) .card-img-bg{background:linear-gradient(135deg,#1a1510,#302510,#181008);}
+    .project-card-content{padding:var(--space-6);flex:1;display:flex;flex-direction:column;gap:var(--space-3);}
+    .project-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-2);}
+    .project-card-title{font-family:var(--font-heading);font-size:var(--font-size-xl);font-weight:700;color:var(--color-text-primary);margin:0;}
+    .project-status-badge{font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:var(--border-radius-sm);border:1px solid var(--color-border-accent);color:var(--color-accent-primary);white-space:nowrap;flex-shrink:0;}
+    .project-status-badge.completed{border-color:rgba(74,222,128,0.3);color:var(--color-accent-green);}
+    .project-status-badge.open-source{border-color:rgba(34,211,238,0.3);color:var(--color-accent-tertiary);}
+    .project-card-description{font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.7;flex:1;margin:0;}
+    .project-card-tech{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+    .badge-sm{font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:var(--border-radius-sm);border:1px solid var(--color-border);color:var(--color-text-secondary);background:var(--color-bg-tertiary);}
+    .project-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-4);border-top:1px solid var(--color-border);margin-top:auto;}
+    .project-year{font-family:var(--font-mono);font-size:var(--font-size-xs);color:var(--color-text-tertiary);}
+    .btn-outline{font-family:var(--font-mono);font-size:var(--font-size-xs);padding:var(--space-2) var(--space-3);border-radius:var(--border-radius-md);border:1px solid var(--color-border-accent);color:var(--color-accent-primary);background:transparent;cursor:pointer;text-decoration:none;transition:var(--transition-fast);display:inline-flex;align-items:center;letter-spacing:0.04em;}
+    .btn-outline:hover{background:var(--color-accent-glow);border-color:var(--color-accent-primary);}
+    @media(max-width:600px){#project-grid{grid-template-columns:1fr;}.stats-row{gap:var(--space-8);}}
     </style>
 </head>
 <body>
@@ -160,12 +476,11 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
-                <a href="assets/resume/[YOUR_NAME]_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <a href="assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -174,39 +489,36 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="experience.html" class="nav-link">Experience</a></li>
-                <!-- BLOG: uncomment when writing → <li><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- PAGE HEADER -->
         <section class="page-header section">
             <div class="container text-center">
                 <div class="section-label" style="justify-content:center;">Work</div>
                 <h1 class="section-title">My Projects</h1>
                 <p class="section-subtitle" style="margin:0 auto;">
-                    [YOUR_PROJECTS_PAGE_SUBTITLE]
+                    Every project here was built from scratch and shipped. No tutorial clones. No demo-only prototypes.
                 </p>
                 <div class="stats-row">
                     <div class="stat-item">
-                        <div class="stat-number" data-count="4">4</div>
+                        <div class="stat-number">7</div>
                         <div class="stat-label">Total Projects</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-count="20">20</div>
+                        <div class="stat-number">25+</div>
                         <div class="stat-label">Technologies</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">2021–2026</div>
+                        <div class="stat-number">2024–2026</div>
                         <div class="stat-label">Date Range</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTROLS -->
         <section class="projects-controls">
             <div class="container">
                 <div class="controls-bar">
@@ -219,107 +531,183 @@
                     <div class="filter-group" id="filter-group">
                         <button class="filter-btn active" data-filter="all">All</button>
                         <button class="filter-btn" data-filter="ai-app">AI App</button>
-                        <button class="filter-btn" data-filter="web-app">Web App</button>
+                        <button class="filter-btn" data-filter="saas">SaaS</button>
+                        <button class="filter-btn" data-filter="agent">Agent</button>
                         <button class="filter-btn" data-filter="open-source">Open Source</button>
                     </div>
-                    <span id="results-count">4 projects</span>
+                    <span id="results-count">7 projects</span>
                 </div>
             </div>
         </section>
 
-        <!-- GRID -->
         <section class="section" style="padding-top:0">
             <div class="container">
                 <div id="project-grid">
 
-                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_1_NAME]" data-tech="[project-1-tech-tags]">
+                    <!-- 1. FRIDAY -->
+                    <div class="project-card" data-type="ai-app agent" data-title="F.R.I.D.A.Y" data-tech="python livekit gemini fastmcp chromadb electron voice">
                         <div class="project-card-image">
                             <div class="card-img-bg"></div>
                             <div class="card-img-dots"></div>
                             <span class="card-img-type">Voice AI</span>
-                            <span class="card-img-label">[PROJECT_1_NAME]</span>
+                            <span class="card-img-label">F.R.I.D.A.Y</span>
                         </div>
                         <div class="project-card-content">
                             <div class="project-card-header">
-                                <h3 class="project-card-title">[PROJECT_1_NAME]</h3>
+                                <h3 class="project-card-title">F.R.I.D.A.Y</h3>
                                 <span class="project-status-badge">In Progress</span>
                             </div>
-                            <p class="project-card-description">Voice-first AI assistant with real-time agentic tool execution, persistent semantic memory, and 100% test coverage.</p>
+                            <p class="project-card-description">Voice-operated AI assistant with real-time agentic tool execution (browser, Spotify, system control), persistent semantic memory via ChromaDB, and 100% test coverage across 18 tests.</p>
                             <div class="project-card-tech">
-                                <span class="badge-sm">Python</span><span class="badge-sm">LiveKit</span><span class="badge-sm">Gemini</span><span class="badge-sm">FastMCP</span><span class="badge-sm">ChromaDB</span>
+                                <span class="badge-sm">Python</span><span class="badge-sm">LiveKit</span><span class="badge-sm">Gemini 2.5</span><span class="badge-sm">FastMCP</span><span class="badge-sm">ChromaDB</span>
                             </div>
                             <div class="project-card-footer">
-                                <span class="project-year">2026</span>
+                                <span class="project-year">Apr 2026</span>
                                 <a href="projects/project-one.html" class="btn-outline">View Case Study →</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_2_NAME]" data-tech="[project-2-tech-tags]">
+                    <!-- 2. ResumeAI -->
+                    <div class="project-card" data-type="ai-app saas" data-title="ResumeAI" data-tech="nextjs fastapi claude supabase stripe latex ats">
                         <div class="project-card-image">
                             <div class="card-img-bg"></div>
                             <div class="card-img-dots"></div>
                             <span class="card-img-type">SaaS</span>
-                            <span class="card-img-label">[PROJECT_2_NAME]</span>
+                            <span class="card-img-label">ResumeAI</span>
                         </div>
                         <div class="project-card-content">
                             <div class="project-card-header">
-                                <h3 class="project-card-title">[PROJECT_2_NAME]</h3>
+                                <h3 class="project-card-title">ResumeAI</h3>
                                 <span class="project-status-badge">In Progress</span>
                             </div>
-                            <p class="project-card-description">Full-stack AI resume optimizer that parses PDFs, scores bullet points against job descriptions, and generates LLM-powered improvement suggestions.</p>
+                            <p class="project-card-description">Full-stack AI resume optimizer scoring resumes across 4 ATS dimensions (Taleo, Greenhouse, Lever, Workday) and generating Claude-powered one-click rewrites. Production-deployed with Stripe billing.</p>
                             <div class="project-card-tech">
                                 <span class="badge-sm">Next.js</span><span class="badge-sm">FastAPI</span><span class="badge-sm">Claude API</span><span class="badge-sm">Supabase</span><span class="badge-sm">Stripe</span>
                             </div>
                             <div class="project-card-footer">
-                                <span class="project-year">2026</span>
+                                <span class="project-year">Mar 2026</span>
                                 <a href="projects/project-two.html" class="btn-outline">View Case Study →</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-type="ai-app" data-title="[PROJECT_3_NAME]" data-tech="[project-3-tech-tags]">
+                    <!-- 3. Jobs Applier -->
+                    <div class="project-card" data-type="ai-app agent" data-title="Autonomous Job Application Agent" data-tech="python playwright langchain tfidf sqlite openai mistral anthropic apscheduler">
+                        <div class="project-card-image">
+                            <div class="card-img-bg"></div>
+                            <div class="card-img-dots"></div>
+                            <span class="card-img-type">Autonomous Agent</span>
+                            <span class="card-img-label">Jobs Applier</span>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-header">
+                                <h3 class="project-card-title">Job Application Agent</h3>
+                                <span class="project-status-badge">In Progress</span>
+                            </div>
+                            <p class="project-card-description">Autonomous agent that scrapes LinkedIn, Indeed & Naukri, scores listings via TF-IDF resume matching, generates tailored LLM cover letters, and auto-applies with human-mimicking rate limiting and SQLite deduplication.</p>
+                            <div class="project-card-tech">
+                                <span class="badge-sm">Python</span><span class="badge-sm">Playwright</span><span class="badge-sm">LangChain</span><span class="badge-sm">TF-IDF</span><span class="badge-sm">SQLite</span>
+                            </div>
+                            <div class="project-card-footer">
+                                <span class="project-year">Mar 2026</span>
+                                <a href="projects/project-four.html" class="btn-outline">View Case Study →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. CourseMateAI -->
+                    <div class="project-card" data-type="ai-app" data-title="CourseMateAI" data-tech="fastapi langchain langgraph faiss mistral nextjs rag">
                         <div class="project-card-image">
                             <div class="card-img-bg"></div>
                             <div class="card-img-dots"></div>
                             <span class="card-img-type">RAG System</span>
-                            <span class="card-img-label">[PROJECT_3_NAME]</span>
+                            <span class="card-img-label">CourseMateAI</span>
                         </div>
                         <div class="project-card-content">
                             <div class="project-card-header">
-                                <h3 class="project-card-title">[PROJECT_3_NAME]</h3>
+                                <h3 class="project-card-title">CourseMateAI</h3>
                                 <span class="project-status-badge completed">Completed</span>
                             </div>
-                            <p class="project-card-description">Full-stack RAG study assistant with 5 autonomous learning modes and near-zero hallucination via document-grounded responses.</p>
+                            <p class="project-card-description">Full-stack RAG study assistant with 5 learning modes (Chat, Notes, Flashcards, Quiz, Arena), near-zero hallucination via 2-pass JSON auto-correction, and AI boss opponents generated via a 2-stage LLM pipeline.</p>
                             <div class="project-card-tech">
                                 <span class="badge-sm">FastAPI</span><span class="badge-sm">LangChain</span><span class="badge-sm">LangGraph</span><span class="badge-sm">FAISS</span><span class="badge-sm">Mistral AI</span>
                             </div>
                             <div class="project-card-footer">
-                                <span class="project-year">2026</span>
+                                <span class="project-year">Jan–Feb 2026</span>
                                 <a href="projects/project-three.html" class="btn-outline">View Case Study →</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-type="ai-app open-source" data-title="[PROJECT_4_NAME]" data-tech="[project-4-tech-tags]">
+                    <!-- 5. Morphie-Bot -->
+                    <div class="project-card" data-type="ai-app open-source" data-title="Morphie-Bot" data-tech="flask mistral python json design copilot">
                         <div class="project-card-image">
                             <div class="card-img-bg"></div>
                             <div class="card-img-dots"></div>
-                            <span class="card-img-type">Open Source</span>
-                            <span class="card-img-label">[PROJECT_4_NAME]</span>
+                            <span class="card-img-type">AI Copilot</span>
+                            <span class="card-img-label">Morphie-Bot</span>
                         </div>
                         <div class="project-card-content">
                             <div class="project-card-header">
-                                <h3 class="project-card-title">[PROJECT_4_NAME]</h3>
-                                <span class="project-status-badge open-source">Open Source</span>
+                                <h3 class="project-card-title">Morphie-Bot</h3>
+                                <span class="project-status-badge completed">Completed</span>
                             </div>
-                            <p class="project-card-description">Discord bot with GPT-4 integration for server management, natural language commands, and automated support workflows.</p>
+                            <p class="project-card-description">Dual-mode AI website design copilot. Switches between conversational chat and structured design generation on command — returning validated JSON color palettes and layout suggestions with strict hallucination prevention.</p>
                             <div class="project-card-tech">
-                                <span class="badge-sm">Python</span><span class="badge-sm">Discord.py</span><span class="badge-sm">GPT-4</span><span class="badge-sm">LangChain</span>
+                                <span class="badge-sm">Flask</span><span class="badge-sm">Mistral AI</span><span class="badge-sm">Python</span><span class="badge-sm">JSON Schema</span>
                             </div>
                             <div class="project-card-footer">
-                                <span class="project-year">2024</span>
-                                <a href="https://github.com/architaggarwal24/morphie-bot" target="_blank" class="btn-outline">GitHub ↗</a>
+                                <span class="project-year">Dec 2024–Jan 2025</span>
+                                <a href="projects/project-five.html" class="btn-outline">View Case Study →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Dynamic SQL -->
+                    <div class="project-card" data-type="open-source" data-title="Dynamic SQL Query Automation" data-tech="flask mysql python sql logging crud">
+                        <div class="project-card-image">
+                            <div class="card-img-bg"></div>
+                            <div class="card-img-dots"></div>
+                            <span class="card-img-type">Backend Tool</span>
+                            <span class="card-img-label">SQL Automation</span>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-header">
+                                <h3 class="project-card-title">Dynamic SQL Query Automation</h3>
+                                <span class="project-status-badge completed">Completed</span>
+                            </div>
+                            <p class="project-card-description">Flask backend that dynamically generates and executes SQL queries on live MySQL databases with constraint-aware validation, structured logging, and a modular CRUD abstraction layer for safe, production-grade operations.</p>
+                            <div class="project-card-tech">
+                                <span class="badge-sm">Flask</span><span class="badge-sm">MySQL</span><span class="badge-sm">Python</span><span class="badge-sm">SQLAlchemy</span>
+                            </div>
+                            <div class="project-card-footer">
+                                <span class="project-year">Mar–Apr 2025</span>
+                                <a href="https://github.com/architaggarwal24/Dynamic-SQL-Query-Automation" target="_blank" class="btn-outline">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. GenifySuite -->
+                    <div class="project-card" data-type="open-source" data-title="GenifySuite" data-tech="web javascript api credit card tools generator">
+                        <div class="project-card-image">
+                            <div class="card-img-bg"></div>
+                            <div class="card-img-dots"></div>
+                            <span class="card-img-type">Web Tools</span>
+                            <span class="card-img-label">GenifySuite</span>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-header">
+                                <h3 class="project-card-title">GenifySuite</h3>
+                                <span class="project-status-badge completed">Completed</span>
+                            </div>
+                            <p class="project-card-description">Multi-tool web suite with credit card number generation & validation, profile generation, lorem ipsum generator, and IP address location finder — all integrated with external APIs.</p>
+                            <div class="project-card-tech">
+                                <span class="badge-sm">JavaScript</span><span class="badge-sm">HTML/CSS</span><span class="badge-sm">REST APIs</span>
+                            </div>
+                            <div class="project-card-footer">
+                                <span class="project-year">Aug–Sep 2024</span>
+                                <a href="https://github.com/architaggarwal24/GenifySuite" target="_blank" class="btn-outline">GitHub ↗</a>
                             </div>
                         </div>
                     </div>
@@ -333,7 +721,15 @@
         <div class="footer-inner container">
             <div class="footer-brand">
                 <a href="index.html" class="footer-logo">AA</a>
-                <p class="footer-tagline">[YOUR_FOOTER_TAGLINE]</p>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/architaggarwal24" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/architaggarwal24/" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-links">
                 <div>
@@ -342,11 +738,19 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="experience.html">Experience</a></li>
-                        <!-- BLOG: uncomment when writing → <li><a href="blog.html">Blog</a></li> --></ul>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://github.com/architaggarwal24">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/architaggarwal24/">LinkedIn</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© [YEAR] [YOUR_FULL_NAME]. All rights reserved.</p>
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -354,36 +758,20 @@
     <script src="js/nav.js"></script>
     <script src="js/theme.js"></script>
     <script>
-    // Filter
-    const cards = document.querySelectorAll('.project-card');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const searchInput = document.getElementById('project-search');
-    const resultsCount = document.getElementById('results-count');
-
-    function updateCount() {
-        const visible = document.querySelectorAll('.project-card:not(.hidden)').length;
-        resultsCount.textContent = visible + ' project' + (visible !== 1 ? 's' : '');
-    }
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilters();
-        });
-    });
-
-    searchInput.addEventListener('input', applyFilters);
-
-    function applyFilters() {
-        const filter = document.querySelector('.filter-btn.active').dataset.filter;
-        const query = searchInput.value.toLowerCase();
-        cards.forEach(card => {
-            const matchesType = filter === 'all' || card.dataset.type.includes(filter);
-            const matchesSearch = !query ||
-                card.dataset.title.toLowerCase().includes(query) ||
-                card.dataset.tech.toLowerCase().includes(query);
-            card.classList.toggle('hidden', !(matchesType && matchesSearch));
+    const cards=document.querySelectorAll('.project-card');
+    const filterBtns=document.querySelectorAll('.filter-btn');
+    const searchInput=document.getElementById('project-search');
+    const resultsCount=document.getElementById('results-count');
+    function updateCount(){const v=document.querySelectorAll('.project-card:not(.hidden)').length;resultsCount.textContent=v+' project'+(v!==1?'s':'');}
+    filterBtns.forEach(btn=>btn.addEventListener('click',()=>{filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');applyFilters();}));
+    searchInput.addEventListener('input',applyFilters);
+    function applyFilters(){
+        const filter=document.querySelector('.filter-btn.active').dataset.filter;
+        const query=searchInput.value.toLowerCase();
+        cards.forEach(card=>{
+            const matchesType=filter==='all'||card.dataset.type.includes(filter);
+            const matchesSearch=!query||card.dataset.title.toLowerCase().includes(query)||card.dataset.tech.toLowerCase().includes(query);
+            card.classList.toggle('hidden',!(matchesType&&matchesSearch));
         });
         updateCount();
     }

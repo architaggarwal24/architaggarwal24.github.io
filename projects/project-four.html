@@ -1,0 +1,246 @@
+<!-- PAGE: Autonomous Job Application Agent -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Agent | Archit Aggarwal</title>
+    <meta name="description" content="Autonomous agent that scrapes job boards, scores listings, generates tailored cover letters, and auto-applies — built with Playwright, LangChain, and multi-LLM support.">
+    <link rel="icon" href="../assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="../index.html" class="nav-logo">AA</a>
+            <ul class="nav-links" role="list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="../assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
+                <nav class="breadcrumb" aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><span class="breadcrumb-current" aria-current="page">Job Application Agent</span></li>
+                    </ol>
+                </nav>
+                <div class="hero-content grid grid-2 items-center gap-8">
+                    <div class="hero-text">
+                        <h1 class="project-title">Autonomous Job Application Agent</h1>
+                        <p class="project-tagline">
+                            An autonomous AI agent that hunts jobs, scores them against your resume, writes tailored cover letters, and applies — so you don't have to.
+                        </p>
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge">Agentic AI</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline">Python</span>
+                                <span class="badge badge-outline">Playwright</span>
+                                <span class="badge badge-outline">LangChain</span>
+                                <span class="badge badge-outline">TF-IDF</span>
+                                <span class="badge badge-outline">SQLite</span>
+                            </div>
+                            <span class="project-badge">In Progress</span>
+                            <span class="project-badge">2026</span>
+                            <span class="project-badge">Advanced</span>
+                        </div>
+                        <div class="project-ctas flex gap-3">
+                            <a href="https://github.com/architaggarwal24/Jobs-Applier" target="_blank" class="btn btn-outline">View on GitHub ↗</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label">Agent Pipeline Diagram</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <div class="problem-statement">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>
+                        Applying to jobs is a full-time job. The average job seeker spends 11 hours per week on applications — searching boards, tailoring cover letters, filling forms — for a process with a &lt;3% response rate. Most of that time is pure repetition.
+                    </p>
+                    <p>
+                        Generic applications don't work. Recruiters discard untailored cover letters instantly. But writing a personalized cover letter for every application doesn't scale. The solution is an agent that does both: high-volume search + per-application personalization via LLMs.
+                    </p>
+                </div>
+                <div class="sidebar-metadata card-glass p-6">
+                    <h3 class="sidebar-title">Project Details</h3>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Role:</span><span class="sidebar-value">Agentic AI Engineer</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Timeline:</span><span class="sidebar-value">1 month</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Team size:</span><span class="sidebar-value">Solo</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Status:</span><span class="sidebar-value badge">In Progress</span></div>
+                    <div class="sidebar-item mb-6">
+                        <span class="sidebar-label">Tech Stack:</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline">Python</span>
+                            <span class="badge badge-outline">Playwright</span>
+                            <span class="badge badge-outline">LangChain</span>
+                            <span class="badge badge-outline">TF-IDF</span>
+                            <span class="badge badge-outline">SQLite</span>
+                            <span class="badge badge-outline">APScheduler</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-links flex gap-3">
+                        <a href="https://github.com/architaggarwal24/Jobs-Applier" target="_blank" class="sidebar-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
+                <h2 class="section-title">Technologies Used</h2>
+                <p class="section-subtitle">Built for reliability, multi-platform coverage, and safe autonomous operation.</p>
+                <div class="tech-cards grid grid-3 gap-6">
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">Playwright</h3>
+                            <p class="tech-description">Headless browser automation for scraping LinkedIn, Indeed, and Naukri. Human-mimicking delays and randomized interaction patterns prevent bot detection.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5z"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">LangChain + Multi-LLM</h3>
+                            <p class="tech-description">Supports OpenAI, Mistral, and Anthropic for cover letter generation. Model is swappable via config — optimizing for cost vs quality per run.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 8h12v4H3v-4z"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">TF-IDF Scoring + SQLite</h3>
+                            <p class="tech-description">TF-IDF relevance matching scores each listing against your parsed resume. SQLite deduplication ensures the agent never applies to the same role twice across daily runs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGES -->
+        <section class="challenges-solutions section reveal-on-scroll">
+            <div class="challenges-solutions-inner container">
+                <h2 class="section-title">Challenges Solved</h2>
+                <div class="challenges-grid grid grid-3 gap-6">
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Bot Detection</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>LinkedIn and Indeed aggressively block automated scrapers with fingerprinting, CAPTCHAs, and behavioral analysis.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Human-mimicking delays, randomized mouse paths via Playwright, and LinkedIn kept to scrape-only (no auto-apply) to protect account safety.</p></div>
+                    </div>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Cover Letter Quality</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>Generic AI cover letters are worse than no cover letter — they signal the applicant didn't read the JD.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Structured prompting injects both the parsed resume and full JD into the LLM context. Output is validated against minimum quality thresholds before submission.</p></div>
+                    </div>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Pipeline Reliability</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>A single browser timeout or LLM error mid-pipeline would crash the entire daily run.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Full error isolation per application — if one fails, the pipeline continues to the next. Dry-run mode enabled by default. Daily CLI dashboard reports success/failure counts per platform.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LESSONS -->
+        <section class="lessons-learned section reveal-on-scroll">
+            <div class="lessons-learned-inner container">
+                <h2 class="section-title">What I Learned</h2>
+                <div class="lessons-grid grid grid-3 gap-6">
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Safety-First Agent Design</h3>
+                        <p>Autonomous agents that interact with the real world need explicit safety defaults. Dry-run mode, rate limiting, and account-risk awareness are not optional features — they're core to responsible agent design.</p>
+                    </div>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Multi-LLM Architecture</h3>
+                        <p>Designing for LLM provider swap-ability from day one (via config, not code changes) is worth the initial overhead — it gives flexibility to optimize cost vs quality per use case.</p>
+                    </div>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Relevance Scoring Trade-offs</h3>
+                        <p>TF-IDF is fast and interpretable but misses semantic similarity. The next iteration would layer a sentence-transformer reranker on top to catch synonym matches that TF-IDF drops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAV -->
+        <section class="project-navigation section">
+            <div class="project-navigation-inner container flex justify-between items-center">
+                <a href="project-three.html" class="prev-project btn btn-outline">← CourseMateAI</a>
+                <a href="../projects.html" class="btn btn-secondary">↑ All Projects</a>
+                <a href="project-five.html" class="next-project btn btn-outline">Morphie-Bot →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
+            </div>
+            <div class="footer-links">
+                <div><h4>Work</h4><ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../experience.html">Experience</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

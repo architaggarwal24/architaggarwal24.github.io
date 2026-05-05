@@ -1,0 +1,243 @@
+<!-- PAGE: Morphie-Bot -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphie-Bot | Archit Aggarwal</title>
+    <meta name="description" content="Dual-mode AI website design copilot with mode-controlled behavior, structured JSON output enforcement, and hallucination prevention.">
+    <link rel="icon" href="../assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="../index.html" class="nav-logo">AA</a>
+            <ul class="nav-links" role="list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="../assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li><a href="../experience.html" class="nav-link">Experience</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="project-hero section reveal-on-scroll">
+            <div class="project-hero-inner container">
+                <nav class="breadcrumb" aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><span class="breadcrumb-current" aria-current="page">Morphie-Bot</span></li>
+                    </ol>
+                </nav>
+                <div class="hero-content grid grid-2 items-center gap-8">
+                    <div class="hero-text">
+                        <h1 class="project-title">Morphie-Bot</h1>
+                        <p class="project-tagline">
+                            A dual-mode AI design copilot that separates conversation from structured design generation — switching on command, with strict output validation.
+                        </p>
+                        <div class="project-meta flex flex-wrap gap-3 mb-6">
+                            <span class="project-badge">AI Copilot</span>
+                            <div class="tech-badges flex flex-wrap gap-2">
+                                <span class="badge badge-outline">Flask</span>
+                                <span class="badge badge-outline">Mistral AI</span>
+                                <span class="badge badge-outline">Python</span>
+                                <span class="badge badge-outline">JSON Schema</span>
+                            </div>
+                            <span class="project-badge">Completed</span>
+                            <span class="project-badge">Dec 2024</span>
+                        </div>
+                        <div class="project-ctas flex gap-3">
+                            <a href="https://github.com/architaggarwal24/Morphie-Bot" target="_blank" class="btn btn-outline">View on GitHub ↗</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-placeholder">
+                            <div class="image-label">Morphie-Bot Interface</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="project-overview section reveal-on-scroll">
+            <div class="project-overview-inner container grid grid-2 gap-12">
+                <div class="problem-statement">
+                    <h2 class="section-title">The Problem</h2>
+                    <p>
+                        Designers and developers waste hours translating vague briefs ("make it look modern and dark") into concrete color palettes and layout decisions. Asking an LLM for design suggestions produces walls of text — not actionable, frontend-safe outputs.
+                    </p>
+                    <p>
+                        Generic chatbots also can't separate "I want to talk about design" from "give me a JSON palette I can drop into my CSS". The mode confusion wastes tokens and produces unusable outputs.
+                    </p>
+                </div>
+                <div class="sidebar-metadata card-glass p-6">
+                    <h3 class="sidebar-title">Project Details</h3>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Role:</span><span class="sidebar-value">AI Engineer</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Timeline:</span><span class="sidebar-value">6 weeks</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Team size:</span><span class="sidebar-value">Solo</span></div>
+                    <div class="sidebar-item mb-4"><span class="sidebar-label">Status:</span><span class="sidebar-value badge">Completed</span></div>
+                    <div class="sidebar-item mb-6">
+                        <span class="sidebar-label">Tech Stack:</span>
+                        <div class="tech-stack flex flex-wrap gap-2">
+                            <span class="badge badge-outline">Flask</span>
+                            <span class="badge badge-outline">Mistral AI</span>
+                            <span class="badge badge-outline">Python</span>
+                            <span class="badge badge-outline">JSON Schema</span>
+                            <span class="badge badge-outline">HTML/CSS/JS</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-links flex gap-3">
+                        <a href="https://github.com/architaggarwal24/Morphie-Bot" target="_blank" class="sidebar-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1.72 5 2.48A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="tech-deep-dive section reveal-on-scroll">
+            <div class="tech-deep-dive-inner container">
+                <h2 class="section-title">Technologies Used</h2>
+                <p class="section-subtitle">Built for structured output reliability and clean mode separation.</p>
+                <div class="tech-cards grid grid-3 gap-6">
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5z"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">Mistral AI</h3>
+                            <p class="tech-description">Mode-controlled system prompts switch the model's behavior between free-form conversation and strict structured JSON generation — same model, completely different output contract.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">JSON Schema Enforcement</h3>
+                            <p class="tech-description">Every Design Mode response is validated against a strict schema before being returned to the frontend. Malformed outputs are caught and handled gracefully — never passed raw to the UI.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card card-glass p-4">
+                        <div class="tech-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-title">Flask + Session Memory</h3>
+                            <p class="tech-description">Server-side session memory maintains conversation history across mode switches — so context isn't lost when the user toggles between chat and design generation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGES -->
+        <section class="challenges-solutions section reveal-on-scroll">
+            <div class="challenges-solutions-inner container">
+                <h2 class="section-title">Challenges Solved</h2>
+                <div class="challenges-grid grid grid-3 gap-6">
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Mode Separation</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>A single LLM can't reliably produce both casual conversation and strict JSON in the same session without the modes bleeding into each other.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Separate system prompts injected per-mode with explicit output contracts. Mode is tracked server-side and enforced on every request — never trusted from the client.</p></div>
+                    </div>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Frontend-Safe Output</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>LLMs occasionally wrap JSON in markdown code fences or add prose explanations — breaking downstream parsing.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Post-processing strips markdown wrappers before validation. If the cleaned output still fails JSON parse, the error is caught and a fallback response is returned without crashing the UI.</p></div>
+                    </div>
+                    <div class="challenge-card card-glass p-4">
+                        <h3 class="challenge-title">Visual Color Presentation</h3>
+                        <div class="challenge-problem"><h4 class="problem-title">Problem:</h4><p>Hex codes in a text response are meaningless without visual context — users can't evaluate a palette they can't see.</p></div>
+                        <div class="challenge-solution"><h4 class="solution-title">Solution:</h4><p>Frontend renders actual color swatches from the returned JSON in real time — users see the palette immediately without copy-pasting hex codes into a color picker.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LESSONS -->
+        <section class="lessons-learned section reveal-on-scroll">
+            <div class="lessons-learned-inner container">
+                <h2 class="section-title">What I Learned</h2>
+                <div class="lessons-grid grid grid-3 gap-6">
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Structured Output Foundations</h3>
+                        <p>This was my first project enforcing strict JSON schema validation on LLM outputs — the techniques I developed here (strip → parse → validate → fallback) became a core pattern in every subsequent project.</p>
+                    </div>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Mode-Controlled Behavior</h3>
+                        <p>System prompt engineering for behavioral mode switching is a lightweight alternative to fine-tuning. The key insight: the mode switch must happen server-side — never trust the client to declare which mode it's in.</p>
+                    </div>
+                    <div class="lesson-item">
+                        <h3 class="lesson-title">Design Feedback Loops</h3>
+                        <p>Users want to iterate on designs conversationally — "make it darker", "add a secondary accent". Supporting iterative refinement requires maintaining design state across turns, not just generating on-demand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAV -->
+        <section class="project-navigation section">
+            <div class="project-navigation-inner container flex justify-between items-center">
+                <a href="project-four.html" class="prev-project btn btn-outline">← Job Application Agent</a>
+                <a href="../projects.html" class="btn btn-secondary">↑ All Projects</a>
+                <a href="project-one.html" class="next-project btn btn-outline">F.R.I.D.A.Y →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
+            </div>
+            <div class="footer-links">
+                <div><h4>Work</h4><ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../experience.html">Experience</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>
