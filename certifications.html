@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Archit Aggarwal</title>
+    <meta name="description" content="Certifications and credentials earned by Archit Aggarwal — Anthropic Claude API, Claude Code, Model Context Protocol, Agent Skills, and IBM AI badges.">
+    <link rel="icon" href="assets/icons/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    body{font-family:var(--font-body);}
+    .flex{display:flex}.flex-wrap{flex-wrap:wrap}.grid{display:grid}.gap-2{gap:var(--space-2)}.gap-4{gap:var(--space-4)}.gap-6{gap:var(--space-6)}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.text-center{text-align:center}.mb-2{margin-bottom:var(--space-2)}.mb-4{margin-bottom:var(--space-4)}.mb-6{margin-bottom:var(--space-6)}.mb-8{margin-bottom:var(--space-8)}.mt-8{margin-top:var(--space-8)}
+
+    .section{padding:var(--space-20) 0;}
+    .page-header{padding:var(--space-32) 0 var(--space-16);}
+    .section-label{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-mono);font-size:var(--font-size-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-primary);margin-bottom:var(--space-4);}
+    .section-label::before{content:'';width:24px;height:1px;background:var(--color-accent-primary);}
+
+    /* STATS */
+    .stats-row{display:flex;gap:var(--space-12);justify-content:center;margin-top:var(--space-8);flex-wrap:wrap;}
+    .stat-item{text-align:center;}
+    .stat-number{font-family:var(--font-heading);font-size:var(--font-size-5xl);font-weight:var(--font-weight-black);letter-spacing:-0.03em;line-height:1;background:linear-gradient(135deg,var(--color-accent-primary),var(--color-accent-tertiary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:var(--space-1);}
+    .stat-label{font-family:var(--font-mono);font-size:var(--font-size-xs);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-tertiary);}
+
+    /* WHY THESE MATTER */
+    .why-matter{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--border-radius-lg);padding:var(--space-8) var(--space-10);margin-top:var(--space-10);position:relative;overflow:hidden;}
+    .why-matter::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--color-accent-primary),var(--color-accent-tertiary));}
+    .why-matter p{font-size:var(--font-size-base);color:var(--color-text-secondary);line-height:1.8;margin:0;}
+    .why-matter p + p{margin-top:var(--space-4);}
+    .why-matter strong{color:var(--color-text-primary);font-weight:600;}
+
+    /* CERT GRID */
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-6);margin-top:var(--space-10);}
+    .cert-card{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--border-radius-lg);overflow:hidden;cursor:pointer;transition:var(--transition-slow);animation:fadeUp 0.5s ease both;display:flex;flex-direction:column;}
+    .cert-card:nth-child(1){animation-delay:0.05s}.cert-card:nth-child(2){animation-delay:0.10s}.cert-card:nth-child(3){animation-delay:0.15s}.cert-card:nth-child(4){animation-delay:0.20s}.cert-card:nth-child(5){animation-delay:0.25s}.cert-card:nth-child(6){animation-delay:0.30s}.cert-card:nth-child(7){animation-delay:0.35s}
+    .cert-card:hover{border-color:var(--color-border-accent);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px var(--color-accent-glow);}
+    .cert-image-wrap{aspect-ratio:4/3;overflow:hidden;background:var(--color-bg-tertiary);position:relative;}
+    .cert-image-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--transition-slow);}
+    .cert-card:hover .cert-image-wrap img{transform:scale(1.04);}
+    .cert-zoom-hint{position:absolute;bottom:var(--space-3);right:var(--space-3);font-family:var(--font-mono);font-size:10px;padding:3px 10px;border-radius:var(--border-radius-full);background:rgba(0,0,0,0.55);color:rgba(255,255,255,0.8);backdrop-filter:blur(4px);opacity:0;transition:opacity var(--transition-fast);}
+    .cert-card:hover .cert-zoom-hint{opacity:1;}
+    .cert-card-content{padding:var(--space-5) var(--space-6);flex:1;display:flex;flex-direction:column;gap:var(--space-2);}
+    .cert-card-title{font-family:var(--font-heading);font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);margin:0;line-height:1.3;}
+    .cert-card-issuer{font-family:var(--font-mono);font-size:var(--font-size-xs);color:var(--color-accent-primary);text-transform:uppercase;letter-spacing:0.06em;}
+    .cert-card-desc{font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.6;margin:0;flex:1;}
+    .cert-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-3);margin-top:var(--space-2);border-top:1px solid var(--color-border);}
+    .cert-type-badge{font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:var(--border-radius-sm);border:1px solid var(--color-border-accent);color:var(--color-accent-primary);background:rgba(99,102,241,0.06);}
+    .cert-type-badge.badge-ibm{border-color:rgba(34,211,238,0.3);color:var(--color-accent-tertiary);background:rgba(34,211,238,0.06);}
+    .cert-verify-link{font-family:var(--font-mono);font-size:10px;color:var(--color-text-secondary);text-decoration:none;padding:2px 8px;border:1px solid var(--color-border);border-radius:var(--border-radius-sm);transition:var(--transition-fast);}
+    .cert-verify-link:hover{border-color:var(--color-border-accent);color:var(--color-accent-primary);background:var(--color-accent-glow);}
+
+    /* SECTION DIVIDER LABELS */
+    .cert-section-title{font-family:var(--font-mono);font-size:var(--font-size-xs);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-tertiary);margin:var(--space-12) 0 0;padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border);}
+    .cert-grid:first-of-type{margin-top:var(--space-6);}
+
+    /* MODAL / LIGHTBOX */
+    .cert-modal-overlay{position:fixed;inset:0;background:rgba(5,5,10,0.85);backdrop-filter:blur(6px);z-index:1000;display:none;align-items:center;justify-content:center;padding:var(--space-6);}
+    .cert-modal-overlay.active{display:flex;}
+    .cert-modal{background:var(--color-bg-card);border:1px solid var(--color-border-accent);border-radius:var(--border-radius-lg);max-width:800px;width:100%;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;animation:fadeUp 0.3s ease both;}
+    .cert-modal-header{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) var(--space-6);border-bottom:1px solid var(--color-border);}
+    .cert-modal-title{font-family:var(--font-heading);font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);margin:0;}
+    .cert-modal-close{background:transparent;border:1px solid var(--color-border);border-radius:var(--border-radius-md);width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);cursor:pointer;transition:var(--transition-fast);font-size:18px;line-height:1;}
+    .cert-modal-close:hover{border-color:var(--color-border-accent);color:var(--color-accent-primary);}
+    .cert-modal-body{overflow:auto;padding:var(--space-6);display:flex;align-items:center;justify-content:center;background:var(--color-bg-secondary);}
+    .cert-modal-body img{max-width:100%;height:auto;border-radius:var(--border-radius-md);}
+    .cert-modal-footer{padding:var(--space-4) var(--space-6);border-top:1px solid var(--color-border);display:flex;justify-content:flex-end;gap:var(--space-3);}
+    .cert-modal-link{font-family:var(--font-mono);font-size:var(--font-size-xs);padding:var(--space-2) var(--space-4);border-radius:var(--border-radius-md);border:1px solid var(--color-border-accent);color:var(--color-accent-primary);background:transparent;cursor:pointer;text-decoration:none;transition:var(--transition-fast);display:inline-flex;align-items:center;gap:var(--space-2);letter-spacing:0.04em;}
+    .cert-modal-link:hover{background:var(--color-accent-glow);}
+    .cert-modal-link.primary{background:var(--color-accent-primary);color:#fff;border-color:var(--color-accent-primary);}
+    .cert-modal-link.primary:hover{opacity:0.9;}
+
+    @media(max-width:600px){.cert-grid{grid-template-columns:1fr;}.stats-row{gap:var(--space-8);}.why-matter{padding:var(--space-6);}}
+    </style>
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="index.html" class="nav-logo">AA</a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle"></button>
+                <a href="assets/resume/Archit_Aggarwal_Resume.pdf" download class="btn btn-primary btn-sm nav-cta">Resume ↓</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header container">
+            <div class="text-center">
+                <div class="section-label" style="justify-content:center;">Credentials</div>
+                <h1 class="section-title">Certifications & Badges</h1>
+                <p class="section-subtitle" style="margin:0 auto;max-width:52ch;">
+                    Hands-on training directly from the people building the tools I use every day.
+                </p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Anthropic Certs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">IBM Badges</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2026</div>
+                        <div class="stat-label">Most Recent</div>
+                    </div>
+                </div>
+
+                <div class="why-matter text-left" style="text-align:left;">
+                    <p>
+                        These certifications aren't shelf decorations — they map directly onto the systems I've built. The Model Context Protocol courses cover the exact architecture behind <strong>FRIDAY's FastMCP tool server</strong>, where an AI agent calls real-world tools (browser automation, Spotify, system control) through standardized MCP interfaces.
+                    </p>
+                    <p>
+                        <strong>Building with the Claude API</strong> and <strong>Claude Code in Action</strong> cover the structured output enforcement, tool-calling patterns, and agentic workflows that show up across CourseMateAI, ResumeAI, and the Job Application Agent. <strong>Agent Skills</strong> and <strong>Subagents</strong> tie directly into the planner-executor-verifier pattern and multi-agent orchestration I use for autonomous task execution.
+                    </p>
+                    <p>
+                        The IBM badges round out the foundation — core AI concepts and hands-on agent-building fundamentals that informed how I approach every project on this site.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANTHROPIC CERTS -->
+        <section class="section" style="padding-top:0;">
+            <div class="container">
+                <div class="section-label">Anthropic</div>
+                <h2 class="section-title">Claude & Agentic AI Certifications</h2>
+                <div class="cert-grid">
+
+                    <div class="cert-card" data-img="assets/images/certifications/claude-api.png" data-title="Building with the Claude API" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/9bzjtzef8695">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/claude-api.png" alt="Building with the Claude API certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Building with the Claude API</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">Core patterns for building production applications with the Claude API — tool use, structured outputs, and multi-turn agentic workflows.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/9bzjtzef8695" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/claude-code.png" data-title="Claude Code in Action" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/t43fozu3nrnv">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/claude-code.png" alt="Claude Code in Action certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Claude Code in Action</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">Practical agentic coding workflows using Claude Code — from codebase navigation to autonomous multi-step development tasks.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/t43fozu3nrnv" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/mcp-intro.png" data-title="Introduction to Model Context Protocol" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/f4ct9zn3i757">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/mcp-intro.png" alt="Introduction to Model Context Protocol certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Introduction to Model Context Protocol</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">Foundations of MCP — the open standard for connecting AI models to external tools, data sources, and systems through a unified protocol.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/f4ct9zn3i757" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/mcp-advanced.png" data-title="Model Context Protocol: Advanced Topics" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/q2e4z64yymhy">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/mcp-advanced.png" alt="Model Context Protocol: Advanced Topics certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Model Context Protocol: Advanced Topics</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">Advanced MCP architecture — server design, security considerations, and building production-grade tool servers for AI agents.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/q2e4z64yymhy" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/agent-skills.png" data-title="Introduction to Agent Skills" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/ncgtznkorghp">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/agent-skills.png" alt="Introduction to Agent Skills certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Introduction to Agent Skills</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">How to design, package, and deploy reusable "skills" that extend an AI agent's capabilities across different tasks and domains.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/ncgtznkorghp" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/subagents.png" data-title="Introduction to Subagents" data-issuer="Anthropic" data-link="https://verify.skilljar.com/c/7xc9mkc9fi82">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/subagents.png" alt="Introduction to Subagents certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Introduction to Subagents</h3>
+                            <span class="cert-card-issuer">Anthropic</span>
+                            <p class="cert-card-desc">How to design and orchestrate specialized subagents that handle focused tasks within a larger multi-agent system — coordination, delegation, and result aggregation.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge">Certificate</span>
+                                <a href="https://verify.skilljar.com/c/7xc9mkc9fi82" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- IBM BADGES -->
+        <section class="section" style="background:var(--color-bg-secondary);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <div class="section-label">IBM · Credly</div>
+                <h2 class="section-title">Skill Badges</h2>
+                <div class="cert-grid">
+
+                    <div class="cert-card" data-img="assets/images/certifications/ibm-build-ai-agent.png" data-title="Build an AI Agent" data-issuer="IBM (Credly)" data-link="https://www.credly.com/earner/earned/badge/ac9f72c4-c606-4446-b9ba-87bb6cbf77f0">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/ibm-build-ai-agent.png" alt="IBM Build an AI Agent badge">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Build an AI Agent</h3>
+                            <span class="cert-card-issuer">IBM</span>
+                            <p class="cert-card-desc">Hands-on badge covering the fundamentals of designing and building autonomous AI agents — from planning to tool integration.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge badge-ibm">Credly Badge</span>
+                                <a href="https://www.credly.com/earner/earned/badge/ac9f72c4-c606-4446-b9ba-87bb6cbf77f0" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-img="assets/images/certifications/ibm-ai-fundamentals.png" data-title="Artificial Intelligence Fundamentals" data-issuer="IBM (Credly)" data-link="https://www.credly.com/earner/earned/badge/2bd2d432-425d-487c-9e12-3470ff4b1676">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/ibm-ai-fundamentals.png" alt="IBM Artificial Intelligence Fundamentals badge">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Artificial Intelligence Fundamentals</h3>
+                            <span class="cert-card-issuer">IBM</span>
+                            <p class="cert-card-desc">Core AI concepts — machine learning, neural networks, and real-world AI applications across industries.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge badge-ibm">Credly Badge</span>
+                                <a href="https://www.credly.com/earner/earned/badge/2bd2d432-425d-487c-9e12-3470ff4b1676" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="cert-modal-overlay" id="cert-modal-overlay">
+        <div class="cert-modal">
+            <div class="cert-modal-header">
+                <h3 class="cert-modal-title" id="cert-modal-title">Certificate</h3>
+                <button class="cert-modal-close" id="cert-modal-close" aria-label="Close">×</button>
+            </div>
+            <div class="cert-modal-body">
+                <img id="cert-modal-image" src="" alt="">
+            </div>
+            <div class="cert-modal-footer">
+                <a id="cert-modal-external" href="#" target="_blank" rel="noopener" class="cert-modal-link" style="display:none;">Verify ↗</a>
+                <a id="cert-modal-download" href="#" download class="cert-modal-link primary">Download ↓</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">AA</a>
+                <p class="footer-tagline">Agentic AI Engineer building intelligent systems that solve real problems.</p>
+            </div>
+            <div class="footer-links">
+                <div><h4>Work</h4><ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Archit Aggarwal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+    (function(){
+        const overlay=document.getElementById('cert-modal-overlay');
+        const modalTitle=document.getElementById('cert-modal-title');
+        const modalImage=document.getElementById('cert-modal-image');
+        const modalDownload=document.getElementById('cert-modal-download');
+        const modalExternal=document.getElementById('cert-modal-external');
+        const closeBtn=document.getElementById('cert-modal-close');
+
+        document.querySelectorAll('.cert-card').forEach(card=>{
+            card.addEventListener('click',()=>{
+                const img=card.dataset.img;
+                const title=card.dataset.title;
+                const link=card.dataset.link;
+                modalTitle.textContent=title;
+                modalImage.src=img;
+                modalImage.alt=title;
+                modalDownload.href=img;
+                modalDownload.setAttribute('download',title.replace(/\s+/g,'_')+'.png');
+                if(link){
+                    modalExternal.href=link;
+                    modalExternal.textContent=link.includes('credly.com')?'Verify on Credly ↗':'Verify on Skilljar ↗';
+                    modalExternal.style.display='inline-flex';
+                }else{
+                    modalExternal.style.display='none';
+                }
+                overlay.classList.add('active');
+                document.body.style.overflow='hidden';
+            });
+        });
+
+        function closeModal(){
+            overlay.classList.remove('active');
+            document.body.style.overflow='';
+        }
+        closeBtn.addEventListener('click',closeModal);
+        overlay.addEventListener('click',(e)=>{if(e.target===overlay)closeModal();});
+        document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeModal();});
+    })();
+    </script>
+</body>
+</html>
