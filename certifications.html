@@ -58,6 +58,7 @@
     .cert-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-3);margin-top:var(--space-2);border-top:1px solid var(--color-border);}
     .cert-type-badge{font-family:var(--font-mono);font-size:10px;padding:2px 8px;border-radius:var(--border-radius-sm);border:1px solid var(--color-border-accent);color:var(--color-accent-primary);background:rgba(99,102,241,0.06);}
     .cert-type-badge.badge-ibm{border-color:rgba(34,211,238,0.3);color:var(--color-accent-tertiary);background:rgba(34,211,238,0.06);}
+    .cert-type-badge.badge-langgraph{border-color:rgba(74,222,128,0.3);color:var(--color-accent-green);background:rgba(74,222,128,0.06);}
     .cert-verify-link{font-family:var(--font-mono);font-size:10px;color:var(--color-text-secondary);text-decoration:none;padding:2px 8px;border:1px solid var(--color-border);border-radius:var(--border-radius-sm);transition:var(--transition-fast);}
     .cert-verify-link:hover{border-color:var(--color-border-accent);color:var(--color-accent-primary);background:var(--color-accent-glow);}
 
@@ -127,7 +128,7 @@
                         <div class="stat-label">Anthropic Certs</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">2</div>
+                        <div class="stat-number">3</div>
                         <div class="stat-label">IBM Badges</div>
                     </div>
                     <div class="stat-item">
@@ -296,6 +297,49 @@
                         </div>
                     </div>
 
+                    <div class="cert-card" data-img="assets/images/certifications/ibm-data-fundamentals.png" data-title="Data Fundamentals" data-issuer="IBM (Credly)" data-link="https://www.credly.com/earner/earned/badge/09b21c77-a799-4721-9396-0338116880df">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/ibm-data-fundamentals.png" alt="IBM Data Fundamentals badge">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Data Fundamentals</h3>
+                            <span class="cert-card-issuer">IBM</span>
+                            <p class="cert-card-desc">Data analytics concepts, methodologies, and the data science lifecycle — including data cleaning, refinement, and visualization with tools like Watson Studio.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge badge-ibm">Credly Badge</span>
+                                <a href="https://www.credly.com/earner/earned/badge/09b21c77-a799-4721-9396-0338116880df" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LANGCHAIN / LANGGRAPH -->
+        <section class="section">
+            <div class="container">
+                <div class="section-label">LangChain Academy</div>
+                <h2 class="section-title">LangGraph Certifications</h2>
+                <div class="cert-grid">
+
+                    <div class="cert-card" data-img="assets/images/certifications/langgraph-foundation.png" data-title="Foundation: Introduction to LangGraph - Python" data-issuer="LangChain Academy" data-link="https://academy.langchain.com/certificates/bpczo9v323">
+                        <div class="cert-image-wrap">
+                            <img src="assets/images/certifications/langgraph-foundation.png" alt="Foundation: Introduction to LangGraph - Python certificate">
+                            <span class="cert-zoom-hint">Click to view ⤢</span>
+                        </div>
+                        <div class="cert-card-content">
+                            <h3 class="cert-card-title">Foundation: Introduction to LangGraph - Python</h3>
+                            <span class="cert-card-issuer">LangChain Academy</span>
+                            <p class="cert-card-desc">Core LangGraph concepts — building stateful, multi-step agent workflows with graphs, nodes, and conditional routing in Python.</p>
+                            <div class="cert-card-footer">
+                                <span class="cert-type-badge badge-langgraph">Certificate</span>
+                                <a href="https://academy.langchain.com/certificates/bpczo9v323" target="_blank" rel="noopener" class="cert-verify-link" onclick="event.stopPropagation()">Verify ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -361,7 +405,9 @@
                 modalDownload.setAttribute('download',title.replace(/\s+/g,'_')+'.png');
                 if(link){
                     modalExternal.href=link;
-                    modalExternal.textContent=link.includes('credly.com')?'Verify on Credly ↗':'Verify on Skilljar ↗';
+                    if(link.includes('credly.com')){modalExternal.textContent='Verify on Credly ↗';}
+                    else if(link.includes('academy.langchain.com')){modalExternal.textContent='Verify on LangChain Academy ↗';}
+                    else{modalExternal.textContent='Verify on Skilljar ↗';}
                     modalExternal.style.display='inline-flex';
                 }else{
                     modalExternal.style.display='none';
